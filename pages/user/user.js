@@ -22,5 +22,9 @@ Page({
         userInfo: userInfo
       })
     })
+
+    var menuOne = document.querySelectorAll('menu-one');
+    console.log(menuOne);
+
   }
 })

@@ -1,9 +1,10 @@
 /* pages/user/user.wxml.wxss */
-page{
+
+page {
   background: #eee;
 }
 
-page::-webkit-scrollbar{
+page::-webkit-scrollbar {
   width: 0px;
   height: 0px;
   color: transparent;
@@ -24,6 +25,20 @@ page::-webkit-scrollbar{
 
 .userinfo-nickname {
   color: #aaa;
+}
+
+.editLink {
+  width: 100%;
+  margin-right: 30px;
+  text-align: right;
+  font-size: 14px;
+}
+
+.editLink image {
+  width: 20px;
+  height: 20px;
+  vertical-align: -15%;
+  margin-right: 2px;
 }
 
 .user-main {
@@ -74,4 +89,8 @@ page::-webkit-scrollbar{
   font-size: 12px;
   text-align: center;
   color: #999;
+}
+
+.menu-twoWrapper {
+  display: none;
 }
