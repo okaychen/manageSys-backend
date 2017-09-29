@@ -1,0 +1,9 @@
+<view class="pageWrapper">
+<!-- bottom tab -->
+  <view class='tab-Wrapper'>
+    <view class='tab-item'>同城</view>
+    <view class='tab-item'>拼团</view>
+    <view class='tab-item'>微页</view>
+    <view class='tab-item'>我的</view>
+  </view>
+</view>

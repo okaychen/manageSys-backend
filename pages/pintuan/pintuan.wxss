@@ -1,0 +1,10 @@
+.tab-Wrapper{
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+.tab-Wrapper .tab-item{
+  float: left;
+  width: 25%;
+  text-align: center;
+}
