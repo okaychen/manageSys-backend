@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/pintuan/pintuan",
     "pages/user/user",
+    "pages/pintuan/pintuan",
     "pages/index/index",
     "pages/logs/logs"
    

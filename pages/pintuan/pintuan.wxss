@@ -1,18 +1,130 @@
-.tab-Wrapper{
+/********************************* tab bottom **************************/
+
+.tab-Wrapper {
   width: 100%;
+  padding: 5px 0px 0px 0px;
   position: absolute;
   bottom: 0px;
   text-align: center;
+  border-top: 1px solid #eee;
 }
-.tab-Wrapper .tab-item{
+
+.tab-Wrapper .tab-item {
   float: left;
-  width: 50%;
+  width: 40%;
   text-align: center;
 }
-.tab-item image{
+
+.tab-item image {
   width: 25px;
   height: 25px;
 }
-.tab-item text{
+
+.tab-item text {
   display: block;
+}
+
+/********************************* tab scorll top **************************/
+
+.tab-h {
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: #f7f7f7;
+  font-size: 14px;
+  white-space: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.tab-item {
+  margin: 0 36rpx;
+  display: inline-block;
+}
+
+.tab-item.active {
+  color: #4675f9;
+  position: relative;
+}
+
+.tab-h .tab-item.active:after {
+  content: "";
+  display: block;
+  height: 8rpx;
+  width: 115rpx;
+  background: #4675f9;
+  position: absolute;
+  bottom: 0;
+  left: 5rpx;
+  border-radius: 16rpx;
+}
+
+.tab-h .tab-item:nth-child(1).active:after {
+  width: 52rpx;
+}
+
+.goods-Wrapper {
+  width: 96%;
+  margin: 20rpx auto;
+}
+
+.goods-img {
+  width: 100%;
+  height: 200px;
+}
+
+.tab-content {
+  margin-top: 80rpx;
+  height: 600px;
+  overflow-y: hidden;
+}
+
+.tab-content  swiper-item {
+  overflow-y: scroll;
+}
+
+/* 隐藏滚动条 */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.goods-info text {
+  display: inline-block;
+}
+
+.goods-info label {
+  float: right;
+}
+
+.goods-info button {
+  display: inline-block;
+  font-size: 12px;
+  margin-top: 8px;
+  border: 1px solid red;
+}
+.goods-info button image{
+  width: 10px;
+  height: 10px;
+  margin: 0px 5px 0px 0px;
+}
+.goods-info button:nth-child(1){
+  border-right: none;
+  background: #fff;
+  color: red;
+}
+.goods-info button:nth-child(2){
+  background: red;
+  color: #fff;
+}
+.price{
+  font-size: 16px;
+  color: red;
+  padding-right: 10px;
 }
