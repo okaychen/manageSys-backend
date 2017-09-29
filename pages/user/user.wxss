@@ -91,6 +91,58 @@ page::-webkit-scrollbar {
   color: #999;
 }
 
-.menu-twoWrapper {
+/* .menu-twoWrapper {
   display: none;
+} */
+
+
+
+
+/* .phone_personal{
+    width: 100%;
+    color:rgb(34, 154, 181);
+    height:100rpx;
+    line-height:100rpx;
+    text-align: center;
 }
+.phone_one{
+    display: flex; 
+    position: relative;
+    justify-content: space-between;
+    background-color:rgb(239, 239, 239);
+    width:90%;
+    height:100rpx;
+    margin:0 auto;
+    border-radius: 10rpx;
+    border-bottom:2rpx solid rgb(255, 255, 255);
+}
+.person_box{
+    position: relative;
+}
+.phone_select{
+    margin-top:0;
+    z-index: 100;
+    position: absolute; 
+}
+.select_one{
+    text-align: center;
+    background-color:rgb(239, 239, 239);
+    width:676rpx;  
+    height:100rpx;
+    line-height:100rpx;
+    margin:0 5%;
+    border-bottom:2rpx solid rgb(255, 255, 255);
+}
+.personal_image{
+    z-index: 100;
+    position: absolute;
+    right:2.5%;
+    width: 34rpx;
+    height: 20rpx;
+    margin:40rpx 20rpx 40rpx 0;
+    transition: All 0.4s ease;  
+    -webkit-transition: All 0.4s ease;
+}
+.rotateRight{
+    transform: rotate(180deg); 
+} */

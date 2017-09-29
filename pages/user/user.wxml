@@ -3,22 +3,23 @@
 <view class='bgeee'>
 
   <view class="container">
-    <view class='editLink'> <image src='../../public/image/edit.png'></image>编辑</view>
+    <view class='editLink'>
+      <image src='../../public/image/edit.png'></image>编辑</view>
     <view bindtap="bindViewTap" class="userinfo">
       <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </view>
   </view>
 
-  <view class='user-wrapper'>
+ <view class='user-wrapper'>
     <view class='user-main'>
       <view class='pull-Down'>
-        <view class='menu-one'>
+        <view class='menu-one' bindtap="clickDown">
           <text>同城</text>
           <text class='right-tip'> > </text>
         </view>
-        <view class='menu-twoWrapper'>
-          <view class='menu-two'>
+        <view class='menu-twoWrapper' hidden="{{selectPerson}}">
+          <view class='menu-two' bindtap="mySelect">
             <text> > 我的发布 </text>
           </view>
         </view>
@@ -51,7 +52,19 @@
       </view>
     </view>
     <view class='create-user'>okaychen提供技术支持</view>
+  </view> 
+
+  <!-- <view class="phone_one" bindtap="clickPerson">
+    <view class="phone_personal">{{firstPerson}}</view>
   </view>
+  <view class="person_box">
+    <view class="phone_select" hidden="{{selectPerson}}">
+      <view class="select_one" bindtap="mySelect" data-me="你好">你好</view>
+    </view>
+  </view>-->
+
+ 
+
 
 
   <!-- bottom tab -->
