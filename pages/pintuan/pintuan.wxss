@@ -1,31 +1,4 @@
-/********************************* tab bottom **************************/
-
-.tab-Wrapper {
-  width: 100%;
-  padding: 5px 0px 0px 0px;
-  position: absolute;
-  bottom: 0px;
-  text-align: center;
-  border-top: 1px solid #eee;
-}
-
-.tab-Wrapper .tab-item {
-  float: left;
-  width: 40%;
-  text-align: center;
-}
-
-.tab-item image {
-  width: 25px;
-  height: 25px;
-}
-
-.tab-item text {
-  display: block;
-}
-
 /********************************* tab scorll top **************************/
-
 .tab-h {
   height: 80rpx;
   width: 100%;
