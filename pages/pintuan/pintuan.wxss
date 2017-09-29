@@ -2,9 +2,17 @@
   width: 100%;
   position: absolute;
   bottom: 0px;
+  text-align: center;
 }
 .tab-Wrapper .tab-item{
   float: left;
-  width: 25%;
+  width: 50%;
   text-align: center;
+}
+.tab-item image{
+  width: 25px;
+  height: 25px;
+}
+.tab-item text{
+  display: block;
 }

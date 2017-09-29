@@ -1,9 +1,13 @@
 <view class="pageWrapper">
 <!-- bottom tab -->
   <view class='tab-Wrapper'>
-    <view class='tab-item'>同城</view>
-    <view class='tab-item'>拼团</view>
-    <view class='tab-item'>微页</view>
-    <view class='tab-item'>我的</view>
+    <view class='tab-item'>
+      <image src='../../public/image/tab-shop.png'></image>
+      <text>拼团</text>
+    </view>
+    <view class='tab-item'>
+      <image src='../../public/image/tab-user.png'></image>
+      <text>我的</text>
+    </view>
   </view>
-</view>
+</view> 
