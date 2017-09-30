@@ -1,2 +1,7 @@
 <!--pages/user/minTuan/myAddress/newAddress/newAddress.wxml-->
-<text>pages/user/minTuan/myAddress/newAddress/newAddress.wxml</text>
+<view>
+  <label>
+    <text>收货人</text>
+    <input type='text'  />
+  </label>
+</view>

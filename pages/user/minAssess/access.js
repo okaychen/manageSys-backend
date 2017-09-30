@@ -6,9 +6,11 @@ Page({
     selectedSrc: '../../../image/selected.png',
     halfSrc: '../../../image/half.png',
     key: 1,//评分
-    path: ''
+    path: ' ',
+    userInput:' '
   },
   onLoad: function () {
+    
   },
 
   //点击右边,半颗星
@@ -72,9 +74,27 @@ Page({
         })
       }
     })
-  }
+  },
+  
+
+   textAreaCon:function(e){
+     var that = this;
+     that.setData({
+       userInput: e.detail.value,
+     })
+   },
+   saveAccess:function(e){
+     if(this.data.userInput == ' '){
+       wx.showModal({
+         title: '提示',
+         content: '对不起，请输入留言内容',
+       })
+     }else{
+      console.log(this.data.userInput);
+      //  成功监听用户输入内容
 
 
-
+     }
+   }
 
 })

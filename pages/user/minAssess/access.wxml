@@ -11,9 +11,12 @@
       </block>
       </view> 
   </view>
- 
-  <textarea placeholder='写点什么吧...'></textarea> 
-  <view class='uploadFile' bindtap='upload'>+</view>
- </view> 
+  
+  <!-- 这里绑定是bindInput而不是bindtab -->
+  <textarea bindinput='textAreaCon' placeholder='写点什么吧...' auto-focus='true'></textarea> 
+  <view class='uploadFile' bindtap='upload'>+</view> 
+ </view>
 
- <button class='save-edit'>提交保存</button> 
+ <button type='submit' bindtap='saveAccess' class='save-edit'>提交保存</button> 
+
+ 

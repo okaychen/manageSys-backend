@@ -3,9 +3,18 @@
 /********************************* common **************************/
 
 page {
-  height: 100%;
   font-family: "微软雅黑";
   overflow: scroll;
+}
+
+page::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+  color: transparent;
+}
+
+navigator:hover {
+  background: none;
 }
 
 .container {

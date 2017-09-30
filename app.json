@@ -1,6 +1,7 @@
 {
   "pages": [
-   
+    "pages/user/minTuan/myAddress/newAddress/newAddress",
+    "pages/user/minTuan/myAddress/add/add",
     "pages/user/minAssess/access",
     "pages/user/edit/edit",
     "pages/pintuan/pintuan",
@@ -9,9 +10,9 @@
     "pages/index/index",
     "pages/logs/logs",
     
-    "pages/user/minTuan/myOrder/myOrder",
-    "pages/user/minTuan/myAddress/add/add",
-    "pages/user/minTuan/myAddress/newAddress/newAddress"
+    "pages/user/minTuan/myOrder/myOrder"
+    
+   
   ],
   "window": {
     "backgroundTextStyle": "light",
