@@ -1,1 +1,8 @@
 /* pages/pintuan/details/details.wxss */
+swiper{
+  width: 100%;
+  height: 200px;
+}
+swiper image{
+  width: 100%;
+}

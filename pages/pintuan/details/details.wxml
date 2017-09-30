@@ -1,2 +1,12 @@
 <!--pages/pintuan/details/details.wxml-->
-<text>pages/pintuan/details/details.wxml</text>
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image mode='widthFix' src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+
