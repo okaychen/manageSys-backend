@@ -1,1 +1,28 @@
 /* pages/user/minAssess/access.wxss */
+page{
+  background: #f5f5f5;
+}
+
+.accessWrapper{
+  background: #fff;
+  font-size: 14px;
+}
+
+.accessWrapper textarea{
+  width: 94%;
+  margin: 0 auto;
+  max-height: 200px;
+  border-top: 1px solid #f5f5f5;
+  padding: 10px 0px;
+}
+
+.accessWrapper textarea::-webkit-scrollbar{
+  width: 0px;
+  height: 0px;
+  color: transparent;
+}
+
+.accessWrapper .title{
+  padding: 10px;
+}
+

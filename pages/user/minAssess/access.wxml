@@ -1,2 +1,14 @@
 <!--pages/user/minAssess/access.wxml-->
-<text>pages/user/minAssess/access.wxml</text>
+<view class='accessWrapper'>
+  <view class='title'>
+    评价
+    <text></text>
+  </view>
+
+  <textarea placeholder='写点什么吧...'>
+
+  </textarea>
+  <input type='file' />
+</view>
+
+<button class='save-edit'>提交保存</button>

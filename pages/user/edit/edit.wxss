@@ -52,11 +52,3 @@ page::-webkit-scrollbar {
   font-size: 12px;
 }
 
-.edit-main button.save-edit {
-  width: 90%;
-  margin: 0 auto;
-  font-size: 16px;
-  color: #fff;
-  background: #1aad19;
-  margin-top: 20px;
-}

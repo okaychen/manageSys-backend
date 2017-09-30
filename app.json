@@ -1,11 +1,12 @@
 {
   "pages": [
+    "pages/user/minAssess/access",
     "pages/user/edit/edit",
     "pages/user/user",
     "pages/pintuan/pintuan",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/user/minAssess/access",
+    
     "pages/user/minTuan/myOrder/myOrder",
     "pages/user/minTuan/myAddress/add/add",
     "pages/user/minTuan/myAddress/newAddress/newAddress"
