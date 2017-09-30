@@ -17,7 +17,7 @@
         <scroll-view scroll-y="true" class="scoll-h">
           <block wx:for="{{[1,2,3,4,5,6,7]}}" wx:key="*this">
             <view class='goods-Wrapper'>
-              <image class="goods-img" src='../../public/image/goods1.jpg'></image>
+              <image mode='widthFix' class="goods-img" src='../../image/goods1.jpg'></image>
               <view class="goods-info">
                 <view>周边团门店微营销系统年费</view>
                 <view>
@@ -26,8 +26,8 @@
                     ¥298.00
                   </text>
                   <label>
-                    <button><image src='../../public/image/icon1.png'></image>1人团</button>
-                    <button><image src='../../public/image/i-sjop.png'></image>去开团</button>
+                    <button><image mode='widthFix' src='../../image/icon1.png'></image>1人团</button>
+                    <button><image mode='widthFix' src='../..image/i-sjop.png'></image>去开团</button>
                   </label>
                 </view>
               </view>              
@@ -43,11 +43,11 @@
   <!-- bottom tab -->
   <view class='tab-Wrapper'>
     <view class='tab-item'>
-      <image src='../../public/image/tab-shop.png'></image>
+      <image mode='widthFix' src='../../image/tab-shop.png'></image>
       <text>拼团</text>
     </view>
     <view class='tab-item'>
-      <image src='../../public/image/tab-user.png'></image>
+      <image mode='widthFix' src='../../image/tab-user.png'></image>
       <text>我的</text>
     </view>
   </view>

@@ -101,3 +101,10 @@
   color: red;
   padding-right: 10px;
 }
+
+
+.tab-Wrapper .tab-item {
+  float: left;
+  width: 40%;
+  text-align: center;
+}
