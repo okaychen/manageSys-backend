@@ -14,23 +14,23 @@
  <view class='user-wrapper'>
     <view class='user-main'>
       <view class='pull-Down'>
-        <view class='menu-one' bindtap="clickDown">
+        <view class='menu-one' bindtap="clickDown1">  
           <text>同城</text>
           <text class='right-tip'> > </text>
         </view>
         <view class='menu-twoWrapper' hidden="{{selectPerson}}">
-          <view class='menu-two' bindtap="mySelect">
+          <view class='menu-two'>
             <text> > 我的发布 </text>
           </view>
         </view>
       </view>
 
       <view class='pull-Down'>
-        <view class='menu-one'>
+        <view class='menu-one'  bindtap="clickDown2">
           <text>微拼团</text>
           <text class='right-tip'> > </text>
         </view>
-        <view class='menu-twoWrapper'>
+        <view class='menu-twoWrapper' hidden="{{selectPerson2}}">
           <view class='menu-two'>
             <text>> 我的订单 </text>
           </view>
@@ -40,11 +40,11 @@
         </view>
       </view>
       <view class='pull-Down'>
-        <view class='menu-one'>
+        <view class='menu-one' bindtap="clickDown3">
           <text>微单页</text>
           <text class='right-tip'> > </text>
         </view>
-        <view class='menu-twoWrapper'>
+        <view class='menu-twoWrapper' hidden="{{selectPerson3}}">
           <view class='menu-two'>
             <text> > 我要评价 </text>
           </view>
@@ -52,18 +52,10 @@
       </view>
     </view>
     <view class='create-user'>okaychen提供技术支持</view>
-  </view> 
-
-  <!-- <view class="phone_one" bindtap="clickPerson">
-    <view class="phone_personal">{{firstPerson}}</view>
   </view>
-  <view class="person_box">
-    <view class="phone_select" hidden="{{selectPerson}}">
-      <view class="select_one" bindtap="mySelect" data-me="你好">你好</view>
-    </view>
-  </view>-->
-
  
+
+
 
 
 

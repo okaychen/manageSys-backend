@@ -5,12 +5,12 @@ Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
-    selectPerson: true,
-    firstPerson: '个人',
-    selectArea: false,
+    selectPerson: false,
+    selectPerson2: false,
+    selectPerson3: true,
   },
 
-  
+
   //事件处理函数
   bindViewTap: function () {
     wx.navigateTo({
@@ -18,30 +18,50 @@ Page({
     })
   },
 
-
-  //点击选择类型
-  clickDown: function () {
+  //dropdown
+  clickDown1: function () {
     var selectPerson = this.data.selectPerson;
     if (selectPerson == true) {
       this.setData({
-        selectArea: true,
         selectPerson: false,
       })
     } else {
       this.setData({
-        selectArea: false,
         selectPerson: true,
       })
     }
   },
-  //点击切换
-  mySelect: function (e) {
-    this.setData({
-      firstPerson: e.target.dataset.me,
-      selectPerson: true,
-      selectArea: false,
-    })
+
+  //dropdown
+  clickDown2: function () {
+    var selectPerson2 = this.data.selectPerson2;
+    if (selectPerson2 == true) {
+      this.setData({
+        selectPerson2: false,
+      })
+    } else {
+      this.setData({
+        selectPerson2: true,
+      })
+    }
   },
+
+  //dropdown
+  clickDown3: function () {
+    var selectPerson3 = this.data.selectPerson3;
+    if (selectPerson3 == true) {
+      this.setData({
+        selectPerson3: false,
+      })
+    } else {
+      this.setData({
+        selectPerson3: true,
+      })
+    }
+  },
+
+
+
 
 
 
