@@ -4,6 +4,10 @@ var app = getApp()
 Page({
   data: {
     motto: 'Hello World',
+    items: [
+      { name: '男', value: '男', checked: 'true' },
+      { name: '女', value: '女'}
+    ]
   },
 
 
@@ -14,7 +18,9 @@ Page({
     })
   },
 
-
+  radioChange: function (e) {
+    console.log('radio发生change事件，携带value值为：', e.detail.value)
+  },
 
   onLoad: function () {
     console.log('onLoad')

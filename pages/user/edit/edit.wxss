@@ -1,6 +1,7 @@
 /* pages/user/edit.wxss */
+
 page {
-  background: #eee;
+  background: #f5f5f5;
 }
 
 page::-webkit-scrollbar {
@@ -24,4 +25,38 @@ page::-webkit-scrollbar {
 
 .userinfo-nickname {
   color: #aaa;
+}
+
+/************************** edit mian ********************/
+
+.edit-main {
+  font-size: 14px;
+}
+
+.edit-main label view {
+  padding: 10px;
+}
+
+.edit-main label view:first-child {
+  background: #f5f5f5;
+  font-weight: bold;
+}
+
+.edit-main label view:nth-child(2) {
+  background: #fff;
+}
+
+.edit-main label view > text {
+  float: right;
+  color: #999;
+  font-size: 12px;
+}
+
+.edit-main button.save-edit {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #fff;
+  background: #1aad19;
+  margin-top: 20px;
 }

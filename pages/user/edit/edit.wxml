@@ -1,8 +1,64 @@
 <!--pages/user/edit.wxml-->
 
- <view class="container">
-    <view bindtap="bindViewTap" class="userinfo">
-      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    </view>
-    
+<view class="container">
+  <view bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
   </view>
+</view>
+
+<view class='edit-main'>
+<!-- name -->
+  <label>
+    <view class='name'>姓名
+      <text>（8个汉字，16个英文字符）</text>
+    </view>
+    <view>
+      <input placeholder-style='color:#000' value='JSoso_fa' maxlength='16' />
+    </view>
+  </label>
+
+  <!--sex  -->
+  <label>
+    <view class='sex'>性别</view>
+    <view>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for-items="{{items}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+  </label>
+
+  <!-- phoneNumber  -->
+  <label>
+    <view class='phone'>手机号</view>
+    <view>
+       <input placeholder-style='color:#999' placeholder='请正确填写手机号' maxlength='11' />
+    </view>
+  </label>
+
+  <!-- address  -->
+  <label>
+      <view class='address'>地址
+      <text>（18个字以内）</text>
+    </view>
+    <view>
+       <input placeholder-style='color:#999' placeholder='18个字以内' maxlength='11' />
+    </view>
+  </label>
+
+  <!-- instruction  -->
+  <label>
+     <view class='instruction'>详细介绍下自己
+      <text>（100个字以内）</text>
+    </view>
+    <view>
+       <input placeholder-style='color:#999' placeholder='100个字以内' maxlength='100' />
+    </view>
+  </label>
+
+  <!-- save button -->
+  <view>
+    <button class='save-edit'>提交保存</button>
+  </view>
+</view>
