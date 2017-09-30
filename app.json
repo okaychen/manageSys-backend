@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/user/edit/edit",
     "pages/pintuan/pintuan",
     "pages/user/minAssess/access",
-    "pages/user/edit/edit",
+    
     "pages/user/user",
    
     "pages/index/index",
