@@ -1,7 +1,29 @@
 <!--pages/user/minTuan/myAddress/newAddress/newAddress.wxml-->
-<view>
+<view class='addWrapper'>
   <label>
     <text>收货人</text>
-    <input type='text'  />
+    <input type='text' placeholder='名字' maxlength='4' />
+  </label>
+  
+  <label>
+    <text>手机号</text>
+    <input type='number' placeholder='11位手机号' maxlength='11' />
+  </label>
+
+   <label>
+    <text>邮箱</text>
+    <input type='number' placeholder='常用邮箱' maxlength='20' />
+  </label>
+
+   <label>
+    <text>配送区域</text>
+    
+  </label>
+
+   <label>
+    <text>详细地址</text>
+    <input type='text' placeholder='详细地址' maxlength='30' />
   </label>
 </view>
+
+<button class='save-edit'> 添加 </button>
