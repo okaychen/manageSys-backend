@@ -1,0 +1,37 @@
+<!--pages/pintuan/placeOrder/placeOrder.wxml-->
+<view class='order-info pd15'>
+  <view>
+    <image mode='widthFix' src="../../../image/photo.png" />
+  </view>
+  <view>
+    <text>[周边团]信息发布免费名额</text>
+    <text>¥180.00</text>
+    <text class='floatR'>x1</text>
+  </view>
+</view>
+
+<view class='order-address pd15 mt5 bgWhite'>
+  <text>收获地址</text>
+  <text class='floatR'> <text class='red'>请选择</text> > </text>
+</view>
+
+<view class='order-dist pd15 mt5 bgWhite'>
+  <text>配送方式</text>
+  <text class='floatR'> 快递配送 - <text class='red'>¥0</text> > </text>
+</view>
+
+<view class='order-pay pd15 mt5 bgWhite'>
+  <text>支付方式</text>
+  <text class='floatR'> 微信支付 > </text>
+</view>
+
+<view class='order-access pd15 mt5 bgWhite'>
+
+  <text>卖家留言</text>
+  <input type='text' placeholder='点击给商家留言'></input>
+</view>
+
+<view class='fixedBottom'>
+  <view>合计：<text class='red'>¥180</text></view>
+  <view>立即支付</view>
+</view>

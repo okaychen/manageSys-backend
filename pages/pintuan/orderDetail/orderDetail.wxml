@@ -1,0 +1,75 @@
+<!--pages/pintuan/orderDetail/orderDetail.wxml-->
+<view class='orderWrapper'>
+  <view class='orderTitle'>
+    <image mode='widthFix' src='../../../../image/pin.png'></image>
+    <text>订单号：2017092917472935511259</text>
+  </view>
+</view>
+
+<view class='userInfo'>
+  <view class='userName'>
+    <view>
+      <image mode='widthFix' src='../../../../image/seeUser.png'></image>okaychen</view>
+    <view class='floatR'>
+      <image mode='widthFix' src='../../../../image/phone.png'></image>18839527768</view>
+  </view>
+  <view class='userAddress'>河南省焦作市高新区世纪大道2001号</view>
+</view>
+
+<view class='order-info pd10'>
+  <view>
+    <image mode='widthFix' src="../../../image/photo.png" />
+  </view>
+  <view>
+    <text>[周边团]信息发布免费名额</text>
+    <text class='red'>¥180.00</text>
+    <text class='floatR'>x1</text>
+  </view>
+</view>
+
+<view class='userAccess pd10 bgWhite mt5'>
+  <text>卖家留言：无</text>
+</view>
+
+<view class='userAccess pd10 bgWhite borTop'>
+  <view>支付状态
+    <text class='red floatR'>已支付</text>
+  </view>
+  <view>
+    <text class='color999'>支付方式：</text>微信支付</view>
+  <view>
+    <text class='color999'>下单时间：</text>2017-09-29 17:47:47</view>
+  <view>
+    <text class='color999'>发货时间：</text>
+  </view>
+</view>
+
+<view class='distInfo pd10 bgWhite borTop'>
+  <view>配送信息</view>
+  <view>
+    <text class='color999'>配送方式：</text>本店配送</view>
+  <view>
+    <text class='color999'>快递单位：</text>2017-09-29 17:47:47</view>
+  <view>
+    <text class='color999'>快递单号：</text>
+  </view>
+</view>
+
+<view class='addPrice pd10 bgWhite borTop'>
+  <view>合计
+    <text class='red floatR'>¥0.01</text>
+  </view>
+  <view class='totalPrice'>
+    <text class='total'>商品总额</text>
+    <text class='price floatR'>¥0.01</text>
+  </view>
+  <view class='trafficPrice'>
+    <text class='traffic'>+运费</text>
+    <text class='price floatR'>¥0.00</text>
+  </view>
+</view>
+
+ <!-- save button -->
+  <view class='suerOrder'>
+    <button bindtap="showok" class='save-edit'>剩余时间23:59:20结束</button>
+  </view>

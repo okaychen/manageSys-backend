@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/pintuan/orderDetail/orderDetail",
+    "pages/pintuan/placeOrder/placeOrder",
     "pages/pintuan/details/details",
     "pages/user/minTuan/myOrder/myOrder",
     "pages/user/user",
