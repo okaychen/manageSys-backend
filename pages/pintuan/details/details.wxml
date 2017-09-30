@@ -1,12 +1,84 @@
 <!--pages/pintuan/details/details.wxml-->
-<swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{imgUrls}}">
     <swiper-item>
-      <image mode='widthFix' src="{{item}}" class="slide-image"/>
+      <image mode='widthFix' src="{{item}}" class="slide-image" />
     </swiper-item>
   </block>
 </swiper>
 
+<view class='shop-info'>
+  <view class='price'>
+    <text class='nowPrice'>¥0.01</text>
+    <text class='line-delete'>¥5.00</text>
+    <text class='priceCutDown'>拼团立减4.99元</text>
+  </view>
+  <view class='floatR haved'>已有
+    <view>
+      <text class='red'>24</text>人参团</view>
+  </view>
+  <view class='title'>
+    <view>[零元购活动]垃圾袋一分钱买一卷(30个)够用一个月</view>
+    <view class='title-tip'>新料垃圾袋一卷30个，买一卷用一个月</view>
+  </view>
+</view>
+
+<view class='shop-play'>
+  <view class='title'>拼团玩法</view>
+  <view class='menu'>
+    <view>
+      <image mode='widthFix' src="../../../image/burse.png" />支付开团或者参团</view>
+    <view>
+      <image mode='widthFix' src="../../../image/user.png" />邀请好友参团</view>
+    <view>
+      <image mode='widthFix' src="../../../image/car.png" />人数达到分别发货</view>
+    <view>
+      <image mode='widthFix' src="../../../image/back.png" />人数不够自动退款</view>
+  </view>
+</view>
+
+<view class='shop-play shop-detail'>
+  <view class='title'>商品详情</view>
+  <view class='con'>
+    <view class='big-Red'>零元购活动</view>
+    <view>只需支付</view>
+    <view class='red'>一分钱</view>
+    <view>即可获得</view>
+    <view class='red'>一卷30个新料垃圾袋</view>
+    <view>一个微信号限购一次，多购作废</view>
+    <view class='purple'>支付成功后到宜黄新车站</view>
+    <view>居详楼梯店</view>
+    <view class='purple'>凭订单支付</view>
+    <view>注：拍下请在24小时内付款，过期系统将自动退款</view>
+    <view>
+      <image mode='widthFix' src="../../../image/detail1.jpg" />
+    </view>
+    <view>
+      <image mode='widthFix' src="../../../image/detail2.jpg" />
+    </view>
+    <view>
+      <image mode='widthFix' src="../../../image/detail3.jpg" />
+    </view>
+  </view>
+</view>
+
+<view class='shop-play shop-access'>
+  <view class='title'>商品评价</view>
+  <view class='con'>暂无评价</view>
+</view>
 
 
+<view class='fixedBottom'>
+  <view class='home'>
+    <image mode='widthFix' src="../../../image/pin2.png" />
+    <text>首页</text>
+  </view>
+  <view class='yourPurse'>
+    <text>¥3.00</text>
+    <text>单独购买</text>
+  </view>
+  <view class='yoursPurse'>
+    <text>¥0.01</text>
+    <text>1人团</text>
+  </view>
+</view>

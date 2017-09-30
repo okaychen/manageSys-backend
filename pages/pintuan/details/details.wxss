@@ -1,8 +1,148 @@
 /* pages/pintuan/details/details.wxss */
-swiper{
+
+page {
+  font: 14px/15px 微软雅黑;
+  background: #f5f5f5;
+}
+
+image {
+  width: 100%;
+}
+
+swiper {
   width: 100%;
   height: 200px;
 }
-swiper image{
+
+swiper image {
   width: 100%;
+}
+
+.shop-info {
+  padding: 10px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.nowPrice {
+  color: red;
+}
+
+.haved {
+  font-size: 12px;
+  color: #999;
+}
+
+.shop-info .price text:not(:first-child) {
+  margin-left: 10px;
+}
+
+.shop-info .price text.priceCutDown {
+  background: red;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px;
+  border-radius: 2px;
+}
+
+.shop-info .title {
+  clear: both;
+  padding-top: 10px;
+  line-height: 25px;
+}
+
+.title .title-tip {
+  font-size: 12px;
+  color: #999;
+}
+
+/* 拼团玩法 */
+
+.shop-play {
+  margin-top: 10px;
+  background: #fff;
+}
+
+.shop-play .title {
+  padding: 10px;
+}
+
+.shop-play .menu {
+  width: 94%;
+  border-top: 1px solid #f5f5f5;
+  display: inline-block;
+  margin-left: 3%;
+}
+
+.shop-play .menu view {
+  width: 20%;
+  margin: 2px 2.5%;
+  float: left;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+
+.shop-play .menu view image {
+  width: 25px;
+  height: 25px;
+  margin: 2px auto;
+  display: block;
+  text-align: center;
+}
+
+/* 商品详情&&评价 */
+
+.shop-detail .con, .shop-access .con {
+  width: 94%;
+  margin: 0 auto;
+  border-top: 1px solid #f5f5f5;
+  padding: 10px 0px;
+  line-height: 25px;
+  font-size: 14px;
+}
+
+.shop-access {
+  margin-bottom: 80px;
+}
+
+.fixedBottom {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+}
+
+.fixedBottom view {
+  float: left;
+  padding: 10px 0px;
+  font-size: 12px;
+  height: 30px;
+}
+
+.fixedBottom view text {
+  display: block;
+}
+
+.fixedBottom view.home {
+  width: 20%;
+  text-align: center;
+  background: #fff;
+}
+
+.fixedBottom view.home image {
+  width: 20px;
+  height: 20px;
+  margin: -1px auto;
+}
+
+.fixedBottom view.yourPurse, .fixedBottom view.yoursPurse {
+  width: 40%;
+  text-align: center;
+  color: #fff;
+}
+.fixedBottom view.yourPurse{
+  background: #f9a825;
+}
+.fixedBottom view.yoursPurse{
+  background: red;
 }
