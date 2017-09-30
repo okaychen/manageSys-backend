@@ -140,9 +140,102 @@ swiper image {
   text-align: center;
   color: #fff;
 }
-.fixedBottom view.yourPurse{
+
+.fixedBottom view.yourPurse {
   background: #f9a825;
 }
-.fixedBottom view.yoursPurse{
+
+.fixedBottom view.yoursPurse {
   background: red;
+}
+
+/* 底部弹出层 */
+
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.8;
+  z-index: 1000;
+  color: #fff;
+}
+
+.commodity_attr_box {
+  width: 100%;
+  /* overflow: hidden; */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+}
+
+.commodity_attr_box .header {
+  width: 100%;
+  height: 55px;
+  position: relative;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.commodity_attr_box .header image {
+  position: absolute;
+  width: 150rpx;
+  height: 150rpx;
+  top: -30px;
+  left: 10px;
+  border-radius: 5px;
+}
+
+.header-imgBox {
+  width: 25%;
+  height: 60px;
+  float: left;
+}
+
+.header-infoBox {
+  width: 75%;
+  float: left;
+}
+
+.header-infoBox text {
+  display: block;
+  line-height: 25px;
+  letter-spacing: 2px;
+}
+
+.count {
+  clear: both;
+  padding: 20px;
+}
+
+.count-control {
+  margin-top: -15px;
+}
+
+.count-control button {
+  display: inline;
+}
+
+
+.count-control text {
+  display: inline-block;
+  padding: 3.5px 14px;
+  vertical-align: 10%;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.submit{
+  clear: both;
+  width: 100%;
+  margin-top: 10px;
+ 
+}
+.submit button[type="submit"]{
+  background: #f35150;
+  color: #fff;
 }

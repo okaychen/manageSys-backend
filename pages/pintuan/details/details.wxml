@@ -73,12 +73,67 @@
     <image mode='widthFix' src="../../../image/pin2.png" />
     <text>首页</text>
   </view>
-  <view class='yourPurse'>
+  <view class='yourPurse' bindtap='showModal1'>
     <text>¥3.00</text>
     <text>单独购买</text>
   </view>
-  <view class='yoursPurse'>
+  <view class='yoursPurse' bindtap='showModal2'>
     <text>¥0.01</text>
     <text>1人团</text>
+  </view>
+</view>
+
+<view class="commodity_screen" bindtap="hideModal1" wx:if="{{showModalStatus1}}"></view>
+<view animation="{{animationData1}}" class="commodity_attr_box" wx:if="{{showModalStatus1}}">
+   
+   <view class='header'>
+      <view class='header-imgBox'>
+        <image mode='widthFix' src="../../../image/photo.png" />
+      </view>
+      <view class='header-infoBox'>
+        <text>[周边团]信息发布免费名额</text>
+        <text class='red'>¥3.00</text>
+      </view>
+   </view>
+
+  <view class='count'>
+    <text>购买数量:</text>
+    <view class='count-control floatR'>
+      <button>-</button>
+      <text>1</text>
+      <button>+</button>
+    </view>
+  </view>
+
+  <view class='submit'>
+    <button type='submit'>确定</button>  
+  </view>
+</view>
+
+
+<view class="commodity_screen" bindtap="hideModal2" wx:if="{{showModalStatus2}}"></view>
+<view animation="{{animationData2}}" class="commodity_attr_box" wx:if="{{showModalStatus2}}">
+   
+   <view class='header'>
+      <view class='header-imgBox'>
+        <image mode='widthFix' src="../../../image/photo.png" />
+      </view>
+      <view class='header-infoBox'>
+        <text>[周边团]信息发布免费名额</text>
+        <text class='red'>¥0.10</text>
+      </view>
+   </view>
+
+  <view class='count'>
+    <text>购买数量:</text>
+    <view class='count-control floatR'>
+      <button>-</button>
+      <text>1</text>
+      <button>+</button>
+    </view>
+  </view>
+
+  <view class='submit'>
+    <button type='submit'>确定</button>  
   </view>
 </view>
