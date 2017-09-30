@@ -13,7 +13,7 @@
   </view>
  
   <textarea placeholder='写点什么吧...'></textarea> 
-  <button bindtap='upload'>上传文件</button>
+  <view class='uploadFile' bindtap='upload'>+</view>
  </view> 
 
  <button class='save-edit'>提交保存</button> 

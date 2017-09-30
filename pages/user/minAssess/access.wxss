@@ -6,6 +6,7 @@ page{
 .accessWrapper{
   background: #fff;
   font-size: 14px;
+  padding-bottom: 10px;
 }
 
 .accessWrapper textarea{
@@ -44,4 +45,15 @@ page{
   top: 0rpx;
   width: 50rpx;
   height: 50rpx;
+}
+
+.uploadFile{
+  width: 50px;
+  height: 50px;
+  border: 1px solid #f5f5f5;
+  color: #999;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  margin-left: 10px;
 }
