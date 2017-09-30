@@ -1,1 +1,55 @@
 /* pages/user/minTuan/myOrder/myOrder.wxss */
+
+page {
+  background-color: #f5f5f5;
+  font: 14px/20px 微软雅黑;
+}
+
+.orderWrapper {
+  background: #fff;
+  margin-top: 5px;
+}
+
+.orderTitle image {
+  width: 20px;
+  height: 20px;
+  vertical-align: -20%;
+}
+
+.orderTitle, .orderCon, .orderPrice {
+  padding: 10px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.orderTitle text:nth-child(3) {
+  color: #f00f00;
+}
+
+.orderCon {
+  display: flex;
+}
+
+.orderCon image {
+  width: 100px;
+  height: 100px;
+  vertical-align: bottom;
+}
+
+.orderCon text {
+  padding-top: 20px;
+}
+/* 无数据 */
+.noData{
+  width: 100%;
+  height: 100%;
+  margin: 50px auto;
+  text-align: center;
+  font-size: 16px;
+  color: #acacac;
+}
+.noData image{
+  width: 100px;
+  height: 100px;
+  padding-bottom: 20px;
+}
+

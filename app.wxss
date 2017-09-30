@@ -13,7 +13,7 @@ page::-webkit-scrollbar {
   color: transparent;
 }
 
-navigator:hover {
+navigator:hover,.navigator-hover {
   background: none;
 }
 
@@ -32,6 +32,9 @@ navigator:hover {
   font-size: 14px;
 }
 
+.floatR{
+  float: right
+}
 /* 删除线 */
 
 .line-delete {

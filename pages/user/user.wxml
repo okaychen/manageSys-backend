@@ -4,17 +4,21 @@
 
   <view class="container">
     <view class='editLink'>
-      <image mode='widthFix' src='../../image/edit.png'></image>编辑</view>
+      <navigator url='edit/edit'>
+        <image mode='widthFix' src='../../image/edit.png'></image>编辑
+      </navigator>
+    </view>
+
     <view bindtap="bindViewTap" class="userinfo">
       <image mode='widthFix' class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </view>
   </view>
 
- <view class='user-wrapper'>
+  <view class='user-wrapper'>
     <view class='user-main'>
       <view class='pull-Down'>
-        <view class='menu-one' bindtap="clickDown1">  
+        <view class='menu-one' bindtap="clickDown1">
           <text>同城</text>
           <text class='right-tip'> > </text>
         </view>
@@ -26,7 +30,7 @@
       </view>
 
       <view class='pull-Down'>
-        <view class='menu-one'  bindtap="clickDown2">
+        <view class='menu-one' bindtap="clickDown2">
           <text>微拼团</text>
           <text class='right-tip'> > </text>
         </view>
@@ -53,7 +57,7 @@
     </view>
     <view class='create-user'>okaychen提供技术支持</view>
   </view>
- 
+
 
 
 
