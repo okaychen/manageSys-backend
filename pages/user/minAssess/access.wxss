@@ -25,19 +25,23 @@ page{
 .accessWrapper .title{
   padding: 10px;
 }
-
-
+.starsWrapper{
+  position: absolute;
+  top: -20px;
+  right: 135px;
+}
+/* stars */
 .star-image {
   position: absolute;
   top: 50rpx;
-  width: 150rpx;
-  height: 150rpx;
-  src: "../../images/normal.png";
+  width: 50rpx;
+  height: 50rpx;
+  src: "../../../image/normal.png";
 }
 
 .item {
   position: absolute;
-  top: 50rpx;
-  width: 75rpx;
-  height: 150rpx;
+  top: 0rpx;
+  width: 50rpx;
+  height: 50rpx;
 }

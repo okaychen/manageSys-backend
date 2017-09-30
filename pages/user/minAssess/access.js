@@ -2,13 +2,14 @@ var app = getApp()
 Page({
   data: {
     stars: [0, 1, 2, 3, 4],
-    normalSrc: '../../images/normal.png',
-    selectedSrc: '../../images/selected.png',
-    halfSrc: '../../images/half.png',
-    key: 0,//评分
+    normalSrc: '../../../image/normal.png',
+    selectedSrc: '../../../image/selected.png',
+    halfSrc: '../../../image/half.png',
+    key: 1,//评分
   },
   onLoad: function () {
   },
+
   //点击右边,半颗星
   selectLeft: function (e) {
     var key = e.currentTarget.dataset.key
