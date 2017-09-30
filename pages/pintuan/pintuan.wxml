@@ -27,7 +27,7 @@
                   </text>
                   <label>
                     <button><image mode='widthFix' src='../../image/icon1.png'></image>1人团</button>
-                    <button><image mode='widthFix' src='../..image/i-sjop.png'></image>去开团</button>
+                    <button><image mode='widthFix' src='../../image/icon2.png'></image>去开团</button>
                   </label>
                 </view>
               </view>              
