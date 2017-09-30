@@ -2,7 +2,14 @@
 <view class='accessWrapper'>
   <view class='title'>
     评价
-    <text></text>
+    <text>
+      <block wx:for="{{stars}}">
+        <image class="star-image" style="left: {{item*150}}rpx" src="{{key > item ?(key-item == 0.5?halfSrc:selectedSrc) : normalSrc}}">
+          <view class="item" style="left:0rpx" data-key="{{item+0.5}}" bindtap="selectLeft"></view>
+          <view class="item" style="left:75rpx" data-key="{{item+1}}" bindtap="selectRight"></view>
+        </image>
+      </block>
+    </text>
   </view>
 
   <textarea placeholder='写点什么吧...'>

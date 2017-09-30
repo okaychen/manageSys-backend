@@ -26,3 +26,18 @@ page{
   padding: 10px;
 }
 
+
+.star-image {
+  position: absolute;
+  top: 50rpx;
+  width: 150rpx;
+  height: 150rpx;
+  src: "../../images/normal.png";
+}
+
+.item {
+  position: absolute;
+  top: 50rpx;
+  width: 75rpx;
+  height: 150rpx;
+}
