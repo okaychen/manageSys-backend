@@ -10,11 +10,18 @@ Page({
     ]
   },
 
-
   //事件处理函数
   bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
+    })
+  },
+
+  showok:function(){
+    wx.showToast({
+      title: '资料更新成功',
+      icon:'success',
+      duration:2000
     })
   },
 

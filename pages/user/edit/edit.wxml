@@ -59,6 +59,6 @@
 
   <!-- save button -->
   <view>
-    <button class='save-edit'>提交保存</button>
+    <button bindtap="showok" class='save-edit'>提交保存</button>
   </view>
 </view>
