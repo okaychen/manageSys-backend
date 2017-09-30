@@ -17,17 +17,6 @@
 
   <view class='user-wrapper'>
     <view class='user-main'>
-      <view class='pull-Down'>
-        <view class='menu-one' bindtap="clickDown1">
-          <text>同城</text>
-          <text class='right-tip'> > </text>
-        </view>
-        <view class='menu-twoWrapper' hidden="{{selectPerson}}">
-          <view class='menu-two'>
-            <text> > 我的发布 </text>
-          </view>
-        </view>
-      </view>
 
       <view class='pull-Down'>
         <view class='menu-one' bindtap="clickDown2">
@@ -43,17 +32,7 @@
           </view>
         </view>
       </view>
-      <view class='pull-Down'>
-        <view class='menu-one' bindtap="clickDown3">
-          <text>微单页</text>
-          <text class='right-tip'> > </text>
-        </view>
-        <view class='menu-twoWrapper' hidden="{{selectPerson3}}">
-          <view class='menu-two'>
-            <text> > 我要评价 </text>
-          </view>
-        </view>
-      </view>
+      
     </view>
     <view class='create-user'>okaychen提供技术支持</view>
   </view>
