@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/user/edit/edit",
     "pages/user/user",
     "pages/pintuan/pintuan",
     "pages/index/index",
