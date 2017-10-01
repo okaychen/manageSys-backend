@@ -25,28 +25,31 @@
         </view>
         <view class='menu-twoWrapper' hidden="{{selectPerson2}}">
           <view class='menu-two'>
-            <text>> 我的订单 </text>
+            <navigator url='minTuan/myOrder/myOrder'>
+              <text>> 我的订单 </text>
+            </navigator>
           </view>
           <view class='menu-two'>
-            <text> > 收获地址 </text>
+            <navigator url='minTuan/myAddress/add/add'>
+              <text> > 收获地址 </text>
+            </navigator>
           </view>
         </view>
       </view>
-      
+
     </view>
     <view class='create-user'>okaychen提供技术支持</view>
   </view>
 
 
 
-
-
-
   <!-- bottom tab -->
   <view class='tab-Wrapper'>
     <view class='tab-item'>
-      <image mode='widthFix' src='../../image/tab-shop.png'></image>
-      <text>拼团</text>
+      <navigator url='../pintuan/pintuan'>
+        <image mode='widthFix' src='../../image/tab-shop.png'></image>
+        <text>拼团</text>
+      </navigator>
     </view>
     <view class='tab-item'>
       <image mode='widthFix' src='../../image/tab-user.png'></image>

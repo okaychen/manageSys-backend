@@ -81,28 +81,29 @@ Page({
     // ------------------- Login登录函数
     function Login(code, encryptedData,iv){
       console.log('code=' + code + '&encryptedData=' + encryptedData + '&iv=' + iv);
-      wx.showToast({
+      wx.showModal({
         title: '正在登录...',
-        icon:'loading',
-        duration:1000
+        icon: 'loading',
+        content: '确定授权登录',
+        duration: 1000
       });
-      wx.request({
-        url: API_URL,
-        data:{
-          code:code,
-          encryptedData: encryptedData,
-          iv: iv
-        },
-        method:'GET',
-        header:{
-          'content-type': 'application/json'
-        },  // 设置请求的header
-        success:function(res){
-          // success
-          wx.hideToast();
-          console.log('服务器返回'+res.data);
-        }
-      })
+      // wx.request({
+      //   url: API_URL,
+      //   data:{
+      //     code:code,
+      //     encryptedData: encryptedData,
+      //     iv: iv
+      //   },
+      //   method:'GET',
+      //   header:{
+      //     'content-type': 'application/json'
+      //   },  // 设置请求的header
+      //   success:function(res){
+      //     // success
+      //     wx.hideToast();
+      //     console.log('服务器返回'+res.data);
+      //   }
+      // })
     }
   },
   footerTap: app.footerTap

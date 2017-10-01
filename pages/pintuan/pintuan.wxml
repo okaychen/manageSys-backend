@@ -16,24 +16,26 @@
       <swiper-item wx:for="{{[0,1,2,3,4,5,6]}}">
         <scroll-view scroll-y="true" class="scoll-h">
           <block wx:for="{{[1,2,3,4,5,6,7]}}" wx:key="*this">
-            <view class='goods-Wrapper'>
-              <image mode='widthFix' class="goods-img" src='../../image/goods1.jpg'></image>
-              <view class="goods-info">
-                <view>周边团门店微营销系统年费</view>
-                <view>
-                  <text class='price'>¥298.00</text>
-                  <text class='line-delete'>
+            <navigator url='details/details'>
+              <view class='goods-Wrapper'>
+                <image mode='widthFix' class="goods-img" src='../../image/goods1.jpg'></image>
+                <view class="goods-info">
+                  <view>周边团门店微营销系统年费</view>
+                  <view>
+                    <text class='price'>¥298.00</text>
+                    <text class='line-delete'>
                     ¥298.00
                   </text>
-                  <label>
-                    <button>
-                      <image mode='widthFix' src='../../image/icon1.png'></image>1人团</button>
-                    <button>
-                      <image mode='widthFix' src='../../image/icon2.png'></image>去开团</button>
-                  </label>
+                    <label>
+                      <button>
+                        <image mode='widthFix' src='../../image/icon1.png'></image>1人团</button>
+                      <button>
+                        <image mode='widthFix' src='../../image/icon2.png'></image>去开团</button>
+                    </label>
+                  </view>
                 </view>
               </view>
-            </view>
+            </navigator>
           </block>
         </scroll-view>
       </swiper-item>
@@ -49,8 +51,10 @@
       <text>拼团</text>
     </view>
     <view class='tab-item'>
-      <image mode='widthFix' src='../../image/tab-user.png'></image>
-      <text>我的</text>
+      <navigator url='../user/user'>
+        <image mode='widthFix' src='../../image/tab-user.png'></image>
+        <text>我的</text>
+      </navigator>
     </view>
   </view>
 </view>

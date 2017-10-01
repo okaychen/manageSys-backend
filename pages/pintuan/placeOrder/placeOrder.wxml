@@ -32,6 +32,10 @@
 </view>
 
 <view class='fixedBottom'>
-  <view>合计：<text class='red'>¥180</text></view>
-  <view>立即支付</view>
+  <view>合计：
+    <text class='red'>¥180</text>
+  </view>
+  <navigator url='../orderDetail/orderDetail'>
+    <view>立即支付</view>
+  </navigator>
 </view>
