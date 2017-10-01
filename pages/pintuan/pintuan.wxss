@@ -108,3 +108,7 @@
   width: 40%;
   text-align: center;
 }
+
+.goods-Wrapper:last-child{
+  margin-bottom: 30px;
+}

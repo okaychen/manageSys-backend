@@ -1,5 +1,5 @@
 var app = getApp();
-var API_URL = '';  //服务器地址
+var API_URL = 'https://ssl.snowboy99.com';  //服务器地址
 Page({
   data: {
     winHeight: "",//窗口高度
@@ -80,7 +80,29 @@ Page({
 
     // ------------------- Login登录函数
     function Login(code, encryptedData,iv){
-      
+      console.log('code=' + code + '&encryptedData=' + encryptedData + '&iv=' + iv);
+      wx.showToast({
+        title: '正在登录...',
+        icon:'loading',
+        duration:1000
+      });
+      wx.request({
+        url: API_URL,
+        data:{
+          code:code,
+          encryptedData: encryptedData,
+          iv: iv
+        },
+        method:'GET',
+        header:{
+          'content-type': 'application/json'
+        },  // 设置请求的header
+        success:function(res){
+          // success
+          wx.hideToast();
+          console.log('服务器返回'+res.data);
+        }
+      })
     }
   },
   footerTap: app.footerTap
