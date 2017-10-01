@@ -1,7 +1,7 @@
 <view class="pageWrapper">
-  
+
   <view>
-  <!-- tab header -->
+    <!-- tab header -->
     <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
       <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">全部</view>
       <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">营销系统</view>
@@ -21,16 +21,18 @@
               <view class="goods-info">
                 <view>周边团门店微营销系统年费</view>
                 <view>
-                  <text class='price'>¥298.00</text> 
+                  <text class='price'>¥298.00</text>
                   <text class='line-delete'>
                     ¥298.00
                   </text>
                   <label>
-                    <button><image mode='widthFix' src='../../image/icon1.png'></image>1人团</button>
-                    <button><image mode='widthFix' src='../../image/icon2.png'></image>去开团</button>
+                    <button>
+                      <image mode='widthFix' src='../../image/icon1.png'></image>1人团</button>
+                    <button>
+                      <image mode='widthFix' src='../../image/icon2.png'></image>去开团</button>
                   </label>
                 </view>
-              </view>              
+              </view>
             </view>
           </block>
         </scroll-view>

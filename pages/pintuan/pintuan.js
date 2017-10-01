@@ -1,4 +1,5 @@
 var app = getApp();
+var API_URL = '';  //服务器地址
 Page({
   data: {
     winHeight: "",//窗口高度
@@ -56,6 +57,31 @@ Page({
         });
       }
     });
+    console.log('iv');
+    // login
+    wx.login({
+      success: function (res) { // 登录成功
+        if (res.code) {
+          var code = res.code;
+          wx.getUserInfo({  // 获取用户信息
+            success: function (res2) { // 获取userinfo成功
+              console.log(res2);
+              var encryptedData = encodeURIComponent(res2.encryptedData); // <必须> 把加密串转化为url编码
+              var iv = res2.iv;
+              // 请求自己的服务器
+              Login(code, encryptedData, iv);
+            }
+          })
+        } else {
+          console.log('获取用户登录失败' + res.errMsg);
+        }
+      }
+    })
+
+    // Login登录函数
+    function Login(code, encryptedData,iv){
+      
+    }
   },
   footerTap: app.footerTap
 })

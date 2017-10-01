@@ -8,7 +8,7 @@
 	},
 	"compileType": "weapp",
 	"libVersion": "1.5.4",
-	"appid": "touristappid",
+	"appid": "wx3c07e53adabb8983",
 	"projectname": "boxinwx",
 	"condition": {
 		"weapp": {

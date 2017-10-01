@@ -7,12 +7,10 @@
     "pages/pintuan/details/details",
     "pages/user/minTuan/myOrder/myOrder",
     "pages/user/edit/edit",
-    
     "pages/user/minTuan/myAddress/add/add",
     "pages/index/index",
     "pages/user/minTuan/myAddress/newAddress/newAddress",
     "pages/logs/logs"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
