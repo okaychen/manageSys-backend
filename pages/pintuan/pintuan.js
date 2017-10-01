@@ -58,7 +58,7 @@ Page({
       }
     });
     console.log('iv');
-    // login
+    // ------------------ login
     wx.login({
       success: function (res) { // 登录成功
         if (res.code) {
@@ -68,7 +68,7 @@ Page({
               console.log(res2);
               var encryptedData = encodeURIComponent(res2.encryptedData); // <必须> 把加密串转化为url编码
               var iv = res2.iv;
-              // 请求自己的服务器
+              // 请求自己的服务器 调用Login函数
               Login(code, encryptedData, iv);
             }
           })
@@ -78,7 +78,7 @@ Page({
       }
     })
 
-    // Login登录函数
+    // ------------------- Login登录函数
     function Login(code, encryptedData,iv){
       
     }
