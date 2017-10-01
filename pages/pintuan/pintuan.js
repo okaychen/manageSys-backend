@@ -1,5 +1,5 @@
 var app = getApp();
-var API_URL = 'https://ssl.snowboy99.com';  //服务器地址
+var API_URL = 'https://ssl.snowboy99.com/weidogs/weipintuan/public/index.php';  //服务器地址 host+url
 Page({
   data: {
     winHeight: "",//窗口高度
@@ -87,23 +87,23 @@ Page({
         content: '确定授权登录',
         duration: 1000
       });
-      // wx.request({
-      //   url: API_URL,
-      //   data:{
-      //     code:code,
-      //     encryptedData: encryptedData,
-      //     iv: iv
-      //   },
-      //   method:'GET',
-      //   header:{
-      //     'content-type': 'application/json'
-      //   },  // 设置请求的header
-      //   success:function(res){
-      //     // success
-      //     wx.hideToast();
-      //     console.log('服务器返回'+res.data);
-      //   }
-      // })
+      wx.request({
+        url: API_URL,
+        data:{
+          code:code,
+          encryptedData: encryptedData,
+          iv: iv
+        },
+        method:'POST',
+        header:{
+          'content-type': 'application/x-www-form-urlencoded'
+        },  // 设置请求的header
+        success:function(res){
+          // success
+          wx.hideToast();
+          // console.log('服务器返回'+res.data);
+        }
+      })
     }
   },
   footerTap: app.footerTap
