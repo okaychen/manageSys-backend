@@ -18,7 +18,10 @@ Page({
   onLoad: function () {
     var that = this;
     console.log('onLoad')
-    //----------------------------- category 导航栏<类别>
+
+    //----------------------------- 
+    // category 导航栏<类别>
+    //----------------------------- 
     wx.request({
       //上线接口地址要是https测试可以使用http接口方式
       url: API_URL + '/api/category/categoryList',
@@ -27,13 +30,15 @@ Page({
       header: {
         'content-type': 'application/json'
       },
-      success:  function (res) {
+      success: function (res) {
         console.log(res.data.data, 'category data acquisition success');
         that.setData({ category: res.data.data });
       },
-      
     })
-    //------------------------------ product con<商品>
+
+    //----------------------------- 
+    // product con<商品>
+    //----------------------------- 
     wx.request({
       url: API_URL + '/api/product/productList?offset=0&limit=7',
       data: {},
@@ -46,12 +51,23 @@ Page({
         // 分离出无分类的数据<待做处理>
         var product = res.data.data;  // 获取接口提供的数据
         var productList = [];
-        for(var i=0;i<product.length;i++){
+        var arr = [];
+        for (var i = 0; i < product.length; i++) {
           if (product[i].cate_id !== 0) {
-            productList.push(product[i]);  
+            productList.push(product[i]);
           }
         }
-        console.log(productList);
+        // 根据cate_id排序
+        function compare(cate_id) {
+          return function (a, b) {
+            var cate_id1 = a[cate_id];
+            var cate_id2 = b[cate_id];
+            return cate_id1 - cate_id2;
+          }
+        }
+        
+        console.log(productList.sort(compare('cate_id')));
+        // console.log(productList);
         that.setData({ productList: productList });
       }
     })

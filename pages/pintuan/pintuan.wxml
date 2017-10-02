@@ -25,28 +25,29 @@
     <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab">
       <swiper-item wx:for="{{productList}}" wx:for-item="item" data-id='{{item.id}}' wx:for-index="idx">
         <scroll-view scroll-y="true" class="scoll-h">
-           <!-- <block wx:for="{{[0,1,2,3]}}">  -->
-            <navigator url='details/details'>
-              <view class='goods-Wrapper' >
-                <image mode='widthFix' class="goods-img" src='../../image/goods1.jpg'></image>
-                <view class="goods-info">
-                  <view>{{item.id}}</view>
-                  <view>
-                    <text class='price'>¥298.00</text>
-                    <text class='line-delete'>
-                    ¥298.00
+          <!-- <block wx:for="{{[0,1,2,3]}}">  -->
+          <navigator url='details/details'>
+            <view class='goods-Wrapper'>
+              <!-- <image mode='widthFix' class="goods-img" src='../../image/goods1.jpg'></image> -->
+              <image mode='widthFix' class="goods-img" src='{{item.prod_images}}'></image>
+              <view class="goods-info">
+                <view>{{item.prod_name}}</view>
+                <view>
+                  <text class='price'>{{item.prod_single_price}}</text>
+                  <text class='line-delete'>
+                    ¥{{item.prod_old_price}}
                   </text>
-                    <label>
-                      <button>
-                        <image mode='widthFix' src='../../image/icon1.png'></image>1人团</button>
-                      <button>
-                        <image mode='widthFix' src='../../image/icon2.png'></image>去开团</button>
-                    </label>
-                  </view>
+                  <label>
+                    <button>
+                      <image mode='widthFix' src='../../image/icon1.png'></image>1人团</button>
+                    <button>
+                      <image mode='widthFix' src='../../image/icon2.png'></image>去开团</button>
+                  </label>
                 </view>
               </view>
-            </navigator>
-           <!-- </block>  -->
+            </view>
+          </navigator>
+          <!-- </block>  -->
         </scroll-view>
       </swiper-item>
     </swiper>
