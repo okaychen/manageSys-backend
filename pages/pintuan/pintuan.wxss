@@ -28,7 +28,7 @@
   content: "";
   display: block;
   height: 8rpx;
-  width: 115rpx;
+  width: 100rpx;
   background: #4675f9;
   position: absolute;
   bottom: 0;
@@ -36,9 +36,9 @@
   border-radius: 16rpx;
 }
 
-.tab-h .tab-item:nth-child(1).active:after {
+/* .tab-h .tab-item:nth-child(1).active:after {
   width: 52rpx;
-}
+} */
 
 .goods-Wrapper {
   width: 96%;

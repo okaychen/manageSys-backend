@@ -3,17 +3,15 @@
   <view>
     <!-- tab header -->
     <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
-      <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">全部</view>
-      <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">家居建材</view>
-      <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">家居建材</view>
-      <!-- <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">美妆护肤</view>
-      <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">数码电器</view>
-      <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="swichNav">母婴玩具</view>
-      <view class="tab-item {{currentTab==6?'active':''}}" data-current="6" bindtap="swichNav">零元购活动</view> -->
+        <block wx:for="{{category}}" wx:for-item="item" wx:for-index="idx">
+          <view class="tab-item {{currentTab==idx?'active':''}}" bindtap="goodsTap" data-id="{{item.id}}">
+            {{item.cate_name}}
+          </view>
+        </block>
     </scroll-view>
     <!-- tab content -->
     <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="max-height:{{winHeight}}rpx">
-      <swiper-item wx:for="{{[0,1,2]}}">
+      <swiper-item wx:for="{{[0,1]}}">
         <scroll-view scroll-y="true" class="scoll-h">
           <block wx:for="{{[0,1,2,3,4,5,6,7]}}" wx:for-item="item" wx:key="*this">
             <navigator url='details/details'>
