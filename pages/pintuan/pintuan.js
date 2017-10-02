@@ -1,5 +1,6 @@
 var app = getApp();
 var API_URL = 'https://ssl.snowboy99.com/weidogs/weipintuan/public/index.php';  //服务器地址 host+url
+var IMG_URL = 'https://ssl.snowboy99.com/weidogs/weipintuan/public';  // 图片
 Page({
   data: {
     winHeight: "",//窗口高度
@@ -65,14 +66,15 @@ Page({
             return cate_id1 - cate_id2;
           }
         }
-        
-        console.log(productList.sort(compare('cate_id')));
-        // console.log(productList);
+        console.log(productList.sort(compare('cate_id'))); // console.log(productList);
+        // 对图片路径进行处理
+        for(var i in productList){
+          console.log(productList[i].prod_images = IMG_URL + JSON.parse(productList[i].prod_images));
+        }
         that.setData({ productList: productList });
       }
     })
   },
-
 
   footerTap: app.footerTap,
   // 滚动切换标签样式
