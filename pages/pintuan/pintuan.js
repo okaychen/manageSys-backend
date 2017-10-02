@@ -1,5 +1,5 @@
 var app = getApp();
-var API_URL = 'https://ssl.snowboy99.com/weidogs/weipintuan/public/index.php';  //服务器地址 host+url
+var API_URL = 'https://ssl.snowboy99.com';  //服务器地址 host+url
 Page({
   data: {
     winHeight: "",//窗口高度
@@ -11,7 +11,8 @@ Page({
       tag: "",
       answer: 134,
       listen: 2234
-    }]
+    }],
+    category:[]
   },
   // 滚动切换标签样式
   switchTab: function (e) {
@@ -42,7 +43,7 @@ Page({
       })
     }
   },
-  onLoad: function () {
+  onLoad: function (e) {
     var that = this;
     //  高度自适应
     wx.getSystemInfo({
@@ -57,54 +58,73 @@ Page({
         });
       }
     });
-    console.log('iv');
     // ------------------ login
-    wx.login({
-      success: function (res) { // 登录成功
-        if (res.code) {
-          var code = res.code;
-          wx.getUserInfo({  // 获取用户信息
-            success: function (res2) { // 获取userinfo成功
-              console.log(res2);
-              var encryptedData = encodeURIComponent(res2.encryptedData); // <必须> 把加密串转化为url编码
-              var iv = res2.iv;
-              // 请求自己的服务器 调用Login函数
-              Login(code, encryptedData, iv);
-            }
-          })
-        } else {
-          console.log('获取用户登录失败' + res.errMsg);
-        }
-      }
-    })
+    // wx.login({
+    //   success: function (res) { // 登录成功
+    //     if (res.code) {
+    //       var code = res.code;
+    //       wx.getUserInfo({  // 获取用户信息
+    //         success: function (res2) { // 获取userinfo成功
+    //           console.log(res2);
+    //           var encryptedData = encodeURIComponent(res2.encryptedData); // <必须> 把加密串转化为url编码
+    //           var iv = res2.iv;
+    //           // 请求自己的服务器 调用Login函数
+    //           Login(code, encryptedData, iv);
+    //         }
+    //       })
+    //     } else {
+    //       console.log('获取用户登录失败' + res.errMsg);
+    //     }
+    //   }
+    // })
 
-    // ------------------- Login登录函数
-    function Login(code, encryptedData,iv){
-      console.log('code=' + code + '&encryptedData=' + encryptedData + '&iv=' + iv);
-      wx.showModal({
-        title: '正在登录...',
-        icon: 'loading',
-        content: '确定授权登录',
-        duration: 1000
-      });
-      wx.request({
-        url: API_URL,
-        data:{
-          code:code,
-          encryptedData: encryptedData,
-          iv: iv
-        },
-        method:'POST',
-        header:{
-          'content-type': 'application/x-www-form-urlencoded'
-        },  // 设置请求的header
-        success:function(res){
-          // success
-          wx.hideToast();
-          // console.log('服务器返回'+res.data);
-        }
-      })
-    }
+    // // ------------------- Login登录函数
+    // function Login(code, encryptedData,iv){
+    //   console.log('code=' + code + '&encryptedData=' + encryptedData + '&iv=' + iv);
+    //   wx.showModal({
+    //     title: '正在登录...',
+    //     icon: 'loading',
+    //     content: '确定授权登录',
+    //     duration: 1000
+    //   });
+    //   wx.request({
+    //     url: API_URL,
+    //     data:{
+    //       code:code,
+    //       encryptedData: encryptedData,
+    //       iv: iv
+    //     },
+    //     method:'POST',
+    //     header:{
+    //       'content-type': 'application/x-www-form-urlencoded'
+    //     },  // 设置请求的header
+    //     success:function(res){
+    //       // success
+    //       wx.hideToast();
+    //       // console.log('服务器返回'+res.data);
+    //     }
+    //   })
+    // }
+    wx.request({
+      url: 'https://ssl.snowboy99.com/weidogs/weipintuan/public/index.php/api/category/categoryList',
+      data:{},
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log('服务器返回' + res.data);
+        that.setData({
+          Article:res.data,
+        })
+        var article = that.data.Article;
+        console.log(article.data)
+      },
+      fail:function(){},
+      complete:function(){}
+    })
+    
+    
   },
   footerTap: app.footerTap
 })
