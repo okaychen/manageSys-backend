@@ -28,7 +28,7 @@
   content: "";
   display: block;
   height: 8rpx;
-  width: 100rpx;
+  width: 105rpx;
   background: #4675f9;
   position: absolute;
   bottom: 0;

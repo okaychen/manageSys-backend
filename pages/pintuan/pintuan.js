@@ -27,10 +27,11 @@ Page({
       header: {
         'content-type': 'application/json'
       },
-      success: function (res) {
+      success:  function (res) {
         console.log(res.data.data, 'category data acquisition success');
         that.setData({ category: res.data.data });
       },
+      
     })
     //------------------------------ product con<商品>
     wx.request({
@@ -47,7 +48,7 @@ Page({
         var productList = [];
         for(var i=0;i<product.length;i++){
           if (product[i].cate_id !== 0) {
-            productList.push(product[i]);
+            productList.push(product[i]);  
           }
         }
         console.log(productList);

@@ -22,10 +22,10 @@
 
     </scroll-view>
     <!-- tab content -->
-    <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="max-height:{{winHeight}}rpx">
-      <swiper-item wx:for="{{productList}}" wx:for-item="item" data-id='{{item.id}}'   wx:for-index="idx">
+    <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab">
+      <swiper-item wx:for="{{productList}}" wx:for-item="item" data-id='{{item.id}}' wx:for-index="idx">
         <scroll-view scroll-y="true" class="scoll-h">
-          <block wx:for="{{[0,1,2,3]}}" wx:key="*this">
+           <!-- <block wx:for="{{[0,1,2,3]}}">  -->
             <navigator url='details/details'>
               <view class='goods-Wrapper' >
                 <image mode='widthFix' class="goods-img" src='../../image/goods1.jpg'></image>
@@ -46,7 +46,7 @@
                 </view>
               </view>
             </navigator>
-          </block>
+           <!-- </block>  -->
         </scroll-view>
       </swiper-item>
     </swiper>
