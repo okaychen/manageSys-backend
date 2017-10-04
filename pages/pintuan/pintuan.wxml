@@ -26,7 +26,7 @@
       <swiper-item wx:for="{{productList}}" wx:for-item="item" data-id='{{item.id}}' wx:for-index="idx">
         <scroll-view scroll-y="true" class="scoll-h">
           <!-- <block wx:for="{{[0,1,2,3]}}">  -->
-          <navigator url='details/details'>
+          <navigator url='details/details?id=1'>
             <view class='goods-Wrapper'>
               <!-- <image mode='widthFix' class="goods-img" src='../../image/goods1.jpg'></image> -->
               <image mode='widthFix' class="goods-img" src='{{item.prod_images}}'></image>

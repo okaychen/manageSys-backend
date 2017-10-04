@@ -1,21 +1,21 @@
 {
-  "pages": [
-    "pages/pintuan/pintuan",
-    "pages/user/user",
-    "pages/pintuan/orderDetail/orderDetail",
-    "pages/pintuan/placeOrder/placeOrder",
-    "pages/pintuan/details/details",
-    "pages/user/minTuan/myOrder/myOrder",
-    "pages/user/edit/edit",
-    "pages/user/minTuan/myAddress/add/add",
-    "pages/index/index",
-    "pages/user/minTuan/myAddress/newAddress/newAddress",
-    "pages/logs/logs"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#302e43",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "#fff"
-  }
+	"pages": [
+		"pages/user/edit/edit",
+		"pages/user/minTuan/myAddress/add/add",
+		"pages/user/minTuan/myAddress/newAddress/newAddress",
+		"pages/user/user",
+		"pages/index/index",
+		"pages/pintuan/details/details",
+		"pages/pintuan/pintuan",
+		"pages/pintuan/orderDetail/orderDetail",
+		"pages/pintuan/placeOrder/placeOrder",
+		"pages/user/minTuan/myOrder/myOrder",
+		"pages/logs/logs"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#302e43",
+		"navigationBarTitleText": "WeChat",
+		"navigationBarTextStyle": "#fff"
+	}
 }

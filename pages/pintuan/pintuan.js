@@ -1,6 +1,6 @@
-var app = getApp();
 var API_URL = 'https://ssl.snowboy99.com/weidogs/weipintuan/public/index.php';  //服务器地址 host+url
 var IMG_URL = 'https://ssl.snowboy99.com/weidogs/weipintuan/public';  // 图片
+var app = getApp();
 Page({
   data: {
     winHeight: "",//窗口高度
