@@ -19,20 +19,6 @@ Page({
   },
 
   //dropdown
-  clickDown1: function () {
-    var selectPerson = this.data.selectPerson;
-    if (selectPerson == true) {
-      this.setData({
-        selectPerson: false,
-      })
-    } else {
-      this.setData({
-        selectPerson: true,
-      })
-    }
-  },
-
-  //dropdown
   clickDown2: function () {
     var selectPerson2 = this.data.selectPerson2;
     if (selectPerson2 == true) {
@@ -45,25 +31,6 @@ Page({
       })
     }
   },
-
-  //dropdown
-  clickDown3: function () {
-    var selectPerson3 = this.data.selectPerson3;
-    if (selectPerson3 == true) {
-      this.setData({
-        selectPerson3: false,
-      })
-    } else {
-      this.setData({
-        selectPerson3: true,
-      })
-    }
-  },
-
-
-
-
-
 
   onLoad: function () {
     console.log('onLoad')

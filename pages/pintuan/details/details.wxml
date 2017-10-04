@@ -7,10 +7,10 @@
   </block>
 </swiper>
 
-<view class='shop-info'>
+<view class='shop-info' wx:for="{{productList}}" wx:for-item="item" data-id='{{item.id}}' wx:for-index="idx">
   <view class='price'>
-    <text class='nowPrice'>¥0.01</text>
-    <text class='line-delete'>¥5.00</text>
+    <text class='nowPrice'>¥{{item.prod_single_price}}</text>
+    <text class='line-delete'>¥{{item.prod_old_price}}</text>
     <text class='priceCutDown'>拼团立减4.99元</text>
   </view>
   <view class='floatR haved'>已有
@@ -70,8 +70,10 @@
 
 <view class='fixedBottom'>
   <view class='home'>
-    <image mode='widthFix' src="../../../image/pin2.png" />
-    <text>首页</text>
+    <navigator url='../pintuan'>
+      <image mode='widthFix' src="../../../image/pin2.png" />
+      <text>首页</text>
+    </navigator>
   </view>
   <view class='yourPurse' bindtap='showModal1'>
     <text>¥3.00</text>
@@ -85,16 +87,16 @@
 
 <view class="commodity_screen" bindtap="hideModal1" wx:if="{{showModalStatus1}}"></view>
 <view animation="{{animationData1}}" class="commodity_attr_box" wx:if="{{showModalStatus1}}">
-   
-   <view class='header'>
-      <view class='header-imgBox'>
-        <image mode='widthFix' src="../../../image/photo.png" />
-      </view>
-      <view class='header-infoBox'>
-        <text>[周边团]信息发布免费名额</text>
-        <text class='red'>¥3.00</text>
-      </view>
-   </view>
+
+  <view class='header'>
+    <view class='header-imgBox'>
+      <image mode='widthFix' src="../../../image/photo.png" />
+    </view>
+    <view class='header-infoBox'>
+      <text>[周边团]信息发布免费名额</text>
+      <text class='red'>¥3.00</text>
+    </view>
+  </view>
 
   <view class='count'>
     <text>购买数量:</text>
@@ -106,23 +108,25 @@
   </view>
 
   <view class='submit'>
-    <button type='submit'>确定</button>  
+    <navigator url='../placeOrder/placeOrder'>
+      <button type='submit'>确定</button>
+    </navigator>
   </view>
 </view>
 
 
 <view class="commodity_screen" bindtap="hideModal2" wx:if="{{showModalStatus2}}"></view>
 <view animation="{{animationData2}}" class="commodity_attr_box" wx:if="{{showModalStatus2}}">
-   
-   <view class='header'>
-      <view class='header-imgBox'>
-        <image mode='widthFix' src="../../../image/photo.png" />
-      </view>
-      <view class='header-infoBox'>
-        <text>[周边团]信息发布免费名额</text>
-        <text class='red'>¥0.10</text>
-      </view>
-   </view>
+
+  <view class='header'>
+    <view class='header-imgBox'>
+      <image mode='widthFix' src="../../../image/photo.png" />
+    </view>
+    <view class='header-infoBox'>
+      <text>[周边团]信息发布免费名额</text>
+      <text class='red'>¥0.10</text>
+    </view>
+  </view>
 
   <view class='count'>
     <text>购买数量:</text>
@@ -134,6 +138,8 @@
   </view>
 
   <view class='submit'>
-    <button type='submit'>确定</button>  
+    <navigator url='../placeOrder/placeOrder'>
+      <button type='submit'>确定</button>
+    </navigator>
   </view>
 </view>

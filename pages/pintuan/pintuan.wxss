@@ -1,3 +1,9 @@
+page{
+  background: #f5f5f5;
+}
+scroll-view {
+  background: #fff;
+}
 /********************************* tab scorll top **************************/
 .tab-h {
   height: 80rpx;
@@ -28,7 +34,7 @@
   content: "";
   display: block;
   height: 8rpx;
-  width: 115rpx;
+  width: 105rpx;
   background: #4675f9;
   position: absolute;
   bottom: 0;
@@ -36,9 +42,9 @@
   border-radius: 16rpx;
 }
 
-.tab-h .tab-item:nth-child(1).active:after {
+/* .tab-h .tab-item:nth-child(1).active:after {
   width: 52rpx;
-}
+} */
 
 .goods-Wrapper {
   width: 96%;
@@ -52,7 +58,7 @@
 
 .tab-content {
   margin-top: 80rpx;
-  height: 600px;
+  height: 500px;
   overflow-y: hidden;
 }
 
@@ -107,4 +113,8 @@
   float: left;
   width: 40%;
   text-align: center;
+}
+
+.goods-Wrapper:last-child{
+  margin-bottom: 30px;
 }
