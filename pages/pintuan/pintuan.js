@@ -16,7 +16,7 @@ Page({
     category: []
   },
 
-  onLoad: function () {
+  onLoad: function (e) {
     var that = this;
     console.log('onLoad')
 
@@ -72,6 +72,7 @@ Page({
           console.log(productList[i].prod_images = IMG_URL + JSON.parse(productList[i].prod_images)[0]);
         }
         that.setData({ productList: productList });
+
       }
     })
   },

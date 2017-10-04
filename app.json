@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/pintuan/details/details",
     "pages/pintuan/pintuan",
+    "pages/pintuan/details/details",
+   
     "pages/user/edit/edit",
     "pages/user/minTuan/myAddress/add/add",
     "pages/user/minTuan/myAddress/newAddress/newAddress",

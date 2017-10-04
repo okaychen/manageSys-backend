@@ -7,10 +7,10 @@
   </block>
 </swiper>
 
-<view class='shop-info' wx:for="{{productList}}" wx:for-item="item" data-id='{{item.id}}' wx:for-index="idx">
+<view class='shop-info'>
   <view class='price'>
-    <text class='nowPrice'>¥{{item.prod_single_price}}</text>
-    <text class='line-delete'>¥{{item.prod_old_price}}</text>
+    <text class='nowPrice'>¥{{options.single_price}}</text>
+    <text class='line-delete'>¥{{options.old_price}}</text>
     <text class='priceCutDown'>拼团立减4.99元</text>
   </view>
   <view class='floatR haved'>已有

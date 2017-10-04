@@ -25,8 +25,8 @@
       <swiper-item wx:for="{{productList}}" wx:for-item="item" data-id='{{item.id}}' wx:for-index="idx">
         <scroll-view scroll-y="true" class="scoll-h">
           <!-- <block wx:for="{{[0,1,2,3]}}">  -->
-          <navigator url='details/details?id=1'>
-            <view class='goods-Wrapper'>
+           <navigator url='details/details?id={{item.id}}&name={{item.prod_name}}&images={{item.prod_images}}&single_price={{item.single_price}}&old_price={{item.prod_old_price}}'> 
+            <view class='goods-Wrapper' bindtap='clickList'>
               <!-- <image mode='widthFix' class="goods-img" src='../../image/goods1.jpg'></image> -->
               <image mode='widthFix' class="goods-img" src='{{item.prod_images}}'></image>
               <view class="goods-info">
@@ -45,7 +45,7 @@
                 </view>
               </view>
             </view>
-          </navigator>
+           </navigator> 
           <!-- </block>  -->
         </scroll-view>
       </swiper-item>
