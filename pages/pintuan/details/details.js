@@ -1,3 +1,6 @@
+var API_URL = 'https://ssl.snowboy99.com/weidogs/weipintuan/public/index.php';  //服务器地址 host+url
+var IMG_URL = 'https://ssl.snowboy99.com/weidogs/weipintuan/public';  // 图片
+var app = getApp();
 Page({
   data: {
     imgUrls: [
@@ -9,6 +12,49 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 1000
+  },
+
+  onLoad:function(){
+    var that = this;
+    console.log('onLoad');
+
+    //----------------------------- 
+    // product con<商品>
+    //----------------------------- 
+    wx.request({
+      url: API_URL + '/api/product/productList?offset=0&limit=7',
+      data: {},
+      method: 'GET',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data.data, 'product data acquisition success');
+        // 分离出无分类的数据<待做处理>
+        var product = res.data.data;  // 获取接口提供的数据
+        var productList = [];
+        var arr = [];
+        for (var i = 0; i < product.length; i++) {
+          if (product[i].cate_id !== 0) {
+            productList.push(product[i]);
+          }
+        }
+        // 根据cate_id排序
+        function compare(cate_id) {
+          return function (a, b) {
+            var cate_id1 = a[cate_id];
+            var cate_id2 = b[cate_id];
+            return cate_id1 - cate_id2;
+          }
+        }
+        console.log(productList.sort(compare('cate_id'))); // console.log(productList);
+        // 对图片路径进行处理
+        for (var i in productList) {
+          console.log(productList[i].prod_images = IMG_URL + JSON.parse(productList[i].prod_images));
+        }
+        that.setData({ productList: productList });
+      }
+    })
   },
 
   showModal1: function () {
