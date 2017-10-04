@@ -1,6 +1,5 @@
 <view class="pageWrapper">
-
-  <view>
+    <view>
     <!-- tab header -->
     <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
 

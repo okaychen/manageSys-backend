@@ -67,9 +67,9 @@ Page({
           }
         }
         console.log(productList.sort(compare('cate_id'))); // console.log(productList);
-        // 对图片路径进行处理
+        // 对图片路径进行处理<得到轮播图中的第一个图展示>
         for(var i in productList){
-          console.log(productList[i].prod_images = IMG_URL + JSON.parse(productList[i].prod_images));
+          console.log(productList[i].prod_images = IMG_URL + JSON.parse(productList[i].prod_images)[0]);
         }
         that.setData({ productList: productList });
       }
