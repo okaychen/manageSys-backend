@@ -1,8 +1,17 @@
 <!--pages/user/minTuan/myAddress/add/add.wxml-->
-
-<navigator url='../newAddress/newAddress'>
-  <view>
-    <button class='save-edit'> + 添加新地址 </button>
-  </view>
-  
-</navigator>
+<view class="addr-wrapper">
+	<view class="addr-item-wrapper">
+		<view class="addr-item" wx:for="{{addrList}}" bindtap="showDetail" data-addr-id="{{item.id}}">
+			<text class="addr-left">
+				<text class="addr-title">{{item.name}} ({{item.phone}})</text>
+				<text class="addr-desc">{{item.shipping_address}}{{item.full_address}}</text>
+			</text>
+			<text class="addr-right"> ></text>
+		</view>
+	</view>
+	<navigator url='../newAddress/newAddress'>
+		<view>
+			<button class='save-edit'> + 添加新地址</button>
+		</view>
+	</navigator>
+</view>
