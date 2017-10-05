@@ -1,25 +1,25 @@
 <!--pages/pintuan/details/details.wxml-->
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{imgUrls}}">
+  <block wx:for="{{productInfo.prod_images}}" wx:for-item="item">
     <swiper-item>
-      <image mode='widthFix' src="{{item}}" class="slide-image" />
+      <image mode='widthFix' src="{{}}" class="slide-image" />
     </swiper-item>
   </block>
 </swiper>
 
 <view class='shop-info'>
   <view class='price'>
-    <text class='nowPrice'>¥{{options.single_price}}</text>
-    <text class='line-delete'>¥{{options.old_price}}</text>
+    <text class='nowPrice'>¥{{productInfo.prod_single_price}}</text>
+    <text class='line-delete'>¥{{productInfo.prod_old_price}}</text>
     <text class='priceCutDown'>拼团立减4.99元</text>
   </view>
   <view class='floatR haved'>已有
     <view>
-      <text class='red'>24</text>人参团</view>
+      <text class='red'>{{productInfo.prod_group_num}}</text>人参团</view>
   </view>
   <view class='title'>
-    <view>[零元购活动]垃圾袋一分钱买一卷(30个)够用一个月</view>
-    <view class='title-tip'>新料垃圾袋一卷30个，买一卷用一个月</view>
+    <view>{{productInfo.prod_desc}}</view>
+    <view class='title-tip'></view>
   </view>
 </view>
 
