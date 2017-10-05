@@ -9,11 +9,11 @@
 <view class='userInfo'>
   <view class='userName'>
     <view>
-      <image mode='widthFix' src='../../../../image/seeUser.png'></image>okaychen</view>
+      <image mode='widthFix' src='../../../../image/seeUser.png'></image>{{name}}</view>
     <view class='floatR'>
-      <image mode='widthFix' src='../../../../image/phone.png'></image>18839527768</view>
+      <image mode='widthFix' src='../../../../image/phone.png'></image>{{phone}}</view>
   </view>
-  <view class='userAddress'>河南省焦作市高新区世纪大道2001号</view>
+  <view class='userAddress'>{{address}}</view>
 </view>
 
 <view class='order-info pd10'>

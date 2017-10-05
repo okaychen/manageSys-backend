@@ -7,24 +7,27 @@ Page({
     leaveMessage:'',
     selectAddress:''
   },
-  // 选择地址
-  selectAddress:function(e){
-    this.setData({
-      selectAddress:e.detail.value
-    })
-  },
+  // selectAddress:function(e){
+  //   this.setData({
+  //     selectAddress: e.detail.value
+  //   })
+  // },
   // 留言
   leaveMessage:function(e){
     this.setData({
       leaveMessage:e.detail.value
     })
   },
-  firmOrder:function(e){
+  firmOrder: function (e) {
     console.log(this.data.leaveMessage)
-    console.log(this.data.selectAddress)
-    if (this.data.selectAddress == '') {
-     
-    }
+    // console.log(this.data.selectAddress)
+    // if (this.data.selectAddress == '') {
+
+    //   wx.showToast({
+    //     title: '请选择收获地址',
+    //     duration:5000,
+    //   })
+    // }
   },
   // 加载完成之后 
   onLoad: function (options) {

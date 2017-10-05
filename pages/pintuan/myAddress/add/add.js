@@ -5,7 +5,9 @@ Page({
 	/**
 	 * 页面的初始数据
 	 */
-	data: {},
+	data: {
+    is_select:true
+  },
 	
 	/**
 	 * 生命周期函数--监听页面加载
@@ -59,7 +61,9 @@ Page({
           //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
           prevPage.setData({
             mydata: {
-              a: resp.data.data[0].shipping_address
+              name: resp.data.data[0].name,
+              phone: resp.data.data[0].phone,
+              address: resp.data.data[0].shipping_address,
             }
           })
           

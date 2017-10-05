@@ -19,12 +19,15 @@ Page({
   // 加载完成之后 
   onLoad: function (options) {
     var that = this;
-    console.log('orderId:' + options.orderId + ' 留言:' + options.lm + ' 单价:' + options.onePrice+' 数量:'+options.num);
+
     that.setData({
       windowHeight: wx.getStorageSync('windowHeight'),  
       num: options.num,
       onePrice: options.onePrice,
-      lm:options.lm // 留言
+      lm:options.lm, // 留言
+      name:options.name,
+      phone:options.phone,
+      address:options.address
     })
     wx.request({
       url: API_URL + '/api/product/getProductById?prod_id=' + options.orderId,
@@ -34,6 +37,7 @@ Page({
         'content-type': 'application/json'
       },
       success: function (res) {
+         wx.hideLoading();
         console.log(res.data.data, 'get this info of order');
         var productInfo = res.data.data;
         // 对轮播图进行处理<默认只处理三个>
