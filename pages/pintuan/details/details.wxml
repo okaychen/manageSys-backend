@@ -97,7 +97,7 @@
   </view>
 
   <view class='submit'>
-    <navigator url='../placeOrder/placeOrder'>
+    <navigator url='../placeOrder/placeOrder?'>
       <button type='submit'>确定</button>
     </navigator>
   </view>
@@ -130,7 +130,7 @@
   </view>
 
   <view class='submit'>
-    <navigator url='../placeOrder/placeOrder'>
+    <navigator url='../placeOrder/placeOrder?orderId=1'>
       <button type='submit'>确定</button>
     </navigator>
   </view>

@@ -95,7 +95,7 @@ Page({
       success: function (res) {
         console.log(res.data.data, 'get this info');
         var productInfo = res.data.data;
-        // 对轮播图进行处理
+        // 对轮播图进行处理<默认只处理三个>
         var arr = [];
         for (var i in productInfo.prod_images) {
           var images = IMG_URL + JSON.parse(productInfo.prod_images)[0]
