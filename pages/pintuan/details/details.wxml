@@ -98,13 +98,13 @@
 
   <view class='submit'>
   <!-- 单独购买订单传参 -->
-    <navigator url='../placeOrder/placeOrder?orderId={{orderId}}&onePrice={{single_price}}&num={{num}}'>
+    <navigator url='../placeOrder/placeOrder?product_id={{productInfo.id}}&orderId={{orderId}}&onePrice={{single_price}}&num={{num}}&purchase_method=single&group_id={{group_id}}'>
       <button type='submit'>确定</button>
     </navigator>
   </view>
 </view>
 
-<!-- 1人团 -->
+<!-- 拼团 -->
 <view class="commodity_screen" bindtap="hideModal2" wx:if="{{showModalStatus2}}"></view>
 <view animation="{{animationData2}}" class="commodity_attr_box" wx:if="{{showModalStatus2}}">
 
@@ -128,8 +128,8 @@
   </view>
 
   <view class='submit'>
-    <!-- 一人团订单传参 -->
-    <navigator url='../placeOrder/placeOrder?orderId={{orderId}}&onePrice={{group_price}}&num={{num1}}'>
+    <!-- 拼团订单传参 -->
+    <navigator url='../placeOrder/placeOrder?product_id={{productInfo.id}}&orderId={{orderId}}&onePrice={{group_price}}&num={{num1}}&purchase_method=group&group_id={{group_id}}'>
       <button type='submit'>确定</button>
     </navigator>
   </view>

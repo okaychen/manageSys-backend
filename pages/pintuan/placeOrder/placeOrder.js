@@ -3,54 +3,76 @@ var API_URL = 'https://ssl.snowboy99.com/weidogs/weipintuan/public/index.php';  
 var IMG_URL = 'https://ssl.snowboy99.com/weidogs/weipintuan/public';  // 图片
 var app = getApp();
 Page({
-  data: {
-    leaveMessage:'',
-  },
-  // 留言
-  leaveMessage:function(e){
-    this.setData({
-      leaveMessage:e.detail.value
-    })
-  },
-  firmOrder:function(e){
-    console.log(this.data.leaveMessage)
-  },
-  // 加载完成之后 
-  onLoad: function (options) {
-    var that = this;
-    console.log('orderId：' + options.orderId +';数量'+ options.num +';单价'+options.onePrice);
-    that.setData({
-      num:options.num,
-      onePrice:options.onePrice
-    })
-    wx.request({
-      url: API_URL + '/api/product/getProductById?prod_id=' + options.orderId,
-      data: {},
-      method: 'GET',
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        console.log(res.data.data, 'get this info of order');
-        var productInfo = res.data.data;
-        // 对轮播图进行处理<默认只处理三个>
-        var arr = [];
-        for (var i in productInfo.prod_images) {
-          var images = IMG_URL + JSON.parse(productInfo.prod_images)[0]
-        }
-        arr.push(images)
-        arr.length = 3;
-        // 设置数据
-        that.setData({
-          orderInfo: res.data.data,
-          prod_images: arr,
-          // 总金额 = 单价 * 数量 + 运费
-          totalPrice: options.num * options.onePrice + productInfo.trans_price
-        })
-      }
-    })
-  },
-
-
-
-})
+	data: {
+		leaveMessage: '',
+		pay_params: {
+			openid: app.getOpenId()
+		}
+	},
+	/**
+	 * 设置支付参数的快捷方法
+	 * @param key
+	 * @param val
+	 */
+	setPayParams: function (key, val) {
+		let that = this;
+		let pay_params = that.data.pay_params;
+		pay_params[key] = val;
+		that.setData({
+			pay_params: pay_params
+		});
+	},
+	// 留言
+	leaveMessage: function (e) {
+		this.setData({
+			leaveMessage: e.detail.value
+		});
+	},
+	firmOrder: function (e) {
+		console.log(this.data.leaveMessage);
+	},
+	// 加载完成之后
+	onLoad: function (options) {
+		var that = this;
+		console.log(options);
+		that.setData({
+			num: options.num,
+			onePrice: options.onePrice
+		});
+		//给支付订单API准备数据
+		that.setPayParams('product_id', options.product_id);
+		that.setPayParams('product_num', options.num);
+		that.setPayParams('purchase_method', options.purchase_method);
+		that.setPayParams('group_id', options.group_id);
+		wx.request({
+			url: API_URL + '/api/product/getProductById?prod_id=' + options.orderId,
+			data: {},
+			method: 'GET',
+			header: {
+				'content-type': 'application/json'
+			},
+			success: function (res) {
+				console.log(res.data.data, 'get this info of order');
+				var productInfo = res.data.data;
+				// 对轮播图进行处理<默认只处理三个>
+				var arr = [];
+				for (var i in productInfo.prod_images) {
+					var images = IMG_URL + JSON.parse(productInfo.prod_images)[0];
+				}
+				arr.push(images);
+				arr.length = 3;
+				// 设置数据
+				let totalPrice=options.num * options.onePrice + productInfo.trans_price;
+				that.setData({
+					orderInfo: res.data.data,
+					prod_images: arr,
+					// 总金额 = 单价 * 数量 + 运费
+					totalPrice: totalPrice
+				});
+				//给支付订单API准备数据
+				that.setPayParams('pay_count',totalPrice);
+			}
+		});
+	},
+	
+});
