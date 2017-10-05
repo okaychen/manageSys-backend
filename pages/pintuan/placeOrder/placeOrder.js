@@ -62,7 +62,7 @@ Page({
 				arr.push(images);
 				arr.length = 3;
 				// 设置数据
-				let totalPrice=options.num * options.onePrice + productInfo.trans_price;
+				let totalPrice = options.num * options.onePrice + productInfo.trans_price;
 				that.setData({
 					orderInfo: res.data.data,
 					prod_images: arr,
@@ -70,9 +70,9 @@ Page({
 					totalPrice: totalPrice
 				});
 				//给支付订单API准备数据
-				that.setPayParams('pay_count',totalPrice);
+				that.setPayParams('pay_count', totalPrice);
 			}
 		});
-	},
+	}
 	
 });
