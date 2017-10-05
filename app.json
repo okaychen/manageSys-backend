@@ -2,7 +2,7 @@
   "pages": [
     "pages/pintuan/pintuan",
     "pages/pintuan/details/details",
-   
+    "pages/pintuan/myAddress/add/add",
     "pages/user/edit/edit",
     "pages/user/minTuan/myAddress/add/add",
     "pages/user/minTuan/myAddress/newAddress/newAddress",
