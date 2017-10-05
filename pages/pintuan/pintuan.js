@@ -32,6 +32,7 @@ Page({
         'content-type': 'application/json'
       },
       success: function (res) {
+        wx.hideLoading();
         console.log(res.data.data, 'category data acquisition success');
         that.setData({ category: res.data.data });
       },

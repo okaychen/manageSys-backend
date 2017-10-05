@@ -37,7 +37,7 @@ Page({
         'content-type': 'application/json'
       },
       success: function (res) {
-         wx.hideLoading();
+        wx.hideLoading();
         console.log(res.data.data, 'get this info of order');
         var productInfo = res.data.data;
         // 对轮播图进行处理<默认只处理三个>
