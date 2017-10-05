@@ -84,14 +84,14 @@ Page({
 	onLoad: function (options) {
 		var that = this;
 		console.log('传递的参数是：' + options.id);
-		if (!options.group_id){
+		if (!options.group_id) {
 			this.setData({
-				group_id:0
-			})
-		}else{
+				group_id: 0
+			});
+		} else {
 			this.setData({
-				group_id:options.group_id
-			})
+				group_id: options.group_id
+			});
 		}
 		wx.request({
 			url: API_URL + '/api/product/getProductById?prod_id=' + options.id,
@@ -102,14 +102,14 @@ Page({
 			},
 			success: function (res) {
 				console.log(res.data.data, 'get this info');
-				var productInfo = res.data.data;
+				let productInfo = res.data.data;
 				// 对轮播图进行处理<默认只处理三个>
-				var arr = [];
-				for (var i in productInfo.prod_images) {
-					var images = IMG_URL + JSON.parse(productInfo.prod_images)[0];
+				let arr = [];
+				let prod_images = JSON.parse(productInfo.prod_images);
+				for (let i in prod_images) {
+					let images = IMG_URL + prod_images[i];
+					arr.push(images);
 				}
-				arr.push(images);
-				arr.length = 3;
 				// 对商品详情进行处理
 				WxParse.wxParse('article', 'html', productInfo.prod_detail, that, 5);
 				
