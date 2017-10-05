@@ -11,7 +11,7 @@
 </view>
 
 <view class='order-address pd15 mt5 bgWhite'>
-  <navigator src="">
+  <navigator url="../myAddress/add/add">
     <text>收获地址</text>
     <text class='floatR'> <text class='red'>请选择</text> > </text>
   </navigator>

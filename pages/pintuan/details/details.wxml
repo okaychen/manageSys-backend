@@ -97,6 +97,7 @@
   </view>
 
   <view class='submit'>
+  <!-- 单独购买订单传参 -->
     <navigator url='../placeOrder/placeOrder?orderId={{orderId}}&onePrice={{single_price}}&num={{num}}'>
       <button type='submit'>确定</button>
     </navigator>
@@ -120,17 +121,15 @@
   <view class='count'>
     <text>购买数量:</text>
     <view class="stepper floatR">
-      <!-- 减号 -->
       <text class="{{minusStatus1}}" bindtap="bindMinus1">-</text>
-      <!-- 数值 -->
       <input type="number" bindchange="bindManual1" value="{{num1}}" />
-      <!-- 加号 -->
       <text class="normal" bindtap="bindPlus1">+</text>
     </view>
   </view>
 
   <view class='submit'>
-    <navigator url='../placeOrder/placeOrder?orderId=1'>
+    <!-- 一人团订单传参 -->
+    <navigator url='../placeOrder/placeOrder?orderId={{orderId}}&onePrice={{group_price}}&num={{num1}}'>
       <button type='submit'>确定</button>
     </navigator>
   </view>
