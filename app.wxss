@@ -132,16 +132,15 @@ button.bg-red {
 
 .order-info {
 	background: #fff;
-	height: 80px;
+  height: 80px;
 }
 
 .order-info view {
 	float: left;
-	height: 100 rpx;
 }
 
 .order-info image {
-	width: 150 rpx;
+	width: 150px;
 }
 
 .order-info view:nth-child(1) {

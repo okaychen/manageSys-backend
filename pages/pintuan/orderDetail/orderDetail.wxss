@@ -4,10 +4,10 @@ page {
   font: 12px/20px 微软雅黑;
   background: #f5f5f5;
 }
-
-.order-info image {
-  width: 150rpx;
-  height: 150rpx;
+.order-info image{
+  width: 80px;
+  height: 80px;
+  display: block;
 }
 
 .orderWrapper {

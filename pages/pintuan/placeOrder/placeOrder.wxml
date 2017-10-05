@@ -37,7 +37,7 @@
   <view>合计：
     <text class='red'>¥{{totalPrice}}</text>
   </view>
-  <navigator url='../orderDetail/orderDetail?lm={{leaveMessage}}'>
+  <navigator url='../orderDetail/orderDetail?orderId={{orderId}}&lm={{leaveMessage}}&onePrice={{onePrice}}&num={{num}}'>
     <view bindtap='firmOrder'>立即支付</view>
   </navigator>
 </view>
