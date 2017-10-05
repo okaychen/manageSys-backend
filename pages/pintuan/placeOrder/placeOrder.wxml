@@ -5,19 +5,21 @@
   </view>
   <view>
     <text>{{orderInfo.prod_desc}}</text>
-    <text>¥{{productInfo.prod_desc}}</text>
-    <text class='floatR'>x1</text>
+    <text>¥{{onePrice}}</text>
+    <text class='floatR'>x{{num}}</text>
   </view>
 </view>
 
 <view class='order-address pd15 mt5 bgWhite'>
-  <text>收获地址</text>
-  <text class='floatR'> <text class='red'>请选择</text> > </text>
+  <navigator src="">
+    <text>收获地址</text>
+    <text class='floatR'> <text class='red'>请选择</text> > </text>
+  </navigator>
 </view>
 
 <view class='order-dist pd15 mt5 bgWhite'>
   <text>配送方式</text>
-  <text class='floatR'> 快递配送 - <text class='red'>¥0</text> > </text>
+  <text class='floatR'> 快递配送 + <text class='red'>¥{{orderInfo.trans_price}}</text> > </text>
 </view>
 
 <view class='order-pay pd15 mt5 bgWhite'>

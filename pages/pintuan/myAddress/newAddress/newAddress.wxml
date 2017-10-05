@@ -1,0 +1,31 @@
+<!--pages/user/minTuan/myAddress/newAddress/newAddress.wxml-->
+<view class='addWrapper'>
+	<label>
+		<text>收货人</text>
+		<input type='text' placeholder='名字' maxlength='4' value="{{address.name}}" data-key="name" bindinput="formInput" />
+	</label>
+	
+	<label>
+		<text>手机号</text>
+		<input type='number' placeholder='11位手机号' maxlength='11' value="{{address.phone}}" data-key="phone" bindinput="formInput" />
+	</label>
+	
+	<label>
+		<text>邮箱</text>
+		<input type='number' placeholder='常用邮箱' maxlength='20' value="{{address.email}}" data-key="email" bindinput="formInput" />
+	</label>
+	
+	<label>
+		<text>配送区域</text>
+		<input type='text' placeholder='省 市 区/县' maxlength='30' value="{{address.shipping_address}}" data-key="shipping_address" bindinput="formInput" />
+	</label>
+	
+	<label>
+		<text>详细地址</text>
+		<input type='text' placeholder='详细地址' maxlength='30' value="{{address.full_address}}" data-key="full_address" bindinput="formInput" />
+	</label>
+</view>
+
+<button class='save-edit' bindtap="submitForm" wx:if="{{!update}}">添加</button>
+<button class='save-edit' bindtap="editAddress" wx:if="{{update}}">修改</button>
+<button class="save-edit bg-red" bindtap="delAddress" wx:if="{{update}}">删除</button>

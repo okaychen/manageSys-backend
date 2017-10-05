@@ -11,7 +11,10 @@ Page({
   onLoad: function (options) {
     var that = this;
     console.log('orderId：' + options.orderId +'; 数量'+ options.num +';单价'+options.onePrice);
-
+    that.setData({
+      num:options.num,
+      onePrice:options.onePrice
+    })
     wx.request({
       url: API_URL + '/api/product/getProductById?prod_id=' + options.orderId,
       data: {},

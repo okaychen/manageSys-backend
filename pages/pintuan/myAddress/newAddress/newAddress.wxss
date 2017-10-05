@@ -1,0 +1,26 @@
+/* pages/user/minTuan/myAddress/newAddress/newAddress.wxss */
+
+page {
+  background: #f5f5f5;
+  font: 14px/20px 微软雅黑;
+}
+
+.addWrapper label {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 10px;
+  background: #fff;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.addWrapper label text {
+  padding-top: 3px;
+  min-width: 60px;
+  color: #999;
+  text-align: right;
+}
+
+.addWrapper label  input {
+  padding-left: 10px;
+  width: 100%;
+}

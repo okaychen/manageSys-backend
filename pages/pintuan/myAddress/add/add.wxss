@@ -1,0 +1,50 @@
+/* pages/user/minTuan/myAddress/add/add.wxss */
+page {
+	background: #eeeeee;
+}
+
+navigator:hover {
+	background: none;
+}
+
+.addr-item {
+	background: #ffffff;
+	margin: 5px 0;
+	padding: 10px 10px;
+	overflow: hidden;
+	font-size: 14px;
+}
+
+.addr-title {
+	display: block;
+	line-height: 18px;
+	color: #666666;
+	margin-bottom: 10px;
+	width: 90%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.addr-desc {
+	display: block;
+	line-height: 20px;
+	color: #b4b4b4;
+	margin-top: 10px;
+	width: 90%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.addr-left {
+	width: 95%;
+	float: left;
+}
+
+.addr-right {
+	width: 5%;
+	float: left;
+	line-height: 50px;
+	color: #888888;
+}
