@@ -6,6 +6,7 @@
     "pages/user/edit/edit",
     "pages/user/minTuan/myAddress/add/add",
     "pages/user/minTuan/myAddress/newAddress/newAddress",
+    "pages/pintuan/myAddress/newAddress/newAddress",
     "pages/user/user",
     "pages/index/index",
     "pages/pintuan/orderDetail/orderDetail",

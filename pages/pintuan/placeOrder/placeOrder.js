@@ -5,6 +5,13 @@ var app = getApp();
 Page({
   data: {
     leaveMessage:'',
+    selectAddress:''
+  },
+  // 选择地址
+  selectAddress:function(e){
+    this.setData({
+      selectAddress:e.detail.value
+    })
   },
   // 留言
   leaveMessage:function(e){
@@ -14,10 +21,15 @@ Page({
   },
   firmOrder:function(e){
     console.log(this.data.leaveMessage)
+    console.log(this.data.selectAddress)
+    if (this.data.selectAddress == '') {
+     
+    }
   },
   // 加载完成之后 
   onLoad: function (options) {
     var that = this;
+
     console.log('orderId：' + options.orderId +';数量'+ options.num +';单价'+options.onePrice);
     that.setData({
       num:options.num,
@@ -31,6 +43,7 @@ Page({
         'content-type': 'application/json'
       },
       success: function (res) {
+        wx.hideLoading();
         console.log(res.data.data, 'get this info of order');
         var productInfo = res.data.data;
         // 对轮播图进行处理<默认只处理三个>

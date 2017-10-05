@@ -11,15 +11,17 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-	
+   
 	},
-	showDetail: function (e) {
-		let that = this;
-		let addrId = e.currentTarget.dataset.addrId;
-		wx.navigateTo({
-			url: '../newAddress/newAddress?addr_id=' + addrId
-		});
-	},
+
+  // 返回下订单页面
+  pageBack:function(){
+    wx.navigateBack({
+      data:{
+        delta: 1  // 为1返回上一页面
+      }
+    })
+  },
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
@@ -47,10 +49,25 @@ Page({
 				wx.hideLoading();
 				if (resp.data.status == 'success') {
 					console.log('获取数据成功');
-					console.log(resp.data.data);
-					that.setData({
-						addrList: resp.data.data
-					});
+          console.log(resp.data.data);
+
+          // 给上一页面设置数据
+          var pages = getCurrentPages();
+          var currPage = pages[pages.length - 1];   //当前页面
+          var prevPage = pages[pages.length - 2];  //上一个页面
+
+          //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
+          prevPage.setData({
+            mydata: {
+              a: resp.data.data[0].shipping_address
+            }
+          })
+          
+          //当前页面 
+          that.setData({
+            addrList: resp.data.data
+          });
+
 				} else {
 					wx.showModal({
 						title: '错误',
