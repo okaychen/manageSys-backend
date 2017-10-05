@@ -66,6 +66,7 @@ Page({
 				that.setData({
 					orderInfo: res.data.data,
 					prod_images: arr,
+          orderId: productInfo.id,  // 对应商品的id，传入最后的订单页面
 					// 总金额 = 单价 * 数量 + 运费
 					totalPrice: totalPrice
 				});
@@ -76,3 +77,4 @@ Page({
 	}
 	
 });
+

@@ -10,12 +10,12 @@
   </view>
 </view>
 
-<view class='order-address pd15 mt5 bgWhite'>
-  <navigator url="../myAddress/add/add">
+<navigator url="../myAddress/add/add">
+  <view class='order-address pd15 mt5 bgWhite'>
     <text>收获地址</text>
-    <text class='floatR'> <text class='red'>请选择</text> > </text>
-  </navigator>
-</view>
+    <input class='floatR textAlignR'  type='text' value='{{mydata.address}}' disabled='true'  />
+  </view>
+</navigator>
 
 <view class='order-dist pd15 mt5 bgWhite'>
   <text>配送方式</text>
@@ -30,14 +30,14 @@
 <view class='order-access pd15 mt5 bgWhite'>
 
   <text>卖家留言</text>
-  <input type='text' bindinput="leaveMessage" placeholder='点击给商家留言'/>
+  <input type='text' bindinput="leaveMessage" placeholder='点击给商家留言' />
 </view>
 
 <view class='fixedBottom'>
   <view>合计：
     <text class='red'>¥{{totalPrice}}</text>
   </view>
-  <navigator url='../orderDetail/orderDetail?lm={{leaveMessage}}'>
+  <navigator url='../orderDetail/orderDetail?orderId={{orderId}}&lm={{leaveMessage}}&onePrice={{onePrice}}&num={{num}}&name={{mydata.name}}&phone={{mydata.phone}}&address={{mydata.address}}'>
     <view bindtap='firmOrder'>立即支付</view>
   </navigator>
 </view>

@@ -6,8 +6,8 @@ page {
 }
 
 .order-info image{
-  width: 150rpx;
-  height: 150rpx;
+  width: 80px;
+  height: 80px;
   display: block;
 }
 
