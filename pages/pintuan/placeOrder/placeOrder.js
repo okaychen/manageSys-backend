@@ -90,19 +90,37 @@ Page({
 				if (resp.data.status == 'success') {
 					let payObj = resp.data.data;
 					payObj.success = function (resp2) {
-						console.log(resp2);
+						wx.showModal({
+							title: '成功',
+							content: '支付成功',
+							showCancel: 0,
+							success: function (res) {
+								//跳转到订单详情页面
+							}
+						});
 					};
 					payObj.fail = function (resp2) {
+						console.log('支付方法调用失败,错误信息如下');
 						console.log(resp2);
 					};
 					wx.requestPayment(payObj);
 				} else {
-					console.log('error');
+					wx.showModal({
+						title: '错误',
+						content: resp.data.msg,
+						showCancel: 0
+					});
 				}
 			},
 			fail: function (resp) {
-				console.log('失败');
-				console.log(resp);
+				wx.showModal({
+					title: '错误',
+					content: '下单请求失败,请稍后重试',
+					showCancel: 0,
+					success: function (res) {
+						//处理一下
+					}
+				});
 			}
 		});
 	}
