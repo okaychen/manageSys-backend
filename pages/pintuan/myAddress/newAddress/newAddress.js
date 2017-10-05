@@ -40,7 +40,7 @@ Page({
 		});
 		//发起请求
 		wx.request({
-			url: app.globalData.api.base_domain + app.globalData.api.path_info + '/api/address/addAddress',
+			url: app.globalData.path_info.api + '/api/address/addAddress',
 			method: 'POST',
 			data: this.data.form_data,
 			success: function (resp) {
@@ -85,7 +85,7 @@ Page({
 		});
 		//发起请求
 		wx.request({
-			url: app.globalData.api.base_domain + app.globalData.api.path_info + '/api/address/addAddress',
+			url: app.globalData.path_info.api + '/api/address/addAddress',
 			method: 'POST',
 			data: this.data.form_data,
 			success: function (resp) {
@@ -138,7 +138,7 @@ Page({
 					});
 					//发起请求
 					wx.request({
-						url: app.globalData.api.base_domain + app.globalData.api.path_info + '/api/address/delAddress',
+						url: app.globalData.path_info.api + '/api/address/delAddress',
 						method: 'POST',
 						data: {openid: app.getOpenId(), addr_id: that.data.address.id},
 						success: function (resp) {
@@ -197,7 +197,7 @@ Page({
 		}
 		//发起请求获取要编辑的地址
 		wx.request({
-			url: app.globalData.api.base_domain + app.globalData.api.path_info + '/api/address/getAddress',
+			url: app.globalData.path_info.api + '/api/address/getAddress',
 			data: {addr_id: addr_id, openid: app.getOpenId()},//带上参数addr_id去获取单独的一条而不是列表
 			method: 'POST',
 			success: function (resp) {

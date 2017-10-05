@@ -23,7 +23,7 @@ Page({
 		});
 		//发起请求
 		wx.request({
-			url: app.globalData.api.base_domain + app.globalData.api.path_info + '/api/user/setUser',
+			url: app.globalData.path_info.api+ '/api/user/setUser',
 			data: that.data.form_data,
 			method: 'POST',
 			success: function (resp) {
@@ -77,7 +77,7 @@ Page({
 		});
 		//发起请求
 		wx.request({
-			url: app.globalData.api.base_domain + app.globalData.api.path_info + '/api/user/setUser',
+			url: app.globalData.path_info.api + '/api/user/setUser',
 			data: that.data.form_data,
 			method: 'POST',
 			success: function (resp) {

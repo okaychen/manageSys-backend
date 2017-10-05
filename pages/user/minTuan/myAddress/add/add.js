@@ -40,7 +40,7 @@ Page({
 		});
 		//发起请求
 		wx.request({
-			url: app.globalData.api.base_domain + app.globalData.api.path_info + '/api/address/getAddress',
+			url: app.globalData.path_info.api + '/api/address/getAddress',
 			data: {openid: app.getOpenId()},
 			method: 'POST',
 			success: function (resp) {

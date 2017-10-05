@@ -1,43 +1,48 @@
 <!--pages/pintuan/placeOrder/placeOrder.wxml-->
 <view class='order-info pd15'>
-  <view>
-    <image src="{{prod_images[0]}}" />
-  </view>
-  <view>
-    <text>{{orderInfo.prod_desc}}</text>
-    <text>¥{{onePrice}}</text>
-    <text class='floatR'>x{{num}}</text>
-  </view>
+	<view>
+		<image src="{{prod_images[0]}}" />
+	</view>
+	<view>
+		<text>{{orderInfo.prod_desc}}</text>
+		<text>¥{{onePrice}}</text>
+		<text class='floatR'>x{{num}}</text>
+	</view>
 </view>
 
 <navigator url="../myAddress/add/add">
-  <view class='order-address pd15 mt5 bgWhite'>
-    <text>收获地址</text>
-    <input class='floatR textAlignR'  type='text' value='{{mydata.address}}' disabled='true'  />
-  </view>
+	<view class='order-address pd15 mt5 bgWhite'>
+		<text>收获地址</text>
+		<input class='floatR textAlignR' type='text' value='{{selected_address.shipping_address}}' disabled='true' />
+	</view>
 </navigator>
 
 <view class='order-dist pd15 mt5 bgWhite'>
-  <text>配送方式</text>
-  <text class='floatR'> 快递配送 + <text class='red'>¥{{orderInfo.trans_price}}</text> > </text>
+	<text>配送方式</text>
+	<text class='floatR'>
+		<text class='red'>快递配送 + ¥ {{orderInfo.trans_price}}</text>>
+	</text>
 </view>
 
 <view class='order-pay pd15 mt5 bgWhite'>
-  <text>支付方式</text>
-  <text class='floatR'> 微信支付 > </text>
+	<text>支付方式</text>
+	<text class='floatR'> 微信支付 ></text>
 </view>
 
 <view class='order-access pd15 mt5 bgWhite'>
-
-  <text>卖家留言</text>
-  <input type='text' bindinput="leaveMessage" placeholder='点击给商家留言' />
+	
+	<text>卖家留言</text>
+	<input type='text' bindinput="leaveMessage" placeholder='点击给商家留言' />
 </view>
 
 <view class='fixedBottom'>
-  <view>合计：
-    <text class='red'>¥{{totalPrice}}</text>
-  </view>
-  <navigator url='../orderDetail/orderDetail?orderId={{orderId}}&lm={{leaveMessage}}&onePrice={{onePrice}}&num={{num}}&name={{mydata.name}}&phone={{mydata.phone}}&address={{mydata.address}}'>
-    <view bindtap='firmOrder'>立即支付</view>
-  </navigator>
+	<view>合计：
+		<text class='red'>¥{{totalPrice}}</text>
+	</view>
+	<!--
+	<navigator url='../orderDetail/orderDetail?orderId={{orderId}}&lm={{leaveMessage}}&onePrice={{onePrice}}&num={{num}}&name={{mydata.name}}&phone={{mydata.phone}}&address={{mydata.address}}'>
+	  <view bindtap='firmOrder'>立即支付</view>
+	</navigator>
+	-->
+	<view bindtap='submitOrder'>立即支付</view>
 </view>

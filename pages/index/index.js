@@ -35,7 +35,7 @@ Page({
     console.log('onLoad')
     wx.request({
       //上线接口地址要是https测试可以使用http接口方式
-      url: 'https://ssl.snowboy99.com/weidogs/weipintuan/public/index.php/api/category/categoryList',
+      url: app.globalData.path_info.api+'/api/category/categoryList',
       data: {},
       method: 'GET',
       header: {
