@@ -1,8 +1,11 @@
+<import src="../../../wxParse/wxParse.wxml"/>
+
+
 <!--pages/pintuan/details/details.wxml-->
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-  <block wx:for="{{productInfo.prod_images}}" wx:for-item="item">
+  <block wx:for="{{prod_images}}" wx:for-item="item">
     <swiper-item>
-      <image mode='widthFix' src="{{}}" class="slide-image" />
+      <image mode='widthFix' src="{{item}}" class="slide-image" />
     </swiper-item>
   </block>
 </swiper>
@@ -40,7 +43,7 @@
 <view class='shop-play shop-detail'>
   <view class='title'>商品详情</view>
   <view class='con'>
-    <view class='big-Red'>零元购活动</view>
+    <!-- <view class='big-Red'>零元购活动</view>
     <view>只需支付</view>
     <view class='red'>一分钱</view>
     <view>即可获得</view>
@@ -58,7 +61,8 @@
     </view>
     <view>
       <image mode='widthFix' src="../../../image/detail3.jpg" />
-    </view>
+    </view> -->
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
   </view>
 </view>
 

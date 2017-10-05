@@ -1,13 +1,9 @@
 var API_URL = 'https://ssl.snowboy99.com/weidogs/weipintuan/public/index.php';  //服务器地址 host+url
 var IMG_URL = 'https://ssl.snowboy99.com/weidogs/weipintuan/public';  // 图片
+var WxParse = require('../../../wxParse/wxParse.js');
 var app = getApp();
 Page({
   data: {
-    imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-    ],
     indicatorDots: true,
     autoplay: true,
     interval: 3000,
@@ -41,8 +37,21 @@ Page({
       },
       success: function (res) {
         console.log(res.data.data, 'get this info');
+        var productInfo = res.data.data;
+        // 对轮播图进行处理
+        var arr=[];
+        for(var i in productInfo.prod_images){
+         var images = IMG_URL + JSON.parse(productInfo.prod_images)[0]
+        }
+        arr.push(images)
+        arr.length = 3;
+        // 对商品详情进行处理
+        WxParse.wxParse('article', 'html', productInfo.prod_detail, that, 5);
+
+        // 设置数据
         that.setData({
-          productInfo:res.data.data
+          productInfo:res.data.data,
+          prod_images:arr
         })
       }
     })
