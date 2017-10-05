@@ -4,13 +4,21 @@ var IMG_URL = 'https://ssl.snowboy99.com/weidogs/weipintuan/public';  // 图片
 var app = getApp();
 Page({
   data: {
- 
+    leaveMessage:'',
   },
-
+  // 留言
+  leaveMessage:function(e){
+    this.setData({
+      leaveMessage:e.detail.value
+    })
+  },
+  firmOrder:function(e){
+    console.log(this.data.leaveMessage)
+  },
   // 加载完成之后 
   onLoad: function (options) {
     var that = this;
-    console.log('orderId：' + options.orderId +'; 数量'+ options.num +';单价'+options.onePrice);
+    console.log('orderId：' + options.orderId +';数量'+ options.num +';单价'+options.onePrice);
     that.setData({
       num:options.num,
       onePrice:options.onePrice
@@ -35,7 +43,9 @@ Page({
         // 设置数据
         that.setData({
           orderInfo: res.data.data,
-          prod_images: arr
+          prod_images: arr,
+          // 总金额 = 单价 * 数量 + 运费
+          totalPrice: options.num * options.onePrice + productInfo.trans_price
         })
       }
     })
