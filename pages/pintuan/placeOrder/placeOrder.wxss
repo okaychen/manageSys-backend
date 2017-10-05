@@ -5,6 +5,10 @@ page {
   background: #f5f5f5;
 }
 
+.order-info image{
+  width: 150rpx;
+  height: 150rpx;
+}
 
 /* bottom */
 .fixedBottom{
@@ -28,3 +32,4 @@ page {
   background: red;
   color: #fff;
 }
+
