@@ -4,30 +4,87 @@ var WxParse = require('../../../wxParse/wxParse.js');
 var app = getApp();
 Page({
   data: {
+    num: 1,
+    num1:1,
+    // 使用data数据对象设置样式名  
+    minusStatus: 'disabled',
     indicatorDots: true,
     autoplay: true,
     interval: 3000,
     duration: 1000
   },
 
+
+  /* 点击减号 */
+  bindMinus1: function () {
+    var num1 = this.data.num1;
+    // 如果大于1时，才可以减  
+    if (num1 > 1) {
+      num1--;
+    }
+    // 只有大于一件的时候，才能normal状态，否则disable状态  
+    var minusStatus1 = num1 <= 1 ? 'disabled' : 'normal';
+    // 将数值与状态写回  
+    this.setData({
+      num1: num1,
+      minusStatus1: minusStatus1
+    });
+  },
+  /* 点击加号 */
+  bindPlus1: function () {
+    var num1 = this.data.num1;
+    // 不作过多考虑自增1  
+    num1++;
+    // 只有大于一件的时候，才能normal状态，否则disable状态  
+    var minusStatus1 = num1 < 1 ? 'disabled' : 'normal';
+    // 将数值与状态写回  
+    this.setData({
+      num1: num1,
+      minusStatus1: minusStatus1
+    });
+  },
+  /* 输入框事件 */
+  bindManual1: function (e) {
+    var num1 = e.detail.value1;
+    // 将数值与状态写回  
+    this.setData({
+      num1: num1
+    });
+  },
+
+  /* 一人团 */
+  bindMinus: function () {
+    var num = this.data.num;
+    if (num > 1) {
+      num--;
+    }
+    var minusStatus = num <= 1 ? 'disabled' : 'normal';
+    this.setData({
+      num: num,
+      minusStatus: minusStatus
+    });
+  },
+  bindPlus: function () {
+    var num = this.data.num;
+    num++;
+    var minusStatus = num < 1 ? 'disabled' : 'normal';
+    this.setData({
+      num: num,
+      minusStatus: minusStatus
+    });
+  },
+  bindManual: function (e) {
+    var num = e.detail.value;
+    this.setData({
+      num: num
+    });
+  },
+
+  // 加载完成之后 
   onLoad: function (options) {
     var that = this;
     console.log('传递的参数是：' + options.id);
 
-    // wx.request({
-    //   url: API_URL + '/api/product/getProductById?prod_id=' + options.id,
-    //   method: 'GET',
-    //   header: {
-    //     'content-type': 'application/json'
-    //   },
-    //   success: function (res) {
-    //     console.log('路由传递api '+res.data.data)
-    //   }
-    // })
-    
-    //----------------------------- 
-    // product con<商品>
-    //----------------------------- 
     wx.request({
       url: API_URL + '/api/product/getProductById?prod_id=' + options.id,
       data: {},
@@ -39,9 +96,9 @@ Page({
         console.log(res.data.data, 'get this info');
         var productInfo = res.data.data;
         // 对轮播图进行处理
-        var arr=[];
-        for(var i in productInfo.prod_images){
-         var images = IMG_URL + JSON.parse(productInfo.prod_images)[0]
+        var arr = [];
+        for (var i in productInfo.prod_images) {
+          var images = IMG_URL + JSON.parse(productInfo.prod_images)[0]
         }
         arr.push(images)
         arr.length = 3;
@@ -50,13 +107,14 @@ Page({
 
         // 设置数据
         that.setData({
-          productInfo:res.data.data,
-          prod_images:arr
+          productInfo: res.data.data,
+          prod_images: arr
         })
       }
     })
   },
 
+  // 自定义底部弹出层
   showModal1: function () {
     // 显示遮罩层
     var animation = wx.createAnimation({
@@ -138,7 +196,5 @@ Page({
       })
     }.bind(this), 200)
   }
-
-
 
 })

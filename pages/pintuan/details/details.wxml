@@ -1,4 +1,4 @@
-<import src="../../../wxParse/wxParse.wxml"/>
+<import src="../../../wxParse/wxParse.wxml" />
 
 
 <!--pages/pintuan/details/details.wxml-->
@@ -43,26 +43,7 @@
 <view class='shop-play shop-detail'>
   <view class='title'>商品详情</view>
   <view class='con'>
-    <!-- <view class='big-Red'>零元购活动</view>
-    <view>只需支付</view>
-    <view class='red'>一分钱</view>
-    <view>即可获得</view>
-    <view class='red'>一卷30个新料垃圾袋</view>
-    <view>一个微信号限购一次，多购作废</view>
-    <view class='purple'>支付成功后到宜黄新车站</view>
-    <view>居详楼梯店</view>
-    <view class='purple'>凭订单支付</view>
-    <view>注：拍下请在24小时内付款，过期系统将自动退款</view>
-    <view>
-      <image mode='widthFix' src="../../../image/detail1.jpg" />
-    </view>
-    <view>
-      <image mode='widthFix' src="../../../image/detail2.jpg" />
-    </view>
-    <view>
-      <image mode='widthFix' src="../../../image/detail3.jpg" />
-    </view> -->
-    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
   </view>
 </view>
 
@@ -80,15 +61,16 @@
     </navigator>
   </view>
   <view class='yourPurse' bindtap='showModal1'>
-    <text>¥3.00</text>
+    <text>¥{{productInfo.prod_single_price}}</text>
     <text>单独购买</text>
   </view>
   <view class='yoursPurse' bindtap='showModal2'>
-    <text>¥0.01</text>
+    <text>¥{{productInfo.prod_group_price}}</text>
     <text>1人团</text>
   </view>
 </view>
 
+<!-- 单独购买 -->
 <view class="commodity_screen" bindtap="hideModal1" wx:if="{{showModalStatus1}}"></view>
 <view animation="{{animationData1}}" class="commodity_attr_box" wx:if="{{showModalStatus1}}">
 
@@ -98,16 +80,19 @@
     </view>
     <view class='header-infoBox'>
       <text>[周边团]信息发布免费名额</text>
-      <text class='red'>¥3.00</text>
+      <text class='red'>¥{{productInfo.prod_single_price}}</text>
     </view>
   </view>
 
   <view class='count'>
     <text>购买数量:</text>
-    <view class='count-control floatR'>
-      <button>-</button>
-      <text>1</text>
-      <button>+</button>
+    <view class="stepper floatR">
+      <!-- 减号 -->
+      <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+      <!-- 数值 -->
+      <input type="number" bindchange="bindManual" value="{{num}}" />
+      <!-- 加号 -->
+      <text class="normal" bindtap="bindPlus">+</text>
     </view>
   </view>
 
@@ -118,7 +103,7 @@
   </view>
 </view>
 
-
+<!-- 1人团 -->
 <view class="commodity_screen" bindtap="hideModal2" wx:if="{{showModalStatus2}}"></view>
 <view animation="{{animationData2}}" class="commodity_attr_box" wx:if="{{showModalStatus2}}">
 
@@ -128,16 +113,19 @@
     </view>
     <view class='header-infoBox'>
       <text>[周边团]信息发布免费名额</text>
-      <text class='red'>¥0.10</text>
+      <text class='red'>¥{{productInfo.prod_old_price}}</text>
     </view>
   </view>
 
   <view class='count'>
     <text>购买数量:</text>
-    <view class='count-control floatR'>
-      <button>-</button>
-      <text>1</text>
-      <button>+</button>
+    <view class="stepper floatR">
+      <!-- 减号 -->
+      <text class="{{minusStatus1}}" bindtap="bindMinus1">-</text>
+      <!-- 数值 -->
+      <input type="number" bindchange="bindManual1" value="{{num1}}" />
+      <!-- 加号 -->
+      <text class="normal" bindtap="bindPlus1">+</text>
     </view>
   </view>
 
