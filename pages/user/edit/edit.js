@@ -63,6 +63,11 @@ Page({
 			that.setData({
 				userInfo: userInfo
 			});
+			let form_data=that.data.form_data;
+			form_data['user_img']=userInfo.avatarUrl;
+			that.setData({
+				form_data: form_data
+			});
 		});
 		//获取服务器上面的用户数据
 		//加载中
