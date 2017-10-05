@@ -107,9 +107,13 @@ Page({
 
         // 设置数据
         that.setData({
-          productInfo: res.data.data,
-          prod_images: arr
+          productInfo: res.data.data, // 传到detail页面的所有数据，包括下面的几条
+          prod_images: arr,  // images数组，轮播图
+          single_price: productInfo.prod_single_price, // 单独购买单价
+          group_price: productInfo.prod_group_price, // 拼团购买单价
+          orderId: productInfo.id,  // 对应商品的id，传入订单页面
         })
+
       }
     })
   },

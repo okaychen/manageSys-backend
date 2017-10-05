@@ -79,7 +79,7 @@
       <image mode='widthFix' src="{{prod_images[0]}}" />
     </view>
     <view class='header-infoBox'>
-      <text>[周边团]信息发布免费名额</text>
+      <text>{{productInfo.prod_desc}}</text>
       <text class='red'>¥{{productInfo.prod_single_price}}</text>
     </view>
   </view>
@@ -97,7 +97,7 @@
   </view>
 
   <view class='submit'>
-    <navigator url='../placeOrder/placeOrder?'>
+    <navigator url='../placeOrder/placeOrder?orderId={{orderId}}&onePrice={{single_price}}&num={{num}}'>
       <button type='submit'>确定</button>
     </navigator>
   </view>
@@ -112,8 +112,8 @@
       <image mode='widthFix' src="{{prod_images[0]}}" />
     </view>
     <view class='header-infoBox'>
-      <text>[周边团]信息发布免费名额</text>
-      <text class='red'>¥{{productInfo.prod_old_price}}</text>
+      <text>{{productInfo.prod_desc}}</text>
+      <text class='red'>¥{{productInfo.prod_group_price}}</text>
     </view>
   </view>
 

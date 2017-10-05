@@ -1,11 +1,11 @@
 <!--pages/pintuan/placeOrder/placeOrder.wxml-->
 <view class='order-info pd15'>
   <view>
-    <image mode='widthFix' src="../../../image/photo.png" />
+    <image src="{{prod_images[0]}}" />
   </view>
   <view>
-    <text>[周边团]信息发布免费名额</text>
-    <text>¥180.00</text>
+    <text>{{orderInfo.prod_desc}}</text>
+    <text>¥{{productInfo.prod_desc}}</text>
     <text class='floatR'>x1</text>
   </view>
 </view>

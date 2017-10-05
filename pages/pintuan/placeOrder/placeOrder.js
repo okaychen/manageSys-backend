@@ -8,24 +8,31 @@ Page({
   },
 
   // 加载完成之后 
-  onLoad: function (orderId) {
+  onLoad: function (options) {
     var that = this;
-    console.log('传递的参数是：' + orderId.id);
+    console.log('orderId：' + options.orderId +'; 数量'+ options.num +';单价'+options.onePrice);
 
     wx.request({
-      url: API_URL + '/api/product/getProductById?prod_id=' + orderId.id,
+      url: API_URL + '/api/product/getProductById?prod_id=' + options.orderId,
       data: {},
       method: 'GET',
       header: {
         'content-type': 'application/json'
       },
       success: function (res) {
-        console.log(res.data.data, 'get this info');
+        console.log(res.data.data, 'get this info of order');
         var productInfo = res.data.data;
-
+        // 对轮播图进行处理<默认只处理三个>
+        var arr = [];
+        for (var i in productInfo.prod_images) {
+          var images = IMG_URL + JSON.parse(productInfo.prod_images)[0]
+        }
+        arr.push(images)
+        arr.length = 3;
         // 设置数据
         that.setData({
-          productInfo: res.data.data,
+          orderInfo: res.data.data,
+          prod_images: arr
         })
       }
     })
