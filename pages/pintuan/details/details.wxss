@@ -190,7 +190,8 @@ swiper image {
 
 .header-imgBox {
   width: 25%;
-  height: 100px;
+  min-height: 55px;
+  max-height: 100px;
   float: left;
 }
 

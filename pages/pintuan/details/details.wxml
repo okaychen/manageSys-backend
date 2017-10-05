@@ -76,7 +76,7 @@
 
   <view class='header'>
     <view class='header-imgBox'>
-      <image mode='widthFix' src="../../../image/photo.png" />
+      <image mode='widthFix' src="{{prod_images[0]}}" />
     </view>
     <view class='header-infoBox'>
       <text>[周边团]信息发布免费名额</text>
@@ -109,7 +109,7 @@
 
   <view class='header'>
     <view class='header-imgBox'>
-      <image mode='widthFix' src="../../../image/photo.png" />
+      <image mode='widthFix' src="{{prod_images[0]}}" />
     </view>
     <view class='header-infoBox'>
       <text>[周边团]信息发布免费名额</text>
