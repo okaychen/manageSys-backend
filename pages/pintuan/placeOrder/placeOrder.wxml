@@ -20,7 +20,7 @@
 <view class='order-dist pd15 mt5 bgWhite'>
 	<text>配送方式</text>
 	<text class='floatR'>
-		<text class='red'>快递配送 + ¥ {{orderInfo.trans_price}}</text>>
+		<text class='red'>快递配送 + ¥ {{orderInfo.trans_price}}</text>
 	</text>
 </view>
 

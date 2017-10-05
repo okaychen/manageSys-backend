@@ -27,6 +27,7 @@ Page({
 		this.setData({
 			leaveMessage: e.detail.value
 		});
+		this.setPayParams('note', e.detail.value);
 	},
 //	firmOrder: function (e) {
 //		console.log(this.data.leaveMessage);
@@ -80,7 +81,7 @@ Page({
 		let that = this;
 		console.log(that.data.pay_params);
 		wx.request({
-			url: app.globalData.path_info.api+'/api/pay/unifiedOrder',
+			url: app.globalData.path_info.api + '/api/pay/unifiedOrder',
 			data: that.data.pay_params,
 			method: 'POST',
 			success: function (resp) {
