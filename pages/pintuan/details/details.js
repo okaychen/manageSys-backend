@@ -2,6 +2,7 @@ var app = getApp();
 var API_URL = app.globalData.path_info.api;  //服务器地址 host+url
 var IMG_URL = app.globalData.path_info.path;  // 图片
 var WxParse = require('../../../wxParse/wxParse.js');
+var util = require('../../../utils/util.js');
 Page({
   data: {
     num: 1,
@@ -12,7 +13,10 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 1000,
-    hideTuan: true
+    // 是否隐藏页面拼团模块
+    hideTuan: true,
+    // 当前时间
+    orderData: util.formatTime(new Date),
   },
 
 
@@ -124,13 +128,47 @@ Page({
             hideTuan: false
           })
         }
+
+        // 拼团剩余时间处理<时间差>
+        var timestamp3 = productInfo.groups[0].create_time
+        var date1 = timestamp3 * 1000,  //开始时间  
+          date2 = new Date(),        //结束时间  
+          date3 = date2.getTime() - new Date(date1).getTime(),   //时间差的毫秒数        
+          //计算出相差天数  
+          days = Math.floor(date3 / (24 * 3600 * 1000)),
+          //计算出小时数  
+          leave1 = date3 % (24 * 3600 * 1000),   //计算天数后剩余的毫秒数  
+          hours = Math.floor(leave1 / (3600 * 1000)),
+          //计算相差分钟数  
+          leave2 = leave1 % (3600 * 1000),      //计算小时数后剩余的毫秒数  
+          minutes = Math.floor(leave2 / (60 * 1000)),
+          //计算相差秒数  
+          leave3 = leave2 % (60 * 1000),     //计算分钟数后剩余的毫秒数  
+          seconds = Math.round(leave3 / 1000);
+        console.log("相差 " + days + "天 " + hours + "小时 " + minutes + "分钟 " + seconds + "秒")
+        // 相差时间与24小时做差
+        var TotalS = 86400;
+        var RemandS = hours * 3600 + minutes * 60 + seconds * 1; //相差时间<秒>
+        var diffS = TotalS - RemandS;
+        // 剩余秒数转化为时分秒
+        var chours = Math.floor(diffS / 3600),
+          cmin = Math.floor((diffS - Math.floor(diffS / 3600) * 3600) / 60),
+          csec = diffS - cmin * 60 - chours * 3600;
+        // 最终时间<拼团结束时间> 
+        var fTime = chours + ':' + cmin + ':' + csec;
+        console.log(fTime)
+
+
+
+
         // 给页面设置数据
         that.setData({
           productInfo: res.data.data, // 传到detail页面的所有数据，包括下面的几条
           prod_images: arr,  // images数组，轮播图
           single_price: productInfo.prod_single_price, // 单独购买单价
           group_price: productInfo.prod_group_price, // 拼团购买单价
-          orderId: productInfo.id  // 对应商品的id，传入订单页面
+          orderId: productInfo.id,  // 对应商品的id，传入订单页面
+          fTime: fTime
         });
 
       }

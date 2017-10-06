@@ -40,7 +40,7 @@
     <view class='con_right'>
       <view>
       <text class='red'>还差{{productInfo.groups[0].person_limit-productInfo.groups[0].person_num}}人参团</text>
-      <text class='color999'>剩余24:59:59结束</text>
+      <text class='color999'>剩余{{fTime}}结束</text>
       </view>
       <navigator url='../JoinGroup/JoinGroup'>
       <text class='join'>去参团</text>
