@@ -119,3 +119,6 @@ scroll-view {
 .goods-Wrapper:last-child{
   margin-bottom: 30px;
 }
+
+
+/* 加载更多 */
