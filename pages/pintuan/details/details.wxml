@@ -31,9 +31,9 @@
   <view class='title'>正在开团的小伙伴</view>
   <view class='con'>
     <view class='con_left'>
-      <image src='../../../image/photo.png' />
+      <image src='{{productInfo.groups[0].user.user_img}}' />
       <view>
-        <text>okaychen</text>
+        <text>{{productInfo.groups[0].user.name}}</text>
         <text class='color999'>正在开团中</text>
       </view>
     </view>
@@ -42,7 +42,9 @@
       <text class='red'>还差0人参团</text>
       <text class='color999'>剩余24:59:59结束</text>
       </view>
+      <navigator url='../JoinGroup/JoinGroup'>
       <text class='join'>去参团</text>
+      </navigator>
     </view>
   </view>
 </view>
