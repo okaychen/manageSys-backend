@@ -16,7 +16,6 @@ Page({
 		countDownSecond: 0,
 		time_is_ok: false
 	},
-	
 	// 加载完成之后
 	onLoad: function (options) {
 		let that = this;
@@ -76,6 +75,6 @@ Page({
 		}
 		
 	}
-	
-	
+  
 });
+
