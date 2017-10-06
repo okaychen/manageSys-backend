@@ -32,9 +32,9 @@ Page({
 		let that = this;
 		let order = this.data.order;
 		let current_time = parseInt(Date.parse(new Date()) / 1000);
-		let totalSecond = 86400 - ( current_time - parseInt(order.pay_time));
+		let totalSecond = 86400 - ( current_time - parseInt(order.get_group.create_time));
 		console.log(current_time);
-		console.log(parseInt(order.pay_time));
+		console.log(parseInt(order.get_group.create_time));
 		if (totalSecond < 0) {//结束
 			this.setData({
 				time_is_ok: true
