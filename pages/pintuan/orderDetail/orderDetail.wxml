@@ -1,79 +1,94 @@
 <!--pages/pintuan/orderDetail/orderDetail.wxml-->
 <view class='orderWrapper'>
-  <view class='orderTitle'>
-    <image mode='widthFix' src='../../../../image/pin.png'></image>
-    <text>订单号：2017092917472935511259</text>
-  </view>
+	<view class='orderTitle'>
+		<image mode='widthFix' src='../../../../image/pin.png'></image>
+		<text>订单号：{{order.order_id}}</text>
+	</view>
 </view>
 
 <view class='userInfo'>
-  <view class='userName'>
-    <view>
-      <image mode='widthFix' src='../../../../image/seeUser.png'></image>{{name}}</view>
-    <view class='floatR'>
-      <image mode='widthFix' src='../../../../image/phone.png'></image>{{phone}}</view>
-  </view>
-  <view class='userAddress'>{{address}}</view>
+	<view class='userName'>
+		<view>
+			<image mode='widthFix' src='../../../../image/seeUser.png'></image>
+			{{order.address.name}}
+		</view>
+		<view class='floatR'>
+			<image mode='widthFix' src='../../../../image/phone.png'></image>
+			{{order.address.phone}}
+		</view>
+	</view>
+	<view class='userAddress'>{{address}}</view>
 </view>
 
 <view class='order-info pd10'>
-  <view>
-    <image src="{{prod_images[0]}}" />
-  </view>
-  <view>
-    <text>{{orderInfo.prod_desc}}</text>
-    <text class='red'>¥{{onePrice}}</text>
-    <text class='floatR'>x{{num}}</text>
-  </view>
+	<view>
+		<image src="{{order.first_image}}" />
+	</view>
+	<view>
+		<text>{{order.product.prod_name}}</text>
+		<text class='red'>¥
+			{{order.purchase_method=='group'?order.product.prod_group_price:order.product.prod_single_price}}
+		</text>
+		<text class='floatR'>x {{order.prod_num}}</text>
+	</view>
 </view>
 
 <view class='userAccess pd10 bgWhite mt5'>
-  <text>卖家留言：{{lm}}</text>
+	<text>卖家留言：{{order.note || ''}}</text>
 </view>
 
 <view class='userAccess pd10 bgWhite borTop'>
-  <view>支付状态
-    <text class='red floatR'>已支付</text>
-  </view>
-  <view>
-    <text class='color999'>支付方式：</text>微信支付</view>
-  <view>
-    <text class='color999'>下单时间：</text>{{orderData}}</view>
-  <view>
-    <text class='color999'>发货时间：</text>
-  </view>
+	<view>支付状态
+		<text class='red floatR'>{{order.status}}</text>
+	</view>
+	<view>
+		<text class='color999'>支付方式：</text>
+		{{order.pay_method}}
+	</view>
+	<view>
+		<text class='color999'>下单时间：</text>
+		{{order.pay_time_str}}
+	</view>
 </view>
 
 <view class='distInfo pd10 bgWhite borTop'>
-  <view>配送信息</view>
-  <view>
-    <text class='color999'>配送方式：</text>本店配送</view>
-  <view>
-    <text class='color999'>快递单位：</text>{{orderData}}</view>
-  <view>
-    <text class='color999'>快递单号：</text>
-  </view>
+	<view>配送信息</view>
+	<view>
+		<text class='color999'>配送方式：</text>
+		本店配送
+	</view>
+	<view>
+		<text class='color999'>快递单位：</text>
+		{{order.trans_type || ''}}
+	</view>
+	<view>
+		<text class='color999'>快递单号：</text>
+		{{order.trans_code || ''}}
+	</view>
 </view>
 
 <view class='addPrice pd10 bgWhite borTop'>
-  <view>合计
-    <text class='red floatR'>¥{{totalPrice}}</text>
-  </view>
-  <view class='totalPrice'>
-    <text class='total'>商品总额</text>
-    <text class='price floatR'>¥{{prodPrice}}</text>
-  </view>
-  <view class='trafficPrice'>
-    <text class='traffic'>+运费</text>
-    <text class='price floatR'>¥{{tranPrice}}</text>
-  </view>
+	<view>合计
+		<text class='red floatR'>¥{{order.pay_count}}</text>
+	</view>
+	<view class='totalPrice'>
+		<text class='total'>商品总额</text>
+		<text class='price floatR'>¥ {{order.purchase_method=='group'?order.product.prod_group_price:order.product.prod_single_price * order.prod_num}}
+		</text>
+	</view>
+	<view class='trafficPrice'>
+		<text class='traffic'>+运费</text>
+		<text class='price floatR'>¥ {{order.product.trans_price || 0}}</text>
+	</view>
 </view>
 
 <!-- save button -->
-<view class='suerOrder'>
-  <button bindtap="showok" class='save-edit'>剩余时间
-    <text>{{countDownHour}}:</text>
-    <text>{{countDownMinute}}:</text>
-    <text>{{countDownSecond}}</text>
-    结束</button>
+<view class='suerOrder' wx:if="{{order.purchase_method=='group'}}">
+	<button bindtap="showok" class='save-edit' wx:if="{{!time_is_ok}}">剩余时间
+		<text>{{countDownHour}}:</text>
+		<text>{{countDownMinute}}:</text>
+		<text>{{countDownSecond}}</text>
+		结束
+	</button>
+	<button bindtap="showok" class='save-edit' wx:if="{{time_is_ok}}">拼团已结束</button>
 </view>
