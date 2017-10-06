@@ -26,6 +26,31 @@
   </view>
 </view>
 
+<!-- 正在开团 -->
+<view class='tuan' hidden='{{hideTuan}}'>
+  <view class='title'>正在开团的小伙伴</view>
+  <view class='con'>
+    <view class='con_left'>
+      <image src='{{productInfo.groups[0].user.user_img}}' />
+      <view>
+        <text>{{productInfo.groups[0].user.name}}</text>
+        <text class='color999'>正在开团中</text>
+      </view>
+    </view>
+    <view class='con_right'>
+      <view>
+      <text class='red'>还差{{productInfo.groups[0].person_limit-productInfo.groups[0].person_num}}人参团</text>
+      <text class='color999'>剩余{{fTime}}结束</text>
+      </view>
+      <navigator url='../JoinGroup/JoinGroup'>
+      <text class='join'>去参团</text>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+
+<!-- 拼团玩法 -->
 <view class='shop-play'>
   <view class='title'>拼团玩法</view>
   <view class='menu'>
@@ -40,6 +65,7 @@
   </view>
 </view>
 
+<!-- 商品详情 -->
 <view class='shop-play shop-detail'>
   <view class='title'>商品详情</view>
   <view class='con'>
@@ -47,12 +73,14 @@
   </view>
 </view>
 
+<!-- 商品评价 -->
 <view class='shop-play shop-access'>
   <view class='title'>商品评价</view>
   <view class='con'>暂无评价</view>
 </view>
 
 
+<!-- 底部菜单 -->
 <view class='fixedBottom'>
   <view class='home'>
     <navigator url='../pintuan'>
@@ -70,7 +98,8 @@
   </view>
 </view>
 
-<!-- 单独购买 -->
+<!-- 自定义底部弹出层 -->
+<!-- 1、单独购买 -->
 <view class="commodity_screen" bindtap="hideModal1" wx:if="{{showModalStatus1}}"></view>
 <view animation="{{animationData1}}" class="commodity_attr_box" wx:if="{{showModalStatus1}}">
 
@@ -87,24 +116,21 @@
   <view class='count'>
     <text>购买数量:</text>
     <view class="stepper floatR">
-      <!-- 减号 -->
       <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
-      <!-- 数值 -->
       <input type="number" bindchange="bindManual" value="{{num}}" />
-      <!-- 加号 -->
       <text class="normal" bindtap="bindPlus">+</text>
     </view>
   </view>
 
   <view class='submit'>
-  <!-- 单独购买订单传参 -->
+    <!-- 单独购买订单传参 -->
     <navigator url='../placeOrder/placeOrder?product_id={{productInfo.id}}&orderId={{orderId}}&onePrice={{single_price}}&num={{num}}&purchase_method=single&group_id={{group_id}}'>
       <button type='submit'>确定</button>
     </navigator>
   </view>
 </view>
 
-<!-- 拼团 -->
+<!-- 2、拼团购买 -->
 <view class="commodity_screen" bindtap="hideModal2" wx:if="{{showModalStatus2}}"></view>
 <view animation="{{animationData2}}" class="commodity_attr_box" wx:if="{{showModalStatus2}}">
 

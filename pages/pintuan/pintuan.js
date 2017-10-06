@@ -50,6 +50,7 @@ Page({
         'content-type': 'application/json'
       },
       success: function (res) {
+        wx.hideLoading();
         console.log(res.data.data, 'product data acquisition success');
         // 分离出无分类的数据<待做处理>
         var product = res.data.data;  // 获取接口提供的数据

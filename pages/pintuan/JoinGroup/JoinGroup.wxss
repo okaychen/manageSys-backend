@@ -1,0 +1,108 @@
+/* pages/pintuan/JoinGroup/JoinGroup.wxss */
+
+page {
+  font: 14px/20px 微软雅黑;
+  background: #f5f5f5;
+}
+
+.prodWrapper {
+  background: #fff;
+  height: 100px;
+  overflow: hidden;
+}
+
+.imgWrapper {
+  float: left;
+}
+
+.imgWrapper image {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+}
+.infoWrapper{
+  padding-left: 10px;
+  height: 100px;
+  position: relative;
+}
+.infoWrapper .rel{
+  position: absolute;
+  bottom: 0px;
+  clear: both;
+}
+.infoWrapper .preson_num{
+  font-size: 12px;
+}
+
+.infoWrapper .preson_num >text:last-child,
+.infoWrapper .price > text:last-child{
+  padding-left: 10px;
+}
+
+/* join */
+.joinWrapper{
+  width: 100%;
+  padding: 20px 0px;
+  margin-top: 10px;
+  background: #fff;
+  height: auto;
+}
+.joinWrapper image{
+  display: block;
+  margin: 0 auto;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}
+.joinWrapper view{
+  width: 100%;
+  margin:  10px auto;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+.joinWrapper button{
+  width: 50%;
+  font-size: 14px;
+}
+
+/* 拼团玩法&&正在开团 */
+
+.shop-play, .tuan {
+  margin-top: 10px;
+  background: #fff;
+}
+
+.shop-play .title, .tuan .title {
+  padding: 10px;
+}
+
+.shop-play .menu {
+  width: 94%;
+  border-top: 1px solid #f5f5f5;
+  display: inline-block;
+  margin-left: 3%;
+}
+
+.shop-play .menu view {
+  width: 20%;
+  margin: 2px 2.5%;
+  float: left;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+
+.shop-play .menu view image {
+  width: 25px;
+  height: 25px;
+  margin: 2px auto;
+  display: block;
+  text-align: center;
+}
+
+/* 返回首页 */
+.back_pintuan button{
+  font-size: 14px;
+  margin-top: 10px;
+  width: 90%;
+}

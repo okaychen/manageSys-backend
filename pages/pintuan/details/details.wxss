@@ -56,14 +56,67 @@ swiper image {
   color: #999;
 }
 
-/* 拼团玩法 */
+/* 正在开团 */
 
-.shop-play {
+.con_left {
+  width: 50%;
+  float: left;
+  display: flex;
+}
+
+.con_right {
+  width: auto;
+  position: relative;
+  text-align: right;
+  display: flex;
+}
+
+.con_left view {
+  margin-left: 10px;
+}
+
+.con_right view {
+  width: 65%;
+  text-align: right;
+}
+
+.con_right .join {
+  position: absolute;
+  right: 0px;
+  margin: 12.5px 4px;
+  padding: 0px 5px;
+  height: 25px;
+  line-height: 25px;
+  background: red;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.tuan .con {
+  height: 50px;
+  overflow: hidden;
+  font-size: 12px !important;
+}
+
+.tuan .con image {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  vertical-align: middle;
+}
+
+.tuan .con text:last-child {
+  display: block;
+}
+
+/* 拼团玩法&&正在开团 */
+
+.shop-play, .tuan {
   margin-top: 10px;
   background: #fff;
 }
 
-.shop-play .title {
+.shop-play .title, .tuan .title {
   padding: 10px;
 }
 
@@ -91,9 +144,9 @@ swiper image {
   text-align: center;
 }
 
-/* 商品详情&&评价 */
+/* 商品详情&&评价&&正在开团 */
 
-.shop-detail .con, .shop-access .con {
+.shop-detail .con, .shop-access .con, .tuan .con {
   width: 94%;
   margin: 0 auto;
   border-top: 1px solid #f5f5f5;
@@ -219,7 +272,6 @@ swiper image {
   display: inline;
 }
 
-
 .count-control text {
   display: inline-block;
   padding: 3.5px 14px;
@@ -228,55 +280,61 @@ swiper image {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.submit{
+.submit {
   clear: both;
   width: 100%;
   margin-top: 10px;
- 
 }
-.submit button[type="submit"]{
+
+.submit button[type="submit"] {
   background: #f35150;
   color: #fff;
 }
 
 /* 加减 */
-/*主容器*/  
-.stepper {  
-    width: 80px;  
-    height: 26px;  
-    /*给主容器设一个边框*/  
-    border: 1px solid #ccc;  
-    border-radius: 3px;  
-    margin:0 auto;  
-}  
-  
-/*加号和减号*/  
-.stepper text {  
-    width: 19px;  
-    line-height: 26px;  
-    text-align: center;  
-    float: left;  
-}  
-  
-/*数值*/  
-.stepper input {  
-    width: 40px;  
-    height: 26px;  
-    float: left;  
-    margin: 0 auto;  
-    text-align: center;  
-    font-size: 12px;  
-    /*给中间的input设置左右边框即可*/  
-    border-left: 1px solid #ccc;  
-    border-right: 1px solid #ccc;  
-}  
-  
-/*普通样式*/  
-.stepper .normal{  
-    color: black;  
-}  
-  
-/*禁用样式*/  
-.stepper .disabled{  
-    color: #ccc;  
-}  
+
+/*主容器*/
+
+.stepper {
+  width: 80px;
+  height: 26px;
+  /*给主容器设一个边框*/
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 0 auto;
+}
+
+/*加号和减号*/
+
+.stepper text {
+  width: 19px;
+  line-height: 26px;
+  text-align: center;
+  float: left;
+}
+
+/*数值*/
+
+.stepper input {
+  width: 40px;
+  height: 26px;
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  /*给中间的input设置左右边框即可*/
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+/*普通样式*/
+
+.stepper .normal {
+  color: black;
+}
+
+/*禁用样式*/
+
+.stepper .disabled {
+  color: #ccc;
+}
