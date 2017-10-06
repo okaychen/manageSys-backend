@@ -12,19 +12,19 @@
 
 <view class='shop-info'>
 	<view class='price'>
-		<text class='nowPrice'>¥{{productInfo.prod_single_price}}</text>
+		<text class='nowPrice'>¥{{productInfo.prod_group_price}}</text>
 		<text class='line-delete'>¥{{productInfo.prod_old_price}}</text>
-		<text class='priceCutDown'>拼团立减4.99元</text>
+		<text class='priceCutDown'>拼团立减{{(productInfo.prod_old_price*100-productInfo.prod_group_price*100)/100}}元</text>
 	</view>
 	<view class='floatR haved'>已有
 		<view>
-			<text class='red'>{{productInfo.prod_group_num}}</text>
+			<text class='red'>{{productInfo.group_order_count}}</text>
 			人参团
 		</view>
 	</view>
 	<view class='title'>
-		<view>{{productInfo.prod_desc}}</view>
-		<view class='title-tip'></view>
+		<view>{{productInfo.prod_name}}</view>
+		<view class='title-tip'>{{productInfo.prod_desc}}</view>
 	</view>
 </view>
 
@@ -44,7 +44,7 @@
 				<text class='red'>还差{{item.person_limit-item.person_num}}人参团</text>
 				<text class='color999'>剩余{{item.time_out}}结束</text>
 			</view>
-				<text class='join' bindtap="redirectToJoinGroup" data-group-id="{{item.id}}">去参团</text>
+			<text class='join' bindtap="redirectToJoinGroup" data-group-id="{{item.id}}">去参团</text>
 		</view>
 	</view>
 </view>
