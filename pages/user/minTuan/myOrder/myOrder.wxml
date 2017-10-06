@@ -7,7 +7,7 @@
 
 <!--存在数据之后 -->
 <view wx:if="{{have_order}}">
-	<view class='orderWrapper' wx:for="{{orders}}">
+	<view class='orderWrapper' wx:for="{{orders}}" bindtap="showOrder" data-order-id="{{item.id}}">
 		<view class='orderTitle'>
 			<image mode='widthFix' src='../../../../image/pin.png'></image>
 			<text>订单号：{{item.order_id}}</text>

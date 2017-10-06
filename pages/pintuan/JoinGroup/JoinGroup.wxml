@@ -1,48 +1,57 @@
 <!--pages/pintuan/JoinGroup/JoinGroup.wxml-->
 <view class='pd10 prodWrapper'>
-  <view class='imgWrapper'>
-    <image mode='widthFix' src='../../../image/photo.png' />
-  </view>
-  <view class='infoWrapper'>
-    <text>[零元购活动]垃圾袋0.01买一卷（30个），够用一个月</text>
-    <view class='rel'>
-      <view class='price'>
-        <text class='big-Red'>¥0.01</text>
-        <text class='.line-delete'>¥5.00</text>
-      </view>
-      <view class='preson_num'>
-        <text class='color999'><text class='red'>1</text>人团</text>
-        <text class='color999'>已有<text class='red'>28</text>人参团</text>
-      </view>
-    </view>
-  </view>
+	<view class='imgWrapper'>
+		<image mode='widthFix' src='{{productInfo.prod_images[0]}}' />
+	</view>
+	<view class='infoWrapper'>
+		<text>{{productInfo.prod_name}}</text>
+		<view class='rel'>
+			<view class='price'>
+				<text class='big-Red'>¥{{productInfo.prod_group_price}}</text>
+				<text class='line-delete'>¥{{productInfo.prod_old_price}}</text>
+			</view>
+			<view class='preson_num'>
+				<text class='color999'><text class='red'>{{group.person_limit}}</text>人团</text>
+				<text class='color999'>已有<text class='red'>{{group.person_num}}</text>人参团</text>
+			</view>
+		</view>
+	</view>
 </view>
 
 <view class='joinWrapper'>
-  <image mode='widthFix' src='../../../image/photo.png' />
-  <view>仅剩
-    <text class='red'>0</text>个名额</view>
-  <view>剩余23:49:52结束</view>
-  <button type='button'>一键参团</button>
+	<image mode='widthFix' src='{{group.user.user_img}}' />
+	<view>
+		仅剩<text class='red'>{{group.person_limit-group.person_num}}</text>个名额
+	</view>
+	<view>剩余{{group.time_out}}结束</view>
+	<button type='button'>一键参团</button>
 </view>
 
 <!-- 拼团玩法 -->
 <view class='shop-play'>
-  <view class='title'>拼团玩法</view>
-  <view class='menu'>
-    <view>
-      <image mode='widthFix' src="../../../image/burse.png" />支付开团或者参团</view>
-    <view>
-      <image mode='widthFix' src="../../../image/user.png" />邀请好友参团</view>
-    <view>
-      <image mode='widthFix' src="../../../image/car.png" />人数达到分别发货</view>
-    <view>
-      <image mode='widthFix' src="../../../image/back.png" />人数不够自动退款</view>
-  </view>
+	<view class='title'>拼团玩法</view>
+	<view class='menu'>
+		<view>
+			<image mode='widthFix' src="../../../image/burse.png" />
+			支付开团或者参团
+		</view>
+		<view>
+			<image mode='widthFix' src="../../../image/user.png" />
+			邀请好友参团
+		</view>
+		<view>
+			<image mode='widthFix' src="../../../image/car.png" />
+			人数达到分别发货
+		</view>
+		<view>
+			<image mode='widthFix' src="../../../image/back.png" />
+			人数不够自动退款
+		</view>
+	</view>
 </view>
 
 <view class='back_pintuan'>
-  <navigator url='../pintuan'>
-    <button>返回首页</button>
-  </navigator>
+	<navigator open-type="reLaunch" url='../pintuan'>
+		<button>返回首页</button>
+	</navigator>
 </view>

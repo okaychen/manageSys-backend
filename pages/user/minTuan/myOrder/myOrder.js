@@ -8,7 +8,29 @@ Page({
 	data: {
 		have_order: false
 	},
-	
+	getOrder: function (orderId) {
+		let that = this;
+		let orders = that.data.orders;
+		for (let i in orders) {
+			if (orders.hasOwnProperty(i)) {
+				let order = orders[i];
+				if (order['id'] == orderId) {
+					return order;
+				}
+			}
+		}
+		return false;
+	},
+	showOrder: function (e) {
+		let that = this;
+		let orderId = e.currentTarget.dataset.orderId;
+		let order = that.getOrder(orderId);
+		wx.setStorageSync('selected_order', order);
+		console.log(order);
+		wx.navigateTo({
+			url: '../../../pintuan/orderDetail/orderDetail'
+		});
+	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
