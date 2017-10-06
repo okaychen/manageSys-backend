@@ -26,9 +26,7 @@
 	</view>
 	<view>
 		<text>{{order.product.prod_name}}</text>
-		<text class='red'>¥
-			{{order.purchase_method=='group'?order.product.prod_group_price:order.product.prod_single_price}}
-		</text>
+		<text class='red'>¥ {{order.purchase_method=='group'?order.product.prod_group_price:order.product.prod_single_price}}</text>
 		<text class='floatR'>x {{order.prod_num}}</text>
 	</view>
 </view>
