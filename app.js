@@ -1,4 +1,7 @@
 //app.js
+let base_domain = 'https://ssl.snowboy99.com';
+let api_path = '/weidogs/weipintuan/public/index.php';
+let server_root = '/weidogs/weipintuan/public';
 App({
 	onLaunch: function () {
 		//调用API从本地缓存中获取数据
@@ -30,9 +33,10 @@ App({
 	
 	globalData: {
 		userInfo: null,
-		api: {
-			base_domain: 'https://ssl.snowboy99.com',
-			path_info: '/weidogs/weipintuan/public/index.php'
+		path_info: {
+			domain: base_domain,
+			api: base_domain + api_path,
+			path: base_domain + server_root
 		}
 	},
 	
@@ -51,7 +55,7 @@ App({
 				console.log('js_code是：' + resp.code);
 				wx.setStorageSync('js_code', resp.code);
 				wx.request({
-					url: that.globalData.api.base_domain+that.globalData.api.path_info+'/api/applet/getOpenIdByCode',
+					url: that.globalData.path_info.api + '/api/applet/getOpenIdByCode',
 					data: {
 						js_code: wx.getStorageSync('js_code')
 					},

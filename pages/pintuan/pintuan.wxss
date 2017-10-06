@@ -96,7 +96,6 @@ scroll-view {
   margin: 0px 5px 0px 0px;
 }
 .goods-info button:nth-child(1){
-  border-right: none;
   background: #fff;
   color: red;
 }

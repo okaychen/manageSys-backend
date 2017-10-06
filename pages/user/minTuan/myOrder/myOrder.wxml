@@ -1,20 +1,22 @@
 <!--pages/user/minTuan/myOrder/myOrder.wxml-->
 <!-- 无订单数据 -->
-<view class='noData'>
-    <image mode='widthFix' src='../../../../image/box.png'></image>
-    <view>暂无订单信息</view>
+<view class='noData' wx:if="{{!have_order}}">
+	<image mode='widthFix' src='../../../../image/box.png'></image>
+	<view>暂无订单信息</view>
 </view>
 
-<!-- 存在数据之后 -->
-<!-- <view class='orderWrapper'>
-  <view class='orderTitle'>
-    <image mode='widthFix' src='../../../../image/pin.png'></image>
-    <text>订单号：2017092917472935511259</text>
-    <text class='floatR'>待发货</text>
-  </view>
-  <view class='orderCon'>
-      <image mode='widthFix' src='../../../../image/love.png'></image>
-      <text>[零元购活动]垃圾袋一分钱一卷（30个）够用一个月</text>
-  </view>
-  <view class='orderPrice'>订单金额：¥0.01</view>
-</view>  -->
+<!--存在数据之后 -->
+<view wx:if="{{have_order}}">
+	<view class='orderWrapper' wx:for="{{orders}}">
+		<view class='orderTitle'>
+			<image mode='widthFix' src='../../../../image/pin.png'></image>
+			<text>订单号：{{item.order_id}}</text>
+			<text class='floatR'>{{item.status}}</text>
+		</view>
+		<view class='orderCon'>
+			<image mode='widthFix' src='{{item.first_image}}'></image>
+			<text>{{item.product.prod_name}}</text>
+		</view>
+		<view class='orderPrice'>订单金额：¥ {{item.pay_count}}</view>
+	</view>
+</view>

@@ -1,7 +1,7 @@
 // pages/pintuan/placeOrder/placeOrder.js
-var API_URL = 'https://ssl.snowboy99.com/weidogs/weipintuan/public/index.php';  //服务器地址 host+url
-var IMG_URL = 'https://ssl.snowboy99.com/weidogs/weipintuan/public';  // 图片
 var app = getApp();
+var API_URL = app.globalData.path_info.api;  //服务器地址 host+url
+var IMG_URL = app.globalData.path_info.path;  // 图片
 Page({
 	data: {
 		leaveMessage: '',
@@ -27,10 +27,11 @@ Page({
 		this.setData({
 			leaveMessage: e.detail.value
 		});
+		this.setPayParams('note', e.detail.value);
 	},
-	firmOrder: function (e) {
-		console.log(this.data.leaveMessage);
-	},
+//	firmOrder: function (e) {
+//		console.log(this.data.leaveMessage);
+//	},
 	// 加载完成之后
 	onLoad: function (options) {
 		var that = this;
@@ -67,7 +68,7 @@ Page({
 				that.setData({
 					orderInfo: res.data.data,
 					prod_images: arr,
-          orderId: productInfo.id,  // 对应商品的id，传入最后的订单页面
+					orderId: productInfo.id,  // 对应商品的id，传入最后的订单页面
 					// 总金额 = 单价 * 数量 + 运费
 					totalPrice: totalPrice
 				});
@@ -75,7 +76,60 @@ Page({
 				that.setPayParams('pay_count', totalPrice);
 			}
 		});
+	},
+	//提交订单啦!!!
+	submitOrder: function () {
+		let that = this;
+		console.log(that.data.pay_params);
+		wx.request({
+			url: app.globalData.path_info.api + '/api/pay/unifiedOrder',
+			data: that.data.pay_params,
+			method: 'POST',
+			success: function (resp) {
+				console.log('成功');
+				console.log(resp);
+				if (resp.data.status == 'success') {
+					let payObj = resp.data.data;
+					payObj.success = function (resp2) {
+						wx.showModal({
+							title: '成功',
+							content: '支付成功',
+							showCancel: 0,
+							success: function (res) {
+								if (res.confirm) {
+									console.log('用户点击确定');
+									//跳转到订单详情页面
+									wx.redirectTo({
+										url: '../../user/minTuan/myOrder/myOrder'
+									});
+								}
+							}
+						});
+					};
+					payObj.fail = function (resp2) {
+						console.log('支付方法调用失败,错误信息如下');
+						console.log(resp2);
+					};
+					wx.requestPayment(payObj);
+				} else {
+					wx.showModal({
+						title: '错误',
+						content: resp.data.msg,
+						showCancel: 0
+					});
+				}
+			},
+			fail: function (resp) {
+				wx.showModal({
+					title: '错误',
+					content: '下单请求失败,请稍后重试',
+					showCancel: 0,
+					success: function (res) {
+						//处理一下
+					}
+				});
+			}
+		});
 	}
-	
 });
 

@@ -1,0 +1,14 @@
+<view class='tab-Wrapper'>
+	<view class='tab-item'>
+		<navigator url='../pintuan/pintuan' open-type="redirect">
+			<image mode='widthFix' src='../../image/tab-shop.png'></image>
+			<text>拼团</text>
+		</navigator>
+	</view>
+	<view class='tab-item'>
+		<navigator url='../user/user' open-type="redirect">
+			<image mode='widthFix' src='../../image/tab-user.png'></image>
+			<text>我的</text>
+		</navigator>
+	</view>
+</view>
