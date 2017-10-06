@@ -44,9 +44,7 @@
 				<text class='red'>还差{{item.person_limit-item.person_num}}人参团</text>
 				<text class='color999'>剩余{{item.time_out}}结束</text>
 			</view>
-			<navigator url='../JoinGroup/JoinGroup'>
-				<text class='join'>去参团</text>
-			</navigator>
+				<text class='join' bindtap="redirectToJoinGroup" data-group-id="{{item.id}}">去参团</text>
 		</view>
 	</view>
 </view>

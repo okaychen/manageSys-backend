@@ -134,7 +134,7 @@ Page({
 				for (let i in groups) {
 					if (groups.hasOwnProperty(i)) {
 						let group = groups[i];
-						group['time_out'] = that.getTimeOut(group.create_time);
+						group['time_out'] = num_util.getTimeOut(group.create_time);
 						groups[i] = group;
 					}
 				}
@@ -152,19 +152,16 @@ Page({
 			}
 		});
 	},
-	getTimeOut: function (ts) {
-		let that = this;
-		let curr_time = Date.parse(new Date()) / 1000; //当前的时间戳
-		let surplus_time = 86400 - (curr_time - parseInt(ts));
-		if (surplus_time < 0) {
-			return false;
-		} else { //处理成时间字符串
-			let time_h = num_util.zero_fill(parseInt(surplus_time / 3600), 2);
-			let time_m = num_util.zero_fill(parseInt((surplus_time % 3600) / 60), 2);
-			let time_s = num_util.zero_fill(parseInt((surplus_time % 60)), 2);
-			return time_h + ':' + time_m + ':' + time_s;
-		}
-		
+	redirectToJoinGroup:function (e) {
+		let that=this;
+		let group_id=e.currentTarget.dataset.groupId;
+		wx.setStorageSync('selected_group_info',{
+			group_id:group_id,
+			productInfo:that.data.productInfo
+		});
+		wx.redirectTo({
+			url:'../JoinGroup/JoinGroup'
+		})
 	},
 	// 自定义底部弹出层
 	showModal1: function () {
