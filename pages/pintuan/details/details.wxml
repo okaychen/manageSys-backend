@@ -27,7 +27,7 @@
 </view>
 
 <!-- 正在开团 -->
-<view class='tuan'>
+<view class='tuan' hidden='{{hideTuan}}'>
   <view class='title'>正在开团的小伙伴</view>
   <view class='con'>
     <view class='con_left'>
@@ -39,7 +39,7 @@
     </view>
     <view class='con_right'>
       <view>
-      <text class='red'>还差0人参团</text>
+      <text class='red'>还差{{productInfo.groups[0].person_limit-productInfo.groups[0].person_num}}人参团</text>
       <text class='color999'>剩余24:59:59结束</text>
       </view>
       <navigator url='../JoinGroup/JoinGroup'>

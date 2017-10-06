@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/pintuan/JoinGroup/JoinGroup",
     "pages/pintuan/pintuan",
+    "pages/pintuan/JoinGroup/JoinGroup",
     "pages/pintuan/details/details",
     "pages/pintuan/myAddress/add/add",
     "pages/pintuan/myAddress/newAddress/newAddress",
