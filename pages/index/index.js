@@ -27,25 +27,23 @@
 
 var app = getApp();
 Page({
-  data: {
-
-  },
-  onLoad: function () {
-    var that = this;
-    console.log('onLoad')
-    wx.request({
-      //上线接口地址要是https测试可以使用http接口方式
-      url: app.globalData.path_info.api+'/api/category/categoryList',
-      data: {},
-      method: 'GET',
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        that.setData({ goodslist: res.data.data });
-        console.log(res.data.data, 1111111);
-      },
-
-    })
-  },
-})
+	data: {},
+	onLoad: function () {
+		var that = this;
+		console.log('onLoad');
+		wx.request({
+			//上线接口地址要是https测试可以使用http接口方式
+			url: app.globalData.path_info.api + '/api/category/categoryList',
+			data: {},
+			method: 'GET',
+			header: {
+				'content-type': 'application/json'
+			},
+			success: function (res) {
+				that.setData({goodslist: res.data.data});
+				console.log(res.data.data, 1111111);
+			}
+			
+		});
+	}
+});

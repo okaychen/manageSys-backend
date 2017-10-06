@@ -95,7 +95,13 @@ Page({
 							content: '支付成功',
 							showCancel: 0,
 							success: function (res) {
-								//跳转到订单详情页面
+								if (res.confirm) {
+									console.log('用户点击确定');
+									//跳转到订单详情页面
+									wx.redirectTo({
+										url: '../../user/minTuan/myOrder/myOrder'
+									});
+								}
 							}
 						});
 					};
