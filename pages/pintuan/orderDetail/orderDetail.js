@@ -14,7 +14,7 @@ Page({
 		countDownHour: 0,
 		countDownMinute: 0,
 		countDownSecond: 0,
-		time_is_ok:false
+		time_is_ok: false
 	},
 	
 	// 加载完成之后
@@ -36,10 +36,10 @@ Page({
 		let totalSecond = 86400 - ( current_time - parseInt(order.pay_time));
 		console.log(current_time);
 		console.log(parseInt(order.pay_time));
-		if (totalSecond<0) {//结束
+		if (totalSecond < 0) {//结束
 			this.setData({
-				time_is_ok:true
-			})
+				time_is_ok: true
+			});
 		} else {
 			var interval = setInterval(function () {
 				// 秒数
@@ -75,14 +75,6 @@ Page({
 			}.bind(this), 1000);
 		}
 		
-	},
-	
-	//cell事件处理函数
-	bindCellViewTap: function (e) {
-		var id = e.currentTarget.dataset.id;
-		wx.navigateTo({
-			url: '../babyDetail/babyDetail?id=' + id
-		});
 	}
 	
 	
