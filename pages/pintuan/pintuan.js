@@ -14,12 +14,17 @@ var loadProd = function (that,limitNum) {
       wx.hideLoading();
       console.log(res.data.data, 'product data acquisition success');
       // 分离出无分类的数据<待做处理>
-      var product = res.data.data;  // 获取接口提供的数据
-      var productList = [];
-      var arr = [];
-      for (var i = 0; i < product.length; i++) {
-        if (product[i].cate_id !== 0) {
-          productList.push(product[i]);
+      var productList = res.data.data;  // 获取接口提供的数据
+      // var productList = [];
+      // var arr = [];
+      // for (var i = 0; i < product.length; i++) {
+      //   if (product[i].cate_id !== 0) {
+      //     productList.push(product[i]);
+      //   }
+      // }
+      for (var i = 0; i < productList.length; i++) {
+        if (productList[i].cate_id == 0) {
+          console.log(productList[1].cate_id = 0)
         }
       }
       // 根据cate_id排序
@@ -35,7 +40,7 @@ var loadProd = function (that,limitNum) {
       for (var i in productList) {
         console.log(productList[i].prod_images = IMG_URL + JSON.parse(productList[i].prod_images)[0]);
       }
-      that.setData({ productList: productList });
+      that.setData({ productList: res.data.data });
 
     }
   })
@@ -66,9 +71,10 @@ Page({
   
   onPullDownRefresh: function () {
     var that = this;
-    console.log(++num)
+    num += 3;
+    console.log(num += 3)
     wx.showNavigationBarLoading() //在标题栏中显示加载
-    loadProd(that,++num);
+    loadProd(that, num += 3);
     setTimeout(() => {
       wx.hideNavigationBarLoading() //完成停止加载
       wx.stopPullDownRefresh() //停止下拉刷新

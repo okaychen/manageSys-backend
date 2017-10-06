@@ -1,10 +1,16 @@
 <view class="pageWrapper">
   <view>
+
+
     <!-- tab header -->
     <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
 
+      <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">
+        全部
+      </view>
+
       <block wx:for="{{category}}" wx:for-item="item" wx:for-index="idx">
-        <view class="tab-item {{currentTab==idx?'active':''}}" data-current="{{item.id-1}}" bindtap="swichNav">
+        <view class="tab-item {{currentTab==idx+1?'active':''}}" data-current="{{item.id}}" bindtap="swichNav">
           {{item.cate_name}}
         </view>
       </block>
@@ -44,16 +50,6 @@
       </swiper-item>
     </swiper>
   </view>
-
-    <view class="tips1">
-            <view wx:if="{{hasMore}}">
-              <icon type="waiting" size="45" />
-              <text>玩命的加载中...</text>
-            </view>
-            <view wx:else>
-              <text>没有更多内容了</text>
-            </view>
-          </view>
   <!-- bottom tab -->
   <include src="../foot-tab.wxml" />
 </view>
