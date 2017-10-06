@@ -152,9 +152,12 @@ Page({
         var diffS = TotalS - RemandS;
         // 剩余秒数转化为时分秒
         var chours = Math.floor(diffS / 3600),
-          cmin = Math.floor((diffS - Math.floor(diffS / 3600) * 3600) / 60),
+          cmin = Math.floor((diffS - chours * 3600) / 60),
           csec = diffS - cmin * 60 - chours * 3600;
         // 最终时间<拼团结束时间> 
+        chours < 10 ? chours = '0' + chours : chours;
+        cmin < 10 ? cmin = '0' + cmin : cmin;
+        csec < 10 ? csec = '0' + csec : csec;
         var fTime = chours + ':' + cmin + ':' + csec;
         console.log(fTime)
 
