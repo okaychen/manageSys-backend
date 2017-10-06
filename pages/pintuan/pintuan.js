@@ -15,18 +15,11 @@ var loadProd = function (that,limitNum) {
       console.log(res.data.data, 'product data acquisition success');
       // 分离出无分类的数据<待做处理>
       var productList = res.data.data;  // 获取接口提供的数据
-      // var productList = [];
-      // var arr = [];
-      // for (var i = 0; i < product.length; i++) {
-      //   if (product[i].cate_id !== 0) {
-      //     productList.push(product[i]);
+      // for (var i = 0; i < productList.length; i++) {
+      //   if (productList[i].cate_id == 0) {
+      //     console.log(productList[1].cate_id = 0)
       //   }
       // }
-      for (var i = 0; i < productList.length; i++) {
-        if (productList[i].cate_id == 0) {
-          console.log(productList[1].cate_id = 0)
-        }
-      }
       // 根据cate_id排序
       function compare(cate_id) {
         return function (a, b) {
@@ -41,7 +34,6 @@ var loadProd = function (that,limitNum) {
         console.log(productList[i].prod_images = IMG_URL + JSON.parse(productList[i].prod_images)[0]);
       }
       that.setData({ productList: res.data.data });
-
     }
   })
 };
@@ -68,7 +60,6 @@ Page({
     }],
     category: []
   },
-  
   onPullDownRefresh: function () {
     var that = this;
     num += 3;
@@ -122,7 +113,7 @@ Page({
   // 点击标题切换当前页时改变样式
   swichNav: function (e) {
     var cur = e.target.dataset.current;
-    if (this.data.currentTaB == cur) { return false; }
+    if (this.data.currentTab == cur) { return false; }
     else {
       this.setData({
         currentTab: cur
