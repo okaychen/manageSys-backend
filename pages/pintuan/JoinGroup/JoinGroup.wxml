@@ -24,7 +24,7 @@
 		仅剩<text class='red'>{{group.person_limit-group.person_num}}</text>个名额
 	</view>
 	<view>剩余{{group.time_out}}结束</view>
-	<navigator open-type="redirect" url='../details/details'>
+	<navigator open-type="redirect" url='../details/details?group_id={{group_id}}&id={{productInfo.id}}'>
 		<button type='button'>一键参团</button>
 	</navigator>
 </view>
