@@ -101,12 +101,12 @@ Page({
 			that.showModal2();
 		}
 		wx.request({
-			url: API_URL + '/api/product/getProductById?prod_id=' + options.id,
-			data: {},
-			method: 'GET',
-			header: {
-				'content-type': 'application/json'
+			url: API_URL + '/api/product/getProductById',
+			data: {
+				applet_id: app.globalData.applet_id,
+				prod_id: options.id
 			},
+			method: 'POST',
 			success: function (res) {
 				wx.hideLoading();
 				let productInfo = res.data.data;
@@ -153,16 +153,16 @@ Page({
 			}
 		});
 	},
-	redirectToJoinGroup:function (e) {
-		let that=this;
-		let group_id=e.currentTarget.dataset.groupId;
-		wx.setStorageSync('selected_group_info',{
-			group_id:group_id,
-			productInfo:that.data.productInfo
+	redirectToJoinGroup: function (e) {
+		let that = this;
+		let group_id = e.currentTarget.dataset.groupId;
+		wx.setStorageSync('selected_group_info', {
+			group_id: group_id,
+			productInfo: that.data.productInfo
 		});
 		wx.redirectTo({
-			url:'../JoinGroup/JoinGroup'
-		})
+			url: '../JoinGroup/JoinGroup'
+		});
 	},
 	// 自定义底部弹出层
 	showModal1: function () {

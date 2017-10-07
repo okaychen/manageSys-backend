@@ -22,9 +22,11 @@ Page({
 			mask: true
 		});
 		//发起请求
+		let form_data=that.data.form_data;
+		form_data['applet_id']=app.globalData.applet_id;
 		wx.request({
 			url: app.globalData.path_info.api+ '/api/user/setUser',
-			data: that.data.form_data,
+			data: form_data,
 			method: 'POST',
 			success: function (resp) {
 				wx.hideLoading();
@@ -76,9 +78,11 @@ Page({
 			mask: true
 		});
 		//发起请求
+		let form_data=that.data.form_data;
+		form_data['applet_id']=app.globalData.applet_id;
 		wx.request({
 			url: app.globalData.path_info.api + '/api/user/setUser',
-			data: that.data.form_data,
+			data: form_data,
 			method: 'POST',
 			success: function (resp) {
 				wx.hideLoading();

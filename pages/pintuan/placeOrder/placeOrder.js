@@ -46,12 +46,12 @@ Page({
 		that.setPayParams('purchase_method', options.purchase_method);
 		that.setPayParams('group_id', options.group_id);
 		wx.request({
-			url: API_URL + '/api/product/getProductById?prod_id=' + options.orderId,
-			data: {},
-			method: 'GET',
-			header: {
-				'content-type': 'application/json'
+			url: API_URL + '/api/product/getProductById',
+			data: {
+				applet_id: app.globalData.applet_id,
+				prod_id:options.orderId
 			},
+			method: 'POST',
 			success: function (res) {
 				wx.hideLoading();
 				console.log(res.data.data, 'get this info of order');
@@ -100,6 +100,7 @@ Page({
 		console.log(that.data.pay_params);
 		let pay_params=that.data.pay_params;
 		pay_params['address']=JSON.stringify(that.data.address);
+		pay_params['applet_id']=app.globalData.applet_id;
 		wx.request({
 			url: app.globalData.path_info.api + '/api/pay/unifiedOrder',
 			data: pay_params,

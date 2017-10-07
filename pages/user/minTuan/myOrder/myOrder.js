@@ -44,7 +44,10 @@ Page({
 		//请求数据
 		wx.request({
 			url: app.globalData.path_info.api + '/api/order/getOrdersByOpenId',
-			data: {openid: app.getOpenId()},
+			data: {
+				applet_id:app.globalData.applet_id,
+				openid: app.getOpenId()
+			},
 			method: 'POST',
 			success: function (resp) {
 				if (resp.data.status == 'success') {

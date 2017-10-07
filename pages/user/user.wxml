@@ -32,7 +32,7 @@
 					</view>
 					<view class='menu-two'>
 						<!--<navigator url='minTuan/myAddress/add/add'>-->
-							<text bindtap="selectAddress"> > 收获地址</text>
+							<text bindtap="selectAddress"> > 收货地址</text>
 						<!--</navigator>-->
 					</view>
 				</view>

@@ -81,7 +81,7 @@
 </view>
 
 <!-- save button -->
-<view class='suerOrder' wx:if="{{order.purchase_method=='group'}}">
+<view class='suerOrder' wx:if="{{order.purchase_method=='group' && order.group_id!=0}}">
 	<button bindtap="showok" class='save-edit' wx:if="{{!time_is_ok}}">剩余时间
 		<text>{{countDownHour}}:</text>
 		<text>{{countDownMinute}}:</text>

@@ -58,6 +58,7 @@ App({
 				wx.request({
 					url: that.globalData.path_info.api + '/api/applet/getOpenIdByCode',
 					data: {
+						applet_id:that.globalData.applet_id,
 						js_code: wx.getStorageSync('js_code')
 					},
 					method: 'POST',
@@ -69,6 +70,7 @@ App({
 									url:that.globalData.path_info.api+'/api/user/setUser',
 									method:'POST',
 									data:{
+										applet_id:that.globalData.applet_id,
 										openid:resp.data.data.openid,
 										user_img:res.userInfo.avatarUrl,
 										name:res.userInfo.nickName,

@@ -12,7 +12,7 @@
 
 <!--<navigator url="../myAddress/add/add">-->
 	<view class='order-address pd15 mt5 bgWhite' bindtap="selectAddress">
-		<text>收获地址</text>
+		<text>收货地址</text>
 		<view class="floatR">
 			<text class="">{{address.provinceName}}{{address.cityName}}{{address.countyName}}</text>
 			<text class="">{{address.detailInfo}}</text>
