@@ -3,168 +3,163 @@
 
 <!--pages/pintuan/details/details.wxml-->
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-	<block wx:for="{{prod_images}}" wx:for-item="item">
-		<swiper-item>
-			<image mode='widthFix' src="{{item}}" class="slide-image" />
-		</swiper-item>
-	</block>
+  <block wx:for="{{prod_images}}" wx:for-item="item">
+    <swiper-item>
+      <image mode='widthFix' src="{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
 </swiper>
 
 <view class='shop-info'>
-	<view class='price'>
-		<text class='nowPrice'>¥{{productInfo.prod_group_price}}</text>
-		<text class='line-delete'>¥{{productInfo.prod_old_price}}</text>
-		<text class='priceCutDown'>拼团立减{{(productInfo.prod_old_price*100-productInfo.prod_group_price*100)/100}}元</text>
-	</view>
-	<view class='floatR haved'>已有
-		<view>
-			<text class='red'>{{productInfo.group_order_count}}</text>
-			人参团
-		</view>
-	</view>
-	<view class='title'>
-		<view>{{productInfo.prod_name}}</view>
-		<view class='title-tip'>{{productInfo.prod_desc}}</view>
-	</view>
+  <view class='price'>
+    <text class='nowPrice'>¥{{productInfo.prod_group_price}}</text>
+    <text class='line-delete'>¥{{productInfo.prod_old_price}}</text>
+    <text class='priceCutDown'>拼团立减{{(productInfo.prod_old_price*100-productInfo.prod_group_price*100)/100}}元</text>
+  </view>
+  <view class='floatR haved'>已有
+    <view>
+      <text class='red'>{{productInfo.group_order_count}}</text> 人参团
+    </view>
+  </view>
+  <view class='title'>
+    <view>{{productInfo.prod_name}}</view>
+    <view class='title-tip'>{{productInfo.prod_desc}}</view>
+  </view>
 </view>
 
 <!-- 正在开团 -->
 <view class='tuan' hidden='{{hideTuan}}'>
-	<view class='title'>正在开团的小伙伴</view>
-	<view class='con' wx:for="{{productInfo.groups}}">
-		<view class='con_left'>
-			<image src='{{item.user.user_img}}' />
-			<view>
-				<text>{{item.user.name}}</text>
-				<text class='color999'>正在开团中</text>
-			</view>
-		</view>
-		<view class='con_right'>
-			<view>
-				<text class='red'>还差{{item.person_limit-item.person_num}}人参团</text>
-				<text class='color999'>剩余{{item.time_out}}结束</text>
-			</view>
-			<text class='join' bindtap="redirectToJoinGroup" data-group-id="{{item.id}}">去参团</text>
-		</view>
-	</view>
+  <view class='title'>正在开团的小伙伴</view>
+  <view class='con' wx:for="{{productInfo.groups}}">
+    <view class='con_left'>
+      <image src='{{item.user.user_img}}' />
+      <view>
+        <text>{{item.user.name}}</text>
+        <text class='color999'>正在开团中</text>
+      </view>
+    </view>
+    <view class='con_right'>
+      <view>
+        <text class='red'>还差{{item.person_limit-item.person_num}}人参团</text>
+        <text class='color999'>剩余{{item.time_out}}结束</text>
+      </view>
+      <text class='join' bindtap="redirectToJoinGroup" data-group-id="{{item.id}}">去参团</text>
+    </view>
+  </view>
 </view>
 
 
 <!-- 拼团玩法 -->
 <view class='shop-play'>
-	<view class='title'>拼团玩法</view>
-	<view class='menu'>
-		<view>
-			<image mode='widthFix' src="../../../image/burse.png" />
-			支付开团或者参团
-		</view>
-		<view>
-			<image mode='widthFix' src="../../../image/user.png" />
-			邀请好友参团
-		</view>
-		<view>
-			<image mode='widthFix' src="../../../image/car.png" />
-			人数达到分别发货
-		</view>
-		<view>
-			<image mode='widthFix' src="../../../image/back.png" />
-			人数不够自动退款
-		</view>
-	</view>
+  <view class='title'>拼团玩法</view>
+  <view class='menu'>
+    <view>
+      <image mode='widthFix' src="../../../image/burse.png" /> 支付开团或者参团
+    </view>
+    <view>
+      <image mode='widthFix' src="../../../image/user.png" /> 邀请好友参团
+    </view>
+    <view>
+      <image mode='widthFix' src="../../../image/car.png" /> 人数达到分别发货
+    </view>
+    <view>
+      <image mode='widthFix' src="../../../image/back.png" /> 人数不够自动退款
+    </view>
+  </view>
 </view>
 
 <!-- 商品详情 -->
 <view class='shop-play shop-detail'>
-	<view class='title'>商品详情</view>
-	<view class='con'>
-		<template is="wxParse" data="{{wxParseData:article.nodes}}" />
-	</view>
+  <view class='title'>商品详情</view>
+  <view class='con'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
 </view>
 
-<!-- 商品评价 -->
+<!-- 商品评价 
 <view class='shop-play shop-access'>
 	<view class='title'>商品评价</view>
 	<view class='con'>暂无评价</view>
-</view>
+</view> -->
 
 
 <!-- 底部菜单 -->
 <view class='fixedBottom'>
-	<view class='home'>
-		<navigator url='../pintuan'>
-			<image mode='widthFix' src="../../../image/pin2.png" />
-			<text>首页</text>
-		</navigator>
-	</view>
-	<view class='yourPurse' bindtap='showModal1'>
-		<text>¥{{productInfo.prod_single_price}}</text>
-		<text>单独购买</text>
-	</view>
-	<view class='yoursPurse' bindtap='showModal2'>
-		<text>¥{{productInfo.prod_group_price}}</text>
-		<text>1人团</text>
-	</view>
+  <view class='home'>
+    <navigator url='../pintuan'>
+      <image mode='widthFix' src="../../../image/pin2.png" />
+      <text>首页</text>
+    </navigator>
+  </view>
+  <view class='yourPurse' bindtap='showModal1'>
+    <text>¥{{productInfo.prod_single_price}}</text>
+    <text>单独购买</text>
+  </view>
+  <view class='yoursPurse' bindtap='showModal2'>
+    <text>¥{{productInfo.prod_group_price}}</text>
+    <text>1人团</text>
+  </view>
 </view>
 
 <!-- 自定义底部弹出层 -->
 <!-- 1、单独购买 -->
 <view class="commodity_screen" bindtap="hideModal1" wx:if="{{showModalStatus1}}"></view>
 <view animation="{{animationData1}}" class="commodity_attr_box" wx:if="{{showModalStatus1}}">
-	
-	<view class='header'>
-		<view class='header-imgBox'>
-			<image mode='widthFix' src="{{prod_images[0]}}" />
-		</view>
-		<view class='header-infoBox'>
-			<text>{{productInfo.prod_desc}}</text>
-			<text class='red'>¥{{productInfo.prod_single_price}}</text>
-		</view>
-	</view>
-	
-	<view class='count'>
-		<text>购买数量:</text>
-		<view class="stepper floatR">
-			<text class="{{minusStatus}}" bindtap="bindMinus">-</text>
-			<input type="number" bindchange="bindManual" value="{{num}}" />
-			<text class="normal" bindtap="bindPlus">+</text>
-		</view>
-	</view>
-	
-	<view class='submit'>
-		<!-- 单独购买订单传参 -->
-		<navigator url='../placeOrder/placeOrder?product_id={{productInfo.id}}&orderId={{orderId}}&onePrice={{single_price}}&num={{num}}&purchase_method=single&group_id={{group_id}}'>
-			<button type='submit'>确定</button>
-		</navigator>
-	</view>
+
+  <view class='header'>
+    <view class='header-imgBox'>
+      <image mode='widthFix' src="{{prod_images[0]}}" />
+    </view>
+    <view class='header-infoBox'>
+      <text>{{productInfo.prod_desc}}</text>
+      <text class='red'>¥{{productInfo.prod_single_price}}</text>
+    </view>
+  </view>
+
+  <view class='count'>
+    <text>购买数量:</text>
+    <view class="stepper floatR">
+      <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+      <input type="number" bindchange="bindManual" value="{{num}}" />
+      <text class="normal" bindtap="bindPlus">+</text>
+    </view>
+  </view>
+
+  <view class='submit'>
+    <!-- 单独购买订单传参 -->
+    <navigator url='../placeOrder/placeOrder?product_id={{productInfo.id}}&orderId={{orderId}}&onePrice={{single_price}}&num={{num}}&purchase_method=single&group_id={{group_id}}'>
+      <button type='submit'>确定</button>
+    </navigator>
+  </view>
 </view>
 
 <!-- 2、拼团购买 -->
 <view class="commodity_screen" bindtap="hideModal2" wx:if="{{showModalStatus2}}"></view>
 <view animation="{{animationData2}}" class="commodity_attr_box" wx:if="{{showModalStatus2}}">
-	
-	<view class='header'>
-		<view class='header-imgBox'>
-			<image mode='widthFix' src="{{prod_images[0]}}" />
-		</view>
-		<view class='header-infoBox'>
-			<text>{{productInfo.prod_desc}}</text>
-			<text class='red'>¥{{productInfo.prod_group_price}}</text>
-		</view>
-	</view>
-	
-	<view class='count'>
-		<text>购买数量:</text>
-		<view class="stepper floatR">
-			<text class="{{minusStatus1}}" bindtap="bindMinus1">-</text>
-			<input type="number" bindchange="bindManual1" value="{{num1}}" />
-			<text class="normal" bindtap="bindPlus1">+</text>
-		</view>
-	</view>
-	
-	<view class='submit'>
-		<!-- 拼团订单传参 -->
-		<navigator url='../placeOrder/placeOrder?product_id={{productInfo.id}}&orderId={{orderId}}&onePrice={{group_price}}&num={{num1}}&purchase_method=group&group_id={{group_id}}'>
-			<button type='submit'>确定</button>
-		</navigator>
-	</view>
+
+  <view class='header'>
+    <view class='header-imgBox'>
+      <image mode='widthFix' src="{{prod_images[0]}}" />
+    </view>
+    <view class='header-infoBox'>
+      <text>{{productInfo.prod_desc}}</text>
+      <text class='red'>¥{{productInfo.prod_group_price}}</text>
+    </view>
+  </view>
+
+  <view class='count'>
+    <text>购买数量:</text>
+    <view class="stepper floatR">
+      <text class="{{minusStatus1}}" bindtap="bindMinus1">-</text>
+      <input type="number" bindchange="bindManual1" value="{{num1}}" />
+      <text class="normal" bindtap="bindPlus1">+</text>
+    </view>
+  </view>
+
+  <view class='submit'>
+    <!-- 拼团订单传参 -->
+    <navigator url='../placeOrder/placeOrder?product_id={{productInfo.id}}&orderId={{orderId}}&onePrice={{group_price}}&num={{num1}}&purchase_method=group&group_id={{group_id}}'>
+      <button type='submit'>确定</button>
+    </navigator>
+  </view>
 </view>

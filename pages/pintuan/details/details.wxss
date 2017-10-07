@@ -154,10 +154,13 @@ swiper image {
   line-height: 25px;
   font-size: 14px;
 }
-
-.shop-access {
-  margin-bottom: 80px;
+.shop-detail{
+  margin-bottom: 100px;
 }
+
+/* .shop-access {
+  margin-bottom: 80px;
+} */
 
 .fixedBottom {
   width: 100%;
