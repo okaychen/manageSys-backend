@@ -53,7 +53,7 @@ Page({
 				'content-type': 'application/json'
 			},
 			success: function (res) {
-        wx.hideLoading();
+				wx.hideLoading();
 				console.log(res.data.data, 'get this info of order');
 				var productInfo = res.data.data;
 				// 对轮播图进行处理<默认只处理三个>
@@ -77,13 +77,32 @@ Page({
 			}
 		});
 	},
+	selectAddress: function () {
+		let that = this;
+		wx.chooseAddress({
+			success: function (res) {
+				console.clear();
+				console.log(res);
+				that.setData({
+					is_select_address: true,
+					address:res
+				});
+			}
+		});
+	},
 	//提交订单啦!!!
 	submitOrder: function () {
+		wx.showLoading({
+			title:'加载中',
+			mask:1
+		});
 		let that = this;
 		console.log(that.data.pay_params);
+		let pay_params=that.data.pay_params;
+		pay_params['address']=JSON.stringify(that.data.address);
 		wx.request({
 			url: app.globalData.path_info.api + '/api/pay/unifiedOrder',
-			data: that.data.pay_params,
+			data: pay_params,
 			method: 'POST',
 			success: function (resp) {
 				console.log('成功');
@@ -128,6 +147,9 @@ Page({
 						//处理一下
 					}
 				});
+			},
+			complete:function () {
+				wx.hideLoading();
 			}
 		});
 	}

@@ -10,14 +10,14 @@
 	<view class='userName'>
 		<view>
 			<image mode='widthFix' src='../../../../image/seeUser.png'></image>
-			{{order.address.name}}
+			{{order.address.userName}}
 		</view>
 		<view class='floatR'>
 			<image mode='widthFix' src='../../../../image/phone.png'></image>
-			{{order.address.phone}}
+			{{order.address.telNumber}}
 		</view>
 	</view>
-	<view class='userAddress'>{{address}}</view>
+	<view class='userAddress'>{{order.address.provinceName}}{{order.address.cityName}}{{order.address.countyName}}{{order.address.detailInfo}}</view>
 </view>
 
 <view class='order-info pd10'>

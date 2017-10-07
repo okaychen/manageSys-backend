@@ -21,6 +21,7 @@ Page({
 		let that = this;
 		let order = wx.getStorageSync('selected_order');
 		order.pay_time_str = new Date(parseInt(order.pay_time) * 1000).toLocaleString();
+		order.address=JSON.parse(order.address);
 		console.log(order);
 		that.setData({
 			order: order
