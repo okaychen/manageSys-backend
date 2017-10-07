@@ -98,6 +98,7 @@ Page({
 			this.setData({
 				group_id: options.group_id
 			});
+			that.showModal2();
 		}
 		wx.request({
 			url: API_URL + '/api/product/getProductById?prod_id=' + options.id,

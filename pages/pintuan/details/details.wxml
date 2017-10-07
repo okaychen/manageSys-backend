@@ -97,7 +97,7 @@
   </view>
   <view class='yoursPurse' bindtap='showModal2'>
     <text>¥{{productInfo.prod_group_price}}</text>
-    <text>1人团</text>
+    <text>{{productInfo.prod_group_num}}人团</text>
   </view>
 </view>
 

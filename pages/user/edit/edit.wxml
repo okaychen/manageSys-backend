@@ -48,7 +48,7 @@
 			<text>（18个字以内）</text>
 		</view>
 		<view>
-			<input placeholder-style='color:#999' placeholder='18个字以内' maxlength='11' data-key="addr" bindinput="formInput" value="{{form_data.addr}}"/>
+			<input placeholder-style='color:#999' placeholder='18个字以内' data-key="addr" bindinput="formInput" value="{{form_data.addr}}"/>
 		</view>
 	</label>
 	

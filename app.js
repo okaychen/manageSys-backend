@@ -62,6 +62,20 @@ App({
 					method: 'POST',
 					success: function (resp) {
 						wx.setStorageSync('openid', resp.data.data.openid);
+						wx.getUserInfo({
+							success:function (res) {
+								wx.request({
+									url:that.globalData.path_info.api+'/api/user/setUser',
+									method:'POST',
+									data:{
+										openid:resp.data.data.openid,
+										user_img:res.userInfo.avatarUrl,
+										name:res.userInfo.nickName,
+										addr:res.userInfo.country+res.userInfo.province+res.userInfo.city
+									}
+								})
+							}
+						})
 					}, fail: function (resp) {
 						console.log('requestOpenId fail');
 					}
