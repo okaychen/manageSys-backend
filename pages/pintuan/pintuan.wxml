@@ -1,81 +1,78 @@
 <view class="pageWrapper">
-  <view>
-    <!-- tab header -->
-    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
-
-      <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">
-        全部
-      </view>
-
-      <block wx:for="{{category}}" wx:for-item="item" wx:for-index="idx">
-        <view class="tab-item {{currentTab==idx+1?'active':''}}" data-current="{{item.id}}" bindtap="swichNav">
-          {{item.cate_name}}
-        </view>
-      </block>
-
-    </scroll-view>
-    <!-- tab content -->
-    <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab">
-      <swiper-item wx:for="{{productList}}" wx:for-item="item" data-id='{{item.id}}' wx:for-index="idx">
-        <scroll-view scroll-y="true" class="scoll-h" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" scroll-y="true" bindscrolltoupper="pullDownRefresh" bindscrolltolower="pullUpLoad" >
-
-          <!-- <block wx:for="{{[0,1,2,3]}}">  -->
-          <view class='goods-Wrapper' bindtap='clickList' wx:if="{{currentTab==0}}" wx:for="{{productList}}" wx:for-item="item" data-id='{{item.id}}' wx:for-index="idx">
-            <navigator url='details/details?id={{item.id}}'>
-              <image mode='widthFix' class="goods-img" src='{{item.prod_images}}'></image>
-              <view class="goods-info">
-                <view>{{item.prod_name}}</view>
-                <view>
-                  <text class='price'>{{item.prod_group_price}}</text>
-                  <text class='line-delete'>
+	<view>
+		<!-- tab header -->
+		<scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+			<view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">
+				全部
+			</view>
+			<block wx:for="{{category}}" wx:for-item="item" wx:for-index="idx">
+				<view class="tab-item {{currentTab==idx+1?'active':''}}" data-current="{{item.id}}" bindtap="swichNav">
+					{{item.cate_name}}
+				</view>
+			</block>
+		</scroll-view>
+		<!-- tab content -->
+		<swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab">
+			<swiper-item wx:for="{{productList}}" wx:for-item="item" data-id='{{item.id}}' wx:for-index="idx">
+				<scroll-view scroll-y="true" class="scoll-h" style="height: {{windowHeight}}px; width: {{windowWidth}}px;" scroll-y="true" bindscrolltoupper="pullDownRefresh" bindscrolltolower="pullUpLoad">
+					
+					<!-- <block wx:for="{{[0,1,2,3]}}">  -->
+					<view class='goods-Wrapper' bindtap='clickList' wx:if="{{currentTab==0}}" wx:for="{{productList}}" wx:for-item="item" data-id='{{item.id}}' wx:for-index="idx">
+						<navigator url='details/details?id={{item.id}}'>
+							<image mode='widthFix' class="goods-img" src='{{item.prod_images}}'></image>
+							<view class="goods-info">
+								<view>{{item.prod_name}}</view>
+								<view>
+									<text class='price'>{{item.prod_group_price}}</text>
+									<text class='line-delete'>
 										¥{{item.prod_old_price}}
 									</text>
-                  <label>
-                    <button class="mgr-5">
-                      <image mode='widthFix' src='../../image/icon1.png'></image>
-                      {{item.prod_group_num}}人团
-                    </button>
-                    <button class="mgl-5">
-                      <image mode='widthFix' src='../../image/icon2.png'></image>
-                      去开团
-                    </button>
-                  </label>
-                </view>
-              </view>
-            </navigator>
-          </view>
-
-          <view class='goods-Wrapper' bindtap='clickList' wx:if="{{currentTab!==0}}" wx:for="{{productList1}}" wx:for-item="item" data-id='{{item.id}}' wx:for-index="idx">
-            <navigator url='details/details?id={{item.id}}'>
-              <image mode='widthFix' class="goods-img" src='{{item.prod_images}}'></image>
-              <view class="goods-info">
-                <view>{{item.prod_name}}</view>
-                <view>
-                  <text class='price'>{{item.prod_group_price}}</text>
-                  <text class='line-delete'>
+									<label>
+										<button class="mgr-5">
+											<image mode='widthFix' src='../../image/icon1.png'></image>
+											{{item.prod_group_num}}人团
+										</button>
+										<button class="mgl-5">
+											<image mode='widthFix' src='../../image/icon2.png'></image>
+											去开团
+										</button>
+									</label>
+								</view>
+							</view>
+						</navigator>
+					</view>
+					
+					<view class='goods-Wrapper' bindtap='clickList' wx:if="{{currentTab!==0}}" wx:for="{{productList1}}" wx:for-item="item" data-id='{{item.id}}' wx:for-index="idx">
+						<navigator url='details/details?id={{item.id}}'>
+							<image mode='widthFix' class="goods-img" src='{{item.prod_images}}'></image>
+							<view class="goods-info">
+								<view>{{item.prod_name}}</view>
+								<view>
+									<text class='price'>{{item.prod_group_price}}</text>
+									<text class='line-delete'>
 										¥{{item.prod_old_price}}
 									</text>
-                  <label>
-                    <button class="mgr-5">
-                      <image mode='widthFix' src='../../image/icon1.png'></image>
-                      {{item.prod_group_num}}人团
-                    </button>
-                    <button class="mgl-5">
-                      <image mode='widthFix' src='../../image/icon2.png'></image>
-                      去开团
-                    </button>
-                  </label>
-                </view>
-              </view>
-            </navigator>
-          </view>
-
-          <!-- </block>  -->
-        </scroll-view>
-      </swiper-item>
-    </swiper>
-  </view>
-
-  <!-- bottom tab -->
-  <include src="../foot-tab.wxml" />
+									<label>
+										<button class="mgr-5">
+											<image mode='widthFix' src='../../image/icon1.png'></image>
+											{{item.prod_group_num}}人团
+										</button>
+										<button class="mgl-5">
+											<image mode='widthFix' src='../../image/icon2.png'></image>
+											去开团
+										</button>
+									</label>
+								</view>
+							</view>
+						</navigator>
+					</view>
+					
+					<!-- </block>  -->
+				</scroll-view>
+			</swiper-item>
+		</swiper>
+	</view>
+	
+	<!-- bottom tab -->
+	<include src="../foot-tab.wxml" />
 </view>

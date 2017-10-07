@@ -33,6 +33,7 @@ App({
 	
 	globalData: {
 		userInfo: null,
+		applet_id: 666,
 		path_info: {
 			domain: base_domain,
 			api: base_domain + api_path,
