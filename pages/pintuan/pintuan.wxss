@@ -65,7 +65,7 @@ scroll-view {
   margin-top: 80rpx;
   height: 500px;
   overflow-y: hidden;
-  padding-bottom: 100px;
+  padding-bottom: 60px;
 }
 
 .tab-content  swiper-item {
