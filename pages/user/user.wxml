@@ -31,9 +31,9 @@
 						</navigator>
 					</view>
 					<view class='menu-two'>
-						<navigator url='minTuan/myAddress/add/add'>
-							<text> > 收获地址</text>
-						</navigator>
+						<!--<navigator url='minTuan/myAddress/add/add'>-->
+							<text bindtap="selectAddress"> > 收货地址</text>
+						<!--</navigator>-->
 					</view>
 				</view>
 			</view>
@@ -44,5 +44,5 @@
 	
 	
 	<!-- bottom tab -->
-	<include src="../foot-tab.wxml" />
+	<!--<include src="../foot-tab.wxml" />-->
 </view>

@@ -10,12 +10,16 @@
 	</view>
 </view>
 
-<navigator url="../myAddress/add/add">
-	<view class='order-address pd15 mt5 bgWhite'>
-		<text>收获地址</text>
-		<input class='floatR textAlignR' type='text' value='{{selected_address.shipping_address}}' disabled='true' />
+<!--<navigator url="../myAddress/add/add">-->
+	<view class='order-address pd15 mt5 bgWhite' bindtap="selectAddress">
+		<text>收货地址</text>
+		<view class="floatR">
+			<text class="">{{address.provinceName}}{{address.cityName}}{{address.countyName}}</text>
+			<text class="">{{address.detailInfo}}</text>
+		</view>
+		<!--<input class='floatR textAlignR' type='text' value='{{selected_address.shipping_address}}' disabled='true' />-->
 	</view>
-</navigator>
+<!--</navigator>-->
 
 <view class='order-dist pd15 mt5 bgWhite'>
 	<text>配送方式</text>

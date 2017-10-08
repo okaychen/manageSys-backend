@@ -46,14 +46,14 @@ Page({
 		that.setPayParams('purchase_method', options.purchase_method);
 		that.setPayParams('group_id', options.group_id);
 		wx.request({
-			url: API_URL + '/api/product/getProductById?prod_id=' + options.orderId,
-			data: {},
-			method: 'GET',
-			header: {
-				'content-type': 'application/json'
+			url: API_URL + '/api/product/getProductById',
+			data: {
+				applet_id: app.globalData.applet_id,
+				prod_id:options.orderId
 			},
+			method: 'POST',
 			success: function (res) {
-        wx.hideLoading();
+				wx.hideLoading();
 				console.log(res.data.data, 'get this info of order');
 				var productInfo = res.data.data;
 				// 对轮播图进行处理<默认只处理三个>
@@ -77,13 +77,33 @@ Page({
 			}
 		});
 	},
+	selectAddress: function () {
+		let that = this;
+		wx.chooseAddress({
+			success: function (res) {
+				console.clear();
+				console.log(res);
+				that.setData({
+					is_select_address: true,
+					address:res
+				});
+			}
+		});
+	},
 	//提交订单啦!!!
 	submitOrder: function () {
+		wx.showLoading({
+			title:'加载中',
+			mask:1
+		});
 		let that = this;
 		console.log(that.data.pay_params);
+		let pay_params=that.data.pay_params;
+		pay_params['address']=JSON.stringify(that.data.address);
+		pay_params['applet_id']=app.globalData.applet_id;
 		wx.request({
 			url: app.globalData.path_info.api + '/api/pay/unifiedOrder',
-			data: that.data.pay_params,
+			data: pay_params,
 			method: 'POST',
 			success: function (resp) {
 				console.log('成功');
@@ -128,6 +148,9 @@ Page({
 						//处理一下
 					}
 				});
+			},
+			complete:function () {
+				wx.hideLoading();
 			}
 		});
 	}

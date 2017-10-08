@@ -1,25 +1,39 @@
 {
-  "pages": [
-    "pages/pintuan/pintuan",
-    "pages/pintuan/JoinGroup/JoinGroup",
-    "pages/pintuan/details/details",
-    "pages/pintuan/myAddress/add/add",
-    "pages/pintuan/myAddress/newAddress/newAddress",
-    "pages/pintuan/orderDetail/orderDetail",
-    "pages/pintuan/placeOrder/placeOrder",
-    "pages/user/user",
-    "pages/user/minTuan/myOrder/myOrder",
-    "pages/user/edit/edit",
-    "pages/user/minTuan/myAddress/add/add",
-    "pages/user/minTuan/myAddress/newAddress/newAddress",
-    "pages/index/index",
-    "pages/logs/logs"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#302e43",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "#fff",
-    "enablePullDownRefresh": true
-  }
+	"pages": [
+		"pages/pintuan/pintuan",
+		"pages/pintuan/JoinGroup/JoinGroup",
+		"pages/pintuan/details/details",
+		"pages/pintuan/orderDetail/orderDetail",
+		"pages/pintuan/placeOrder/placeOrder",
+		"pages/user/user",
+		"pages/user/minTuan/myOrder/myOrder",
+		"pages/user/edit/edit"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#302e43",
+		"navigationBarTitleText": "WeChat",
+		"navigationBarTextStyle": "#fff",
+		"enablePullDownRefresh": true
+	},
+	"tabBar": {
+		"borderStyle": "white",
+		"color": "#000000",
+		"selectedColor": "#009c84",
+		"backgroundColor":"#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/pintuan/pintuan",
+				"iconPath": "image/tab-shop.png",
+				"selectedIconPath": "image/tab-shop.png",
+				"text": "拼团"
+			},
+			{
+				"pagePath": "pages/user/user",
+				"iconPath": "image/tab-user.png",
+				"selectedIconPath": "image/tab-user.png",
+				"text": "我的"
+			}
+		]
+	}
 }
