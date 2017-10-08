@@ -44,5 +44,5 @@
 	
 	
 	<!-- bottom tab -->
-	<include src="../foot-tab.wxml" />
+	<!--<include src="../foot-tab.wxml" />-->
 </view>

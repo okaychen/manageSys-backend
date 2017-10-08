@@ -43,11 +43,11 @@
 						</view>
 					</navigator>
 				</view>
-				<view style="height: 56px;"></view>
+				<!--<view style="height: 56px;"></view>-->
 			</scroll-view>
 		</view>
 	</view>
 	
 	<!-- bottom tab -->
-	<include src="../foot-tab.wxml" />
+	<!--<include src="../foot-tab.wxml" />-->
 </view>
