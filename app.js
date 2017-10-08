@@ -1,9 +1,25 @@
 //app.js
-let base_domain = 'https://ssl.snowboy99.com';
 let api_path = '/weidogs/weipintuan/public/index.php';
 let server_root = '/weidogs/weipintuan/public';
 App({
+	globalData: {
+		userInfo: null,
+		applet_id: 666,
+		openid: '',
+		Urln: 'https://ssl.snowboy99.com',
+		appid: null,
+		appsecret: null
+	},
+
+	
 	onLaunch: function () {
+		let that = this;
+		//第一步先处理globalData
+		that.globalData.path_info = {
+			domain: that.globalData.Urln,
+			api: that.globalData.Urln + api_path,
+			path: that.globalData.Urln + server_root
+		};
 		//调用API从本地缓存中获取数据
 		var logs = wx.getStorageSync('logs') || [];
 		logs.unshift(Date.now());
@@ -31,16 +47,6 @@ App({
 		}
 	},
 	
-	globalData: {
-		userInfo: null,
-		applet_id: 666,
-		path_info: {
-			domain: base_domain,
-			api: base_domain + api_path,
-			path: base_domain + server_root
-		}
-	},
-	
 	
 	/**
 	 * |||||||
@@ -58,27 +64,27 @@ App({
 				wx.request({
 					url: that.globalData.path_info.api + '/api/applet/getOpenIdByCode',
 					data: {
-						applet_id:that.globalData.applet_id,
+						applet_id: that.globalData.applet_id,
 						js_code: wx.getStorageSync('js_code')
 					},
 					method: 'POST',
 					success: function (resp) {
 						wx.setStorageSync('openid', resp.data.data.openid);
 						wx.getUserInfo({
-							success:function (res) {
+							success: function (res) {
 								wx.request({
-									url:that.globalData.path_info.api+'/api/user/setUser',
-									method:'POST',
-									data:{
-										applet_id:that.globalData.applet_id,
-										openid:resp.data.data.openid,
-										user_img:res.userInfo.avatarUrl,
-										name:res.userInfo.nickName,
-										addr:res.userInfo.country+res.userInfo.province+res.userInfo.city
+									url: that.globalData.path_info.api + '/api/user/setUser',
+									method: 'POST',
+									data: {
+										applet_id: that.globalData.applet_id,
+										openid: resp.data.data.openid,
+										user_img: res.userInfo.avatarUrl,
+										name: res.userInfo.nickName,
+										addr: res.userInfo.country + res.userInfo.province + res.userInfo.city
 									}
-								})
+								});
 							}
-						})
+						});
 					}, fail: function (resp) {
 						console.log('requestOpenId fail');
 					}

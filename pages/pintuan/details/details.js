@@ -118,7 +118,7 @@ Page({
 					arr.push(images);
 				}
 				// 对商品详情进行处理（rich-text）
-				WxParse.wxParse('article', 'html', productInfo.prod_detail, that, 5);
+				WxParse.wxParse('article', 'html', productInfo.prod_detail, that, 5,app.globalData.Urln);
 				// 判断是否存在正在进行的拼团
 				if (productInfo.groups[0] == null) {
 					that.setData({
