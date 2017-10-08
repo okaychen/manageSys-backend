@@ -118,7 +118,7 @@ Page({
 					arr.push(images);
 				}
 				// 对商品详情进行处理（rich-text）
-				WxParse.wxParse('article', 'html', productInfo.prod_detail, that, 5,app.globalData.Urln);
+				WxParse.wxParse('article', 'html', productInfo.prod_detail, that, 5, app.globalData.Urln);
 				// 判断是否存在正在进行的拼团
 				if (productInfo.groups[0] == null) {
 					that.setData({
@@ -245,6 +245,17 @@ Page({
 				showModalStatus2: false
 			});
 		}.bind(this), 200);
+	},
+	onShareAppMessage: function (e) {
+		let that = this;
+		return {
+			title: '微拼团-' + that.data.productInfo.prod_name,
+			success: function () {
+				wx.showToast({
+					title: '转发成功'
+				});
+			}
+		};
 	}
 	
 });
