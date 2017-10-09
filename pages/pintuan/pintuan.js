@@ -125,7 +125,7 @@ Page({
 		wx.request({
 			url: API_URL + '/api/category/categoryList',
 			data: {
-				applet_id:app.globalData.applet_id
+				applet_id: app.globalData.applet_id
 			},
 			method: 'POST',
 			success: function (res) {
@@ -148,7 +148,7 @@ Page({
 		productList = productList.concat(list);
 		that.setData({
 			offset: that.data.offset + newLen,
-			productList: productList,
+			productList: productList
 		});
 	},
 	loadProduct: function (cate_id, limit = 5) {
@@ -203,7 +203,7 @@ Page({
 			current_tab: cate_id
 		});
 		that.loadProduct(cate_id);
-	}
+	},
 	/*
 	footerTap: app.footerTap,
 	// 滚动切换标签样式
@@ -232,4 +232,14 @@ Page({
 		}
 	}
 	 */
+	onShareAppMessage: function (e) {
+		return {
+			title:'微拼团',
+			success:function () {
+				wx.showToast({
+					title:'转发成功'
+				})
+			}
+		}
+	}
 });
