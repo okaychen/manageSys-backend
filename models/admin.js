@@ -14,6 +14,7 @@ adminSchema.index({
     _id: 1
 })
 
-var Admin = mongoose.model('Admin', adminSchema, 'user'); // 'user'--模型会在user内查找数据集合
+var Admin = mongoose.model('Admin', adminSchema, 'user');
+// 'user'参数--模型会在use集合内查找数据集合,若不指定则按照前者的复数查找
 
 module.exports = Admin;
