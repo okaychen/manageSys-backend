@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
+// 定义数据模型,user.js利用该模型进行交互
 var adminSchema = new Schema({
     'username': String,
     'password': String,
